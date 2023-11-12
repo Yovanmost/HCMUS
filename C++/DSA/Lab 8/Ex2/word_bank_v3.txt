@@ -1,0 +1,100 @@
+acknowledge,cong nhan
+acquire,dat duoc
+adapt,thich nghi
+adjust,dieu chinh
+challenge,thach thuc
+allocate,phan bo
+alter,thay doi
+amend,sua doi
+appreciate,danh gia cao
+assume,gia dinh
+assure,dam bao
+attain,dat duoc
+crucial,quan trong
+bear,con gau
+analyze,phan tich
+develop,phat trien
+cite,trich dan
+coincide,trung khop
+commence,bat dau
+compile,bien soan
+contribute,dong gop
+constitute,cau thanh
+benefit,loi ich
+convey,truyen dat
+dedicate,cong hien
+define,dinh nghia
+demonstrate,chung minh
+denote,chi dan
+derive,bat nguon
+determine,xac dinh
+devote,cong hien
+diminish,lam giam bot
+disclose,tiet lo
+discover,kham pha
+describe,mo ta
+distinct,rieng biet
+distinguish,phan biet
+distribute,phan phat
+dominate,thong tri
+embrace,om
+employ,su dung
+engage,tham gia
+enhance,nang cao
+enrich,lam giau
+ensure,dam bao
+establish,thiet lap
+evaluate,danh gia
+evolve,tien hoa
+exceed,vuot qua
+expand,mo rong
+fluctuate,bien doi
+galvanize,kich thich
+haphazard,bua bai
+illuminate,chieu sang
+juxtapose,dat canh nhau
+keen,sac sao
+lament,than tho
+mitigate,lam diu bot
+nourish,nuoi duong
+observe,quan sat
+plunge,lao xuong
+quench,dap tat
+rejuvenate,lam tre lai
+stagnate,dinh tre
+thrive,phat trien manh
+unveil,tiet lo
+validate,xac nhan
+waver,lung lay
+xenophobic,ki thi nguoi nuoc ngoai
+yearn,khao khat
+zeal,long nhiet huyet
+encompass,bao gom
+jeopardize,gay nguy hiem
+death,cai chet
+innovate,doi moi
+investigate,dieu tra
+issue,van de
+justify,bao chua
+maintain,duy tri
+measurement,su do luong
+modify,sua doi
+obtain,dat duoc
+perceive,nhan thuc
+predict,du doan
+processor,bo xu ly
+propose,de xuat
+provide,cung cap
+ranger,kiem lam
+reflect,phan anh
+relate,lien quan
+represent,dai dien
+respond,phan hoi
+reveal,tiet lo
+signify,bieu thi
+simulate,mo phong
+specify,xac dinh
+strategy,chien luoc
+student,hoc sinh/sinh vien
+utilize,su dung
+happiness,hanh phuc

@@ -1,0 +1,15 @@
+
+a
+aa
+aaa
+aba
+abba
+Taco cat
+Madam, I'm Adam
+A man, a plan, a canal: Panama
+Doc, note: I dissent. A fast never prevents a fatness. I diet on cod.
+- Level 1: check string is strict palindromes (normal case).
+Level 2: check string is loose palindromes. 
+It means that the function is more flexible than level 1.
+Your program should ignore whitespace and punctuation, and all comparisons should be case-insensitive. 
+Examples of valid palindromes:

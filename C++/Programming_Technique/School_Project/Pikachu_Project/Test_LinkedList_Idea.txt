@@ -1,0 +1,46 @@
+head	node			tail
+0       00	01	02	    0
+1   	10	11	12	    1
+2	    20	21	22	    2
+
+struct Points{
+	int x;
+	int y;
+	int state; // 0 = normal, 1 = selected, 2 = deleted	
+	char value;
+    Points* pNext;
+}
+
+// an array of pointers
+Points** matrix = new Points* [n];
+matrix[i] = NULL; // head of a list
+
+
+bool checkLineX(Points** matrix, int y1, int y2, int x) {
+    // find point have column max and min
+    int minP = min(y1, y2);
+    int maxP = max(y1, y2);
+    
+    Points* p = matrix[x];
+
+    int tmpPos = 0;
+    // move the pointer to the minP pos
+    while (p != NULL && tmpPos != minP){
+        p = p->pNext;
+        tmpPos++;
+    }
+    // no element left
+    if (p == NULL)
+        return false;
+
+    // run column
+    for (int y = minP+1; y < maxP; y++) {
+        if (matrix[x][y].state == NOR) { // if see obstacle -> stop
+            // cout << "dieLX: " << x << " " << y << " ";
+            return false;
+        }
+        // cout << "ok: " << x << " " << y << " ";
+    }
+    
+    return true;
+}
