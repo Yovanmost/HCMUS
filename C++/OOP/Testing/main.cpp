@@ -5,13 +5,10 @@
 using namespace std;
 
 
-int main(){
-    foo obj;
-    obj.setA(5);
-    obj.print();
-    cout << sum(4,5);
-    
-    
+int main(){   
+    cout << "Hello world!\n";
+    for (int i = 0; i < 10; i++)
+        cout << "whut da hell\n";
     
 
     return 0;
