@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Employee.h"
+#include "Employee.cpp"
 #include "Company.h"
+#include "Company.cpp"
 
 using namespace std;
 
@@ -94,7 +96,7 @@ void demo3(){
 }
 
 int main(){
-    demo1();
+    // demo1();
     demo2();
 
 
