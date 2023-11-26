@@ -39,17 +39,6 @@ public:
 
     virtual void setSalary(){}
     virtual float getSalary(){}
-
-
-    
-     // or use dynamic_cast , I use this for coding on paper
-    // virtual bool isProduction();
-    // virtual bool isManagement();
-    // virtual bool isOffice();
-
-    
-    
-    // virtual float calculateSalary() = 0;
 };
 
 // -------------------------------------------------------------------
