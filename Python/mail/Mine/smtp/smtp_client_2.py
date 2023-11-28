@@ -1,22 +1,7 @@
-
-"""
-author:     iluvgirlswithglasses
-github:     https://github.com/iluvgirlswithglasses
-created:    Sat Nov 11 15:39:41 2023
-tab-width:  4 spaces
-
- /\_/\
-( o.o )
- > ^ <
-
-I firmly believe in the supremacy of the Euphonium
-FYI I use Debian
-"""
-
 from typing import Dict, List
 from datetime import datetime
-from client2 import Client
-from config_2 import Config
+from client import Client
+from config import Config
 import base64
 import os
 
@@ -50,7 +35,7 @@ class SmtpClient(Client):
         # if there are attachments create boundary
         if (len(attc) != 0):
             timestamp = int(datetime.timestamp(datetime.now()))
-            boundary = f'------------Boundary_{timestamp}'
+            boundary = f'------------{timestamp}'
             self.send(f'Content-Type: multipart/mixed; boundary="{boundary}"')
 
 
@@ -72,7 +57,7 @@ class SmtpClient(Client):
 
         if (len(attc) != 0):
             self.send('This is a multi-part message in MIME format.\n')
-            self.send(f'------------{hash(attc)}')
+            self.send(f'{boundary}')
 
         self.send(f'Content-Type: {cnfg["content_type"]}')
         self.send(f'Content-Transfer-Encoding: {cnfg["content_transfer_encoding"]}')
@@ -95,7 +80,6 @@ class SmtpClient(Client):
         
         # attachments
         if len(attc) != 0:
-            self.send(f'{boundary}')
 
             for att_path in attc:
                 # Extract the file name from the path
@@ -105,13 +89,13 @@ class SmtpClient(Client):
                 if os.path.getsize(att_path) > 3 * 1024 * 1024:
                     print(f"Skipping attachment '{file_name}' as it is larger than 3MB.")
                     continue
-
+                
+                # header
+                self.send(f'{boundary}')
                 self.send(f'Content-Type: application/octet-stream; name="{file_name}"')
                 self.send(f'Content-Disposition: attachment; filename="{file_name}"')
                 self.send(f'Content-Transfer-Encoding: base64')
-
-                # Ensure there is a boundary before each attachment's content-type
-                self.send(f'{boundary}')
+                self.send('')
 
                 with open(att_path, 'rb') as att_file:
                     att_content = base64.b64encode(att_file.read()).decode('utf-8')
@@ -125,7 +109,8 @@ class SmtpClient(Client):
                 self.send('')  
 
             # End of the boundary with a dot
-            self.send(f'{boundary}--\n.')   
+            self.send(f'{boundary}--')   
+            self.send('\n.')
 
 
 
