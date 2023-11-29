@@ -12,7 +12,7 @@ def encode_attachment(file_path):
     return base64.b64encode(attachment_content).decode('utf-8')
 
 def send_demo():
-    # attc = r"C:\Users\Admin\Desktop\Tai_lieu_Socket\References.txt"
+    # attc = [r'C:\\Users\\Binh Minh\\OneDrive - MSFT\\Documents\\HCMUS\\Python\\mail\\Mine\\hello.py']
     attc = [r'C:\\Users\\Binh Minh\\OneDrive - MSFT\Documents\\HCMUS\\Python\\mail\\Mine\\References.txt']
     c = SmtpClient('127.0.0.1', 4000)
     # c = Client('127.0.0.1', 4000)
@@ -25,8 +25,8 @@ def send_demo():
     boundary = f'------------{timestamp}'
     c.send(f'Content-Type: multipart/mixed; boundary="{boundary}"')
 
-    c.send('Message-ID: 130')
-    c.send('Date: Wed, 28 Nov 2023 14:11:00 +0700')
+    c.send('Message-ID: 144')
+    c.send('Date: Wed, 29 Nov 2023 14:11:00 +0700')
     c.send('MIME-Version: 1.0')
     c.send('User-Agent: Mozilla Thunderbird')
     c.send('Content-Language: en-US')
@@ -42,7 +42,7 @@ def send_demo():
 
 
 
-    c.send('Dear me\n This is a test\nDearest, me\n')
+    c.send('Dear me\n This is a hello.py\nDearest, me\n')
 
 
     # if len(attc) != 0:
@@ -85,7 +85,7 @@ def send_demo():
                 continue
 
             c.send(f'{boundary}')
-            c.send(f'Content-Type: application/octet-stream; name="{file_name}"')
+            c.send(f'Content-Type: text/plain charset=UTF-8; name="{file_name}"')
             c.send(f'Content-Disposition: attachment; filename="{file_name}"')
             c.send(f'Content-Transfer-Encoding: base64')
             c.send('')
@@ -94,30 +94,34 @@ def send_demo():
 
             with open(att_path, 'rb') as att_file:
                 att_content = base64.b64encode(att_file.read()).decode('utf-8')
+                print(f'{att_content}\n')
 
                 # Send the content in chunks of 72 characters
                 for i in range(0, len(att_content), 72):
                     chunk = att_content[i:i+72]
                     c.send(chunk)
-                    print(f'{chunk}\n')
+                    print(f'{chunk}')
 
             # Empty line to separate attachments
             c.send('')  
 
         # End of the boundary with a dot
-        c.send(f'{boundary}--')
+        c.send(f'--{boundary}--')
         c.send('')
         c.send('.')
 
 def demo1():
-    attachment_path = r"C:\Users\Admin\Desktop\Tai_lieu_Socket\References.txt"
-    print(encode_attachment(attachment_path),'\n')
-    print(f'Content-Type: multipart/mixed; boundary="------------{hash(attachment_path)}')
+    attc = r'C:\\Users\\Binh Minh\\OneDrive - MSFT\Documents\\HCMUS\\Python\\mail\\Mine\\References.txt'
+    with open(attc, 'rb') as att_file:
+        att_content = base64.b64encode(att_file.read()).decode('utf-8')
+    print(att_content + 'sss')
+    
+    # print(f'Content-Type: multipart/mixed; boundary="------------{hash(attachment_path)}')
 
 def main():
     print('Something\n')  
-    # demo1()  
-    send_demo()
+    demo1()  
+    # send_demo()
 
 if __name__ == "__main__":
     main()
