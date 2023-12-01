@@ -1,37 +1,32 @@
-# Import the POP3Client class from the pop3 module
-from pop3_v2 import Pop3Client
+import socket
 
-# Define the server details
-server_host = '127.0.0.1'
-server_port = 4001
-email = 'abc@example.com'
-password = '123'
+FORMAT = 'utf-8'
+send_mail_server = ("localhost", 4000)  # Server default PORT + local IP
 
-print('asdas')
+def send_msg(msg, send_client_socket):
+    send_client_socket.send(msg.encode(FORMAT))
 
-# Create a POP3 client instance
-pop3_client = Pop3Client(server_host, server_port)
+def recv_msg(recv_client_socket):
+    return recv_client_socket.recv(1024).decode(FORMAT)
 
-try:
-    print('asdas')
-    # Connect to the server
-    pop3_client.connect()
-    print('asdas')
+def demo2():
+    send_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    send_client_socket.connect(send_mail_server)
 
-    # Login to the server with the provided email and password
-    pop3_client.login(email, password)
-    print('asdas')
+    attc = r'C:\\Users\\Binh Minh\\OneDrive - MSFT\\Documents\\HCMUS\\Python\\mail\\Mine\\smtp_log03.txt'
 
-    # List all messages on the server
-    messages = pop3_client.list_messages()
-    print(f'Messages on the server: {messages}')
+    send_msg('EHLO [127.0.0.1]', send_client_socket)
+    send_msg('MAIL FROM:<binhminh@fit.hcmus.edu.vn>', send_client_socket) 
+    send_msg('RCPT TO:<binhminh@fit.hcmus.edu.vn>', send_client_socket)
+    send_msg('DATA', send_client_socket)
 
-    # Retrieve the first message (assuming at least one message exists)
-    if messages:
-        first_message_number = 1
-        first_message = pop3_client.retrieve_message(first_message_number)
-        print(f'Retrieved message {first_message_number}:\n{first_message}')
+    with open(attc, 'r') as att_file:
+        for line in att_file:
+            send_msg(line, send_client_socket)
+            # print(f'{line}')
 
-finally:
-    # Close the connection to the server
-    pop3_client.quit()
+def main():
+    demo2()
+
+if __name__ == "__main__":
+    main()

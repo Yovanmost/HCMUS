@@ -1,6 +1,6 @@
 from typing import Dict, List
 from datetime import datetime
-from client import Client
+from client2 import Client
 from config import Config
 import base64
 import os
@@ -19,18 +19,24 @@ class SmtpClient(Client):
     def send_mail(self, strt: str, dest: Dict[str, List[str]], subj: str, mssg: List[str], attc: List[str]):
         """Send a whole mail"""
         # verification
+        print(self.recv())
         self.ehlo('localhost')
+        print(self.recv())
 
         # sender/recipients informations
         self.send(f'MAIL FROM: <{strt}>')
+        print(self.recv())
+
         for mode, recipients in dest.items():
             for rcpt in recipients:
                 self.send(f'RCPT TO: <{rcpt}>')
+                print(self.recv())
 
         # headers
         cnfg = Config.load()
-        # self.putcmd('DATA')
-        self.send('DATA')
+        self.putcmd('DATA')
+        # self.send('DATA')
+        print(self.recv())
         
         # if there are attachments create boundary
         if (len(attc) != 0):
@@ -55,9 +61,10 @@ class SmtpClient(Client):
         # subject/content declarations
         self.send(f'Subject: {subj}')
 
+        # Sign for multi-part message
         if (len(attc) != 0):
             self.send('This is a multi-part message in MIME format.\n')
-            self.send(f'{boundary}')
+            self.send(f'--{boundary}')
 
         self.send(f'Content-Type: {cnfg["content_type"]}')
         self.send(f'Content-Transfer-Encoding: {cnfg["content_transfer_encoding"]}')
@@ -66,51 +73,43 @@ class SmtpClient(Client):
         for line in mssg:
             self.send(line)
         
-        # attachments
-        # Use a for loop to do this :
-        # Start loop
-        #     boundary 
-        #     ith attachment
-        #       content-type 
-        #              -Disposition
-        #              -Transfer
-        #       encode base 64
-        # End loop
-        # boundary for everything self.send(f'------------{hash(attc)}--') to mark the end
+        self.send_attachment(boundary, attc)
         
         # attachments
-        if len(attc) != 0:
+        # if len(attc) != 0:
 
-            for att_path in attc:
-                # Extract the file name from the path
-                file_name = os.path.basename(att_path)  
+        #     for att_path in attc:
+        #         # Extract the file name from the path
+        #         file_name = os.path.basename(att_path)  
 
-                # Checking file size using os
-                if os.path.getsize(att_path) > 3 * 1024 * 1024:
-                    print(f"Skipping attachment '{file_name}' as it is larger than 3MB.")
-                    continue
+        #         # Checking file size using os
+        #         if os.path.getsize(att_path) > 3 * 1024 * 1024:
+        #             print(f"Skipping attachment '{file_name}' as it is larger than 3MB.")
+        #             continue
                 
-                # header
-                self.send(f'{boundary}')
-                self.send(f'Content-Type: application/octet-stream; name="{file_name}"')
-                self.send(f'Content-Disposition: attachment; filename="{file_name}"')
-                self.send(f'Content-Transfer-Encoding: base64')
-                self.send('')
+        #         # header
+        #         self.send(f'--{boundary}')
+        #         self.send(f'Content-Type: application/octet-stream; name="{file_name}"')
+        #         self.send(f'Content-Disposition: attachment; filename="{file_name}"')
+        #         self.send(f'Content-Transfer-Encoding: base64')
+        #         self.send('')
 
-                with open(att_path, 'rb') as att_file:
-                    att_content = base64.b64encode(att_file.read()).decode('utf-8')
+        #         with open(att_path, 'rb') as att_file:
+        #             att_content = base64.b64encode(att_file.read()).decode('utf-8')
 
-                    # Send the content in chunks of 72 characters
-                    for i in range(0, len(att_content), 72):
-                        chunk = att_content[i:i+72]
-                        self.send(chunk)
+        #             # Send the content in chunks of 72 characters
+        #             for i in range(0, len(att_content), 72):
+        #                 chunk = att_content[i:i+72]
+        #                 self.send(chunk)
 
-                # Empty line to separate attachments
-                self.send('')  
+        #         # Empty line to separate attachments
+        #         self.send('')  
 
-            # End of the boundary with a dot
-            self.send(f'{boundary}--')   
-            self.send('\n.')
+        #     # End of the boundary with a dot
+        #     self.send(f'--{boundary}--')   
+            
+        # End mail sign, no need for '.' in msg
+        self.send('\n.')
 
 
 
@@ -145,3 +144,39 @@ class SmtpClient(Client):
             s = s.replace('\n', '\\n').replace('\r', '\\r')
             raise ValueError('Command contains prohibited characters')
         self.send(s)
+
+    """
+    @ attachment
+    """
+    def send_attachment(self, boundary: str, attc: List[str]):
+        if len(attc) != 0:
+
+            for att_path in attc:
+                # Extract the file name from the path
+                file_name = os.path.basename(att_path)  
+
+                # Checking file size using os
+                if os.path.getsize(att_path) > 3 * 1024 * 1024:
+                    print(f"Skipping attachment '{file_name}' as it is larger than 3MB.")
+                    continue
+                
+                # header
+                self.send(f'--{boundary}')
+                self.send(f'Content-Type: application/octet-stream; name="{file_name}"')
+                self.send(f'Content-Disposition: attachment; filename="{file_name}"')
+                self.send(f'Content-Transfer-Encoding: base64')
+                self.send('')
+
+                with open(att_path, 'rb') as att_file:
+                    att_content = base64.b64encode(att_file.read()).decode('utf-8')
+
+                    # Send the content in chunks of 72 characters
+                    for i in range(0, len(att_content), 72):
+                        chunk = att_content[i:i+72]
+                        self.send(chunk)
+
+                # Empty line to separate attachments
+                self.send('')  
+
+            # End of the boundary with a dot
+            self.send(f'--{boundary}--')

@@ -15,7 +15,7 @@ FYI I use Debian
 
 import os, sys
 from client import Client
-from smtp.smtp_client import SmtpClient
+from smtp.smtp_client_2 import SmtpClient
 
 def main():
     rcpt = {

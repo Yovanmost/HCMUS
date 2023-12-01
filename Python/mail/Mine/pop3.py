@@ -1,7 +1,7 @@
 import socket
 
 FORMAT = 'utf-8'
-recv_mail_server = ("127.0.0.1", 4001)  # Server default PORT + local IP
+recv_mail_server = ("localhost", 4001)  # Server default PORT + local IP
 
 def send_msg(msg, send_client_socket):
     send_client_socket.send(msg.encode(FORMAT))
@@ -56,4 +56,4 @@ def pop3(username, password):
     # Close the socket
     recv_client_socket.close()
 
-pop3('abc@example.com', '123')
+pop3('binhminh@fit.hcmus.edu.vn', '123456')
