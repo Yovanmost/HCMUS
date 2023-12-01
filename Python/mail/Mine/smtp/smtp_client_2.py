@@ -1,6 +1,6 @@
 from typing import Dict, List
 from datetime import datetime
-from client2 import Client
+from client2 import Client  # change this back to client
 from config import Config
 import base64
 import os
@@ -73,42 +73,10 @@ class SmtpClient(Client):
         for line in mssg:
             self.send(line)
         
+        # attachment
         self.send_attachment(boundary, attc)
-        
-        # attachments
-        # if len(attc) != 0:
-
-        #     for att_path in attc:
-        #         # Extract the file name from the path
-        #         file_name = os.path.basename(att_path)  
-
-        #         # Checking file size using os
-        #         if os.path.getsize(att_path) > 3 * 1024 * 1024:
-        #             print(f"Skipping attachment '{file_name}' as it is larger than 3MB.")
-        #             continue
-                
-        #         # header
-        #         self.send(f'--{boundary}')
-        #         self.send(f'Content-Type: application/octet-stream; name="{file_name}"')
-        #         self.send(f'Content-Disposition: attachment; filename="{file_name}"')
-        #         self.send(f'Content-Transfer-Encoding: base64')
-        #         self.send('')
-
-        #         with open(att_path, 'rb') as att_file:
-        #             att_content = base64.b64encode(att_file.read()).decode('utf-8')
-
-        #             # Send the content in chunks of 72 characters
-        #             for i in range(0, len(att_content), 72):
-        #                 chunk = att_content[i:i+72]
-        #                 self.send(chunk)
-
-        #         # Empty line to separate attachments
-        #         self.send('')  
-
-        #     # End of the boundary with a dot
-        #     self.send(f'--{boundary}--')   
-            
-        # End mail sign, no need for '.' in msg
+    
+        # end of the mail
         self.send('\n.')
 
 
