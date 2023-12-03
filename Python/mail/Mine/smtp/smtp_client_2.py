@@ -105,7 +105,7 @@ class SmtpClient(Client):
     def putcmd(self, cmd, args=''):
         """Send a command to the server."""
         if args == '':
-            s = cmd
+            s = cmd 
         else:
             s = f'{cmd} {args}'
         if '\r' in s or '\n' in s:
