@@ -2,6 +2,7 @@
 #define CIRCUIT_H
 
 #pragma once
+#include <vector>
 
 class Circuit{
 protected:
@@ -33,7 +34,12 @@ public:
 
 class SeriesCircuit : public Circuit{
 public:
+    std::vector<Circuit*> series;
 
+    float getResistance();
+    float getVoltage();
+    float getCurrent();
+    float calculateResistance();
 };
 
 #endif
