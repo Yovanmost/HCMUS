@@ -1,0 +1,44 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+abstract class Circuit {
+    - _R: float
+    - _U: float
+    - _I: float
+    + {abstract} getResistance(): float
+    + {abstract} addCircuit(c: Circuit*)
+    + {abstract} removeCircuit(c: Circuit*)
+    + {abstract} ~Circuit()
+}
+
+class SingleCircuit {
+    + SingleCircuit()
+    + SingleCircuit(u: float, i: float)
+    + ~SingleCircuit()
+    + getResistance(): float
+}
+
+class SeriesCircuit {
+    - series: std::vector<Circuit*>
+    + getResistance(): float
+    + addCircuit(c: Circuit*)
+    + removeCircuit(c: Circuit*)
+}
+
+class ParallelCircuit {
+    - parallelList: std::vector<Circuit*>
+    + getResistance(): float
+    + addCircuit(c: Circuit*)
+    + removeCircuit(c: Circuit*)
+}
+
+Circuit <|-- SeriesCircuit
+Circuit --o SeriesCircuit
+
+Circuit <|-- SingleCircuit
+
+Circuit <|-- ParallelCircuit
+Circuit --o ParallelCircuit
+
+@enduml
