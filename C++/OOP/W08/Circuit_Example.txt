@@ -1,0 +1,27 @@
+ex0: Au = 5, 
+     Ai = 1
+----A----
+
+ex1: Au = 5, Bu = 3, 
+     Ai = Bi = 1
+----A----B----
+
+ex2: Au = 5, Bu = 3, 
+     Ai = Bi = 1
+    ----A----
+---|         |----
+    ----B----
+
+ex3: Au = 5, Bu = 3, Cu = 4, Du = 2, Eu = 1, 
+     Ai = Bi = Ci = Di = Ei = 1
+(series Z - the whole circuit = A + S + E)
+            (series X)
+            ^
+            |
+         ----B--------- 
+----A---|              |----E-----
+         ----C----D----
+            |
+            V
+            (series Y)
+(parallel S = X + Y)
