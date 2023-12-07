@@ -3,9 +3,9 @@
 skinparam classAttributeIconSize 0
 
 abstract class Circuit {
-    - _R: float
-    - _U: float
-    - _I: float
+    # _R: float
+    # _U: float
+    # _I: float
     + {abstract} getResistance(): float
     + {abstract} addCircuit(c: Circuit*)
     + {abstract} removeCircuit(c: Circuit*)
@@ -20,14 +20,14 @@ class SingleCircuit {
 }
 
 class SeriesCircuit {
-    - series: std::vector<Circuit*>
+    + series: std::vector<Circuit*>
     + getResistance(): float
     + addCircuit(c: Circuit*)
     + removeCircuit(c: Circuit*)
 }
 
 class ParallelCircuit {
-    - parallelList: std::vector<Circuit*>
+    + parallelList: std::vector<Circuit*>
     + getResistance(): float
     + addCircuit(c: Circuit*)
     + removeCircuit(c: Circuit*)
