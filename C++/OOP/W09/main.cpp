@@ -1,8 +1,35 @@
 #include <iostream>
 #include "Dragon.h"
+#include "Sales.h"
 #include "Dragon.cpp"
+#include "Sales.cpp"
+
 
 using namespace std;
+
+void demo1(){
+    Order od;
+    Product a, b, c, d;
+    a.setPrice(500000);
+    b.setPrice(60000);
+    c.setPrice(1400000);
+    d.setPrice(5000);
+
+    vector<Product> list;
+    list.push_back(a);
+    list.push_back(b);
+    list.push_back(c);
+    list.push_back(d);
+
+    od.input(list);
+    cout << "Change payment method to MoMo\n";
+    od.setPaymentMethod(new MoMo);
+    od.showPaymentMethod();
+    cout << "\nChange payment method to ATM\n";
+    od.setPaymentMethod(new ATM);
+    od.showPaymentMethod();
+    
+}
 
 void demo2(){
     cout << "Dragon: Alpha, Level: 73, Mode: Attack\n" 
@@ -39,7 +66,8 @@ void demo2(){
 }
 
 int main(){
-    demo2();
+    demo1();
+    // demo2();
 
     return 0;
 }

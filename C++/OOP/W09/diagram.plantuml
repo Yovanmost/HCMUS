@@ -58,7 +58,7 @@ class DefendState {
 ' State <|-- AttackState
 ' State <|-- DefendState
 
-Dragon *-up-> State
+Dragon o-up-> State
 State <|-- NormalState
 State <|-- AttackState
 State <|-- DefendState
