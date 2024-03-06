@@ -1,0 +1,66 @@
+@startuml Dragon
+
+skinparam classAttributeIconSize 0
+
+
+class Dragon {
+    - name: std::string
+    - lv: int
+    - atk: float
+    - def: float
+    - hp: float
+    - currState: State*
+    + Dragon()
+    + Dragon(init: State*)
+    + ~Dragon()
+    + setValue(name: std::string, lv: int, atk: float, def: float, hp: float)
+    + setState(newState: State*)
+    + getName(): std::string
+    + getLv(): int
+    + getAtk(): float
+    + getDef(): float
+    + getHp(): float
+    + doCalculatePower(): float
+    + doAttack(): void
+    + doMove(): void
+}
+
+class State {
+    - drg: Dragon*
+    + {abstract} ~State()
+    + setDragon(d: Dragon*)
+    + {abstract} attackPower(): float
+    + {abstract} attackAction(): void
+    + {abstract} movementAction(): void
+}
+
+class NormalState {
+    + attackPower(): float
+    + attackAction(): void
+    + movementAction(): void
+}
+
+class AttackState {
+    + attackPower(): float
+    + attackAction(): void
+    + movementAction(): void
+}
+
+class DefendState {
+    + attackPower(): float
+    + attackAction(): void
+    + movementAction(): void
+}
+
+' Dragon --|> State
+' Dragon *-up-> State : currState
+' State <|-- NormalState
+' State <|-- AttackState
+' State <|-- DefendState
+
+Dragon o-up-> State
+State <|-- NormalState
+State <|-- AttackState
+State <|-- DefendState
+
+@enduml

@@ -1,0 +1,110 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+class Employee {
+  - name: string
+  - yearIn: int
+  - baseSalary: float
+  - ID: string
+  - birthMonth: int
+  + Employee()
+  + Employee(name: string)
+  + Employee(name: string, yearIn: int)
+  + Employee(name: string, yearIn: int, baseSalary: float)
+  + Employee(name: string, yearIn: int, baseSalary: float, ID: string, birthMonth: int)
+  + Employee(p: const Employee&)
+  + ~Employee()
+  + setBaseSalary(salary: float): void
+  + setName(name: string): void
+  + setYearIn(yearIn: int): void
+  + setID(ID: string): void
+  + getBaseSalary(): float
+  + calculateBaseSalary(): float
+  + getName(): string
+  + getID(): string
+  + getMonth(): int
+  + friend ostream& operator<<(out: ostream&, e: const Employee&): ostream&
+  + setSalary(): virtual void 
+  + getSalary(): virtual float 
+}
+
+class Employee_production {
+  - numberOfProduct: int
+  - v: int = 2000
+  - salary: float
+  + Employee_production()
+  + Employee_production(e: const Employee&)
+  + Employee_production(e: const Employee&, salary: float)
+  + Employee_production(e: const Employee&, numberOfProduct: int)
+  + Employee_production(p: const Employee_production&)
+  + ~Employee_production()
+  + setSalary(numberOfProduct: int, salary: float, v: float): void
+  + getSalary(): float
+  + calculateSalary(): float
+  + friend ostream& operator<<(out: ostream&, e: const Employee_production&): ostream&
+}
+
+class Employee_management {
+  - level: int
+  - bonus: float
+  - salary: float
+  + Employee_management()
+  + Employee_management(e: const Employee&, level: int)
+  + Employee_management(e: const Employee&, level: int, bonus: float)
+  + Employee_management(e: const Employee&, level: int, bonus: float, salary: float)
+  + Employee_management(p: const Employee_management&)
+  + ~Employee_management()
+  + setSalary(level: int, bonus: float, salary: float, v: float): void
+  + getSalary(): float
+  + calculateSalary(): float
+  + friend ostream& operator<<(out: ostream&, e: const Employee_management&): ostream&
+}
+
+class Employee_office {
+  - workDays: int
+  - allowance: float
+  - v: int = 100000
+  - salary: float
+  + Employee_office()
+  + Employee_office(e: const Employee&, workDays: int)
+  + Employee_office(e: const Employee&, workDays: int, allowance: float)
+  + Employee_office(e: const Employee&, workDays: int, allowance: float, v: float)
+  + Employee_office(p: const Employee_office&)
+  + ~Employee_office()
+  + setSalary(workDays: int, allowance: float, v: float): void
+  + getSalary(): float
+  + calculateSalary(): float
+  + friend ostream& operator<<(out: ostream&, e: const Employee_office&): ostream&
+}
+
+class Company {
+  - companyName: string
+  - listEmployee: vector<Employee*>
+  + Company()
+  + Company(name: string)
+  + Company(cp: const Company&)
+  + ~Company()
+  + addEmployee(emp: Employee*): void
+  + addEmployee(employees: vector<Employee*>): void
+  + insert(): void
+  + friend istream& operator>>(in: istream&, cp: Company&): istream&
+  + printListEmployee(): void
+  + friend ostream& operator<<(out: ostream&, cp: Company&): ostream&
+  + totalSalary(): float
+  + findHighestSalary(): Employee*
+  + countEmployeeProduction(): int
+  + countEmployeeOffice(): int
+  + avgSalary(): float
+  + findLessThanXSalary(x: float): void
+  + findEmployeeByID(ID: const string): Employee*
+  + findEmployeeByName(name: const string): Employee*
+  + countEmployeeBornInXMonth(x: int): int
+'   + testGetName(): void
+}
+
+Employee <|-- Employee_production
+Employee <|-- Employee_management
+Employee <|-- Employee_office
+Company --o Employee
+@enduml
