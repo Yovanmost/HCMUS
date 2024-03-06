@@ -1,0 +1,98 @@
+simulate - mo phong
+distinguish - phan biet
+challenge - thach thuc
+appreciate - danh gia cao
+adjust - dieu chinh
+acquire - dat duoc
+acknowledge - cong nhan
+adapt - thich nghi
+alter - thay doi
+allocate - phan bo
+amend - sua doi
+analyze - phan tich
+assure - dam bao
+assume - gia dinh
+bear - con gau
+attain - dat duoc
+benefit - loi ich
+crucial - quan trong
+contribute - dong gop
+compile - bien soan
+coincide - trung khop
+cite - trich dan
+commence - bat dau
+constitute - cau thanh
+convey - truyen dat
+derive - bat nguon
+denote - chi dan
+define - dinh nghia
+dedicate - cong hien
+demonstrate - chung minh
+diminish - lam giam bot
+develop - phat trien
+determine - xac dinh
+describe - mo ta
+devote - cong hien
+discover - kham pha
+disclose - tiet lo
+distinct - rieng biet
+haphazard - bua bai
+ensure - dam bao
+employ - su dung
+dominate - thong tri
+distribute - phan phat
+embrace - om
+enhance - nang cao
+engage - tham gia
+encompass - bao gom
+enrich - lam giau
+exceed - vuot qua
+evaluate - danh gia
+establish - thiet lap
+evolve - tien hoa
+fluctuate - bien doi
+expand - mo rong
+galvanize - kich thich
+plunge - lao xuong
+mitigate - lam diu bot
+lament - than tho
+juxtapose - dat canh nhau
+jeopardize - gay nguy hiem
+illuminate - chieu sang
+investigate - dieu tra
+innovate - doi moi
+issue - van de
+justify - bao chua
+keen - sac sao
+maintain - duy tri
+measurement - su do luong
+nourish - nuoi duong
+modify - sua doi
+obtain - dat duoc
+observe - quan sat
+perceive - nhan thuc
+rejuvenate - lam tre lai
+quench - dap tat
+propose - de xuat
+processor - bo xu ly
+predict - du doan
+provide - cung cap
+ranger - kiem lam
+reflect - phan anh
+reveal - tiet lo
+represent - dai dien
+relate - lien quan
+respond - phan hoi
+signify - bieu thi
+thrive - phat trien manh
+stagnate - dinh tre
+specify - xac dinh
+strategy - chien luoc
+student - hoc sinh/sinh vien
+xenophobic - ki thi nguoi nuoc ngoai
+validate - xac nhan
+unveil - tiet lo
+utilize - su dung
+waver - lung lay
+yearn - khao khat
+zeal - long nhiet huyet

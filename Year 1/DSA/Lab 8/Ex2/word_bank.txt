@@ -1,0 +1,99 @@
+Acknowledge,verb,cong nhan
+Acquire,verb,dat duoc
+Adapt,verb,thich nghi
+Adjust,verb,dieu chinh
+Challenge,noun,thach thuc
+Allocate,verb,phan bo
+Alter,verb,thay doi
+Amend,verb,sua doi
+Appreciate,verb,danh gia cao
+Assume,verb,gia dinh
+Assure,verb,dam bao
+Attain,verb,dat duoc
+Crucial,adjective,quan trong
+Bear,verb,mang
+Analyze,verb,phan tich
+Develop,verb,phat trien
+Cite,verb,trich dan
+Coincide,verb,trung khop
+Commence,verb,bat dau
+Compile,verb,bien soan
+Contribute,verb,dong gop
+Constitute,verb,cau thanh
+Benefit,noun,loi ich
+Convey,verb,truyen dat
+Dedicate,verb,cong hien
+Define,verb,dinh nghia
+Demonstrate,verb,chung minh
+Denote,verb,chi dan
+Derive,verb,bat nguon
+Determine,verb,xac dinh
+Devote,verb,cong hien
+Diminish,verb,lam giam bot
+Disclose,verb,tiet lo
+Discover,verb,kham pha
+Describe,verb,mo ta
+Distinct,adjective,rieng biet
+Distinguish,verb,phan biet
+Distribute,verb,phan phat
+Dominate,verb,thong tri
+Embrace,verb,om
+Employ,verb,su dung
+Engage,verb,tham gia
+Enhance,verb,nang cao
+Enrich,verb,lam giau
+Ensure,verb,dam bao
+Establish,verb,thiet lap
+Evaluate,verb,danh gia
+Evolve,verb,tien hoa
+Exceed,verb,vuot qua
+Expand,verb,mo rong
+Fluctuate,verb,bien doi
+Galvanize,verb,kich thich
+Haphazard,adjective,bua bai
+Illuminate,verb,chieu sang
+Juxtapose,verb,dat canh nhau
+Keen,adjective,sac sao
+Lament,verb,than tho
+Mitigate,verb,lam diu bot
+Nourish,verb,nuoi duong
+Observe,verb,quan sat
+Plunge,verb,lao xuong
+Quench,verb,dap tat
+Rejuvenate,verb,lam tre lai
+Stagnate,verb,dinh tre
+Thrive,verb,phat trien manh
+Unveil,verb,tiet lo
+Validate,verb,xac nhan
+Waver,verb,lung lay
+Xenophobic,adjective,ki thi nguoi nuoc ngoai
+Yearn,verb,khao khat
+Zeal,noun,long nhiet huyet
+Encompass,verb,bao gom
+Jeopardize,verb,gay nguy hiem
+Illuminate,verb,chieu sang
+Innovate,verb,doi moi
+Investigate,verb,dieu tra
+Issue,noun,van de
+Justify,verb,bao chua
+Maintain,verb,duy tri
+Measurement,noun,su do luong
+Modify,verb,sua doi
+Obtain,verb,dat duoc
+Perceive,verb,nhan thuc
+Predict,verb,du doan
+Processor,noun,bo xu ly
+Propose,verb,de xuat
+Provide,verb,cung cap
+Ranger,noun,kiem lam
+Reflect,verb,phan anh
+Relate,verb,lien quan
+Represent,verb,dai dien
+Respond,verb,phan hoi
+Reveal,verb,tiet lo
+Signify,verb,bieu thi
+Simulate,verb,mo phong
+Specify,verb,xac dinh
+Strategy,noun,chien luoc
+Student,noun,hoc sinh/sinh vien
+Utilize,verb,su dung
