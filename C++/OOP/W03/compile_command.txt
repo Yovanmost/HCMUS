@@ -1,1 +1,0 @@
-g++ -I Header -o main.exe main.cpp Fraction.cpp Student.cpp Course.cpp

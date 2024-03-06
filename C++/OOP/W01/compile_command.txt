@@ -1,1 +1,0 @@
-g++ -I Header -o main.exe main.cpp Fraction.cpp Date.cpp Oxy.cpp Rectangle.cpp Student.cpp
