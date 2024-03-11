@@ -64,14 +64,18 @@ void writeText(string fileName, int n, int format){
 
 int main(){
     int n = 0, f = 0;
+    string diskName;
     cout << "Input n: ";
     cin >> n;
     cout << "Input format(0: FAT, 1: NTFS, 2: FAT32): ";
     cin >> f;
+    cin.ignore();
+    cout << "Input disk location(e.g: Disk E(FAT) - enter: E:\\): ";
+    getline(cin, diskName);
 
     // 1A
     for (int i = 0; i < n; i++){
-        string fileName2 = "F" + to_string(i) + ".dat";
+        string fileName2 = diskName + "F" + to_string(i) + ".dat";
         writeText(fileName2, i, f);
     }
     
