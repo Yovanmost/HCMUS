@@ -5,20 +5,30 @@
 
 using namespace std;
 
+
+
 struct Node{
     int n; // board n x n => number N tiles = n x n - 1
     int i, j; // blank space location
-    vector<vector<int>> state;
+    int** state;
     int costPath = 0;
     string goalPath;
 
     Node(){}
-    Node(int n, int i, int j, vector<vector<int>> state, int costPath, string goalPath){
+    Node(int n, int i, int j, int** state, int costPath, string goalPath){
         this->n = n;
         this->i = i;
         this->j = j;
-        this->state = state;
+        this->state = new int*[n];
+        for (int i = 0; i < n; i++)
+            this->state[i] = new int[n];
+        copyState(state, n);
         this->goalPath = goalPath;
+    }
+    ~Node(){
+        for (int i = 0; i < n; i++)
+            delete []this->state[i];
+        delete []state;
     }
 
     void printState(){
@@ -28,97 +38,61 @@ struct Node{
             cout << state[i/n][i%n] << ' ';
         }
     }
+
+    void copyState(int** input, int n){
+        for (int i = 0; i < n*n; i++)
+            this->state[i/n][i%n] = input[i/n][i%n];
+    }
 };
 
-bool compare(Node a, Node b){
-        if (a.state == b.state)
-            return true;
-        return false;
-    }
-
-Node goRight(Node cur){
-    vector<vector<int>> newState = cur.state;
-    int i = cur.i;
-    int j = cur.j;
-    int costPath = cur.costPath;
-
-    if (j+1 < cur.n){
-        int tmp = newState[i][j];
-        newState[i][j] = newState[i][j+1];
-        newState[i][j+1] = tmp;
-    }
-    else return cur;
-    
-    string move = to_string(newState[i][j]) + " left\n";
-    return Node(cur.n, i, j+1, newState, costPath+1, move);
+bool compareSate(Node a, Node b){
+    int n = a.n;
+    for (int i = 0; i < n*n; i++)
+        if (a.state[i/n][i%n] != b.state[i/n][i%n])
+            return false;
+    return true;
 }
 
-Node goLeft(Node cur){
-    vector<vector<int>> newState = cur.state;
-    int i = cur.i;
-    int j = cur.j;
-    int costPath = cur.costPath;
 
-    if (j-1 >= 0){
-        int tmp = newState[i][j];
-        newState[i][j] = newState[i][j-1];
-        newState[i][j-1] = tmp;
+
+vector<Node> expandNode(const Node& node) {
+    vector<Node> successors;
+    vector<pair<int, int>> directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    for (const pair<int, int>& dir : directions) {
+        int new_i = node.i + dir.first;
+        int new_j = node.j + dir.second;
+        if (new_i >= 0 && new_i < node.n && new_j >= 0 && new_j < node.n) {
+            string goalP = "";
+            Node newNode(node.n, new_i, new_j, node.state, node.costPath + 1, node.goalPath);
+            swap(newNode.state[node.i][node.j], newNode.state[new_i][new_j]);
+            newNode.goalPath += to_string(newNode.state[new_i][new_j]) + " ";
+            successors.push_back(newNode);
+            newNode.printState();
+        }
     }
-    else return cur;
-    
-    string move = to_string(newState[i][j]) + " right\n";
-    return Node(cur.n, i, j-1, newState, costPath+1, move);
+    return successors;
 }
 
-Node goUp(Node cur){
-    vector<vector<int>> newState = cur.state;
-    int i = cur.i;
-    int j = cur.j;
-    int costPath = cur.costPath;
-
-    if (i-1 >= 0){
-        int tmp = newState[i][j];
-        newState[i][j] = newState[i-1][j];
-        newState[i-1][j] = tmp;
+vector<Node> getSuccessors(const Node& node) {
+    vector<Node> successors;
+    vector<pair<int, int>> directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    for (const auto& dir : directions) {
+        int new_i = node.i + dir.first;
+        int new_j = node.j + dir.second;
+        if (new_i >= 0 && new_i < node.n && new_j >= 0 && new_j < node.n) {
+            // Create a new state by swapping the blank space with the adjacent tile
+            int** new_state = new int*[node.n];
+            for (int row = 0; row < node.n; ++row) {
+                new_state[row] = new int[node.n];
+                for (int col = 0; col < node.n; ++col) {
+                    new_state[row][col] = node.state[row][col];
+                }
+            }
+            swap(new_state[node.i][node.j], new_state[new_i][new_j]);
+            successors.push_back(Node(node.n, new_i, new_j, new_state, node.costPath + 1, node.goalPath + to_string(new_state[new_i][new_j]) + " "));
+        }
     }
-    else return cur;
-    
-    string move = to_string(newState[i][j]) + " down\n";
-    return Node(cur.n, i-1, j, newState, costPath+1, move);
-}
-
-Node goDown(Node cur){
-    vector<vector<int>> newState = cur.state;
-    int i = cur.i;
-    int j = cur.j;
-    int costPath = cur.costPath;
-
-    if (i+ 1< cur.n){
-        int tmp = newState[i][j];
-        newState[i][j] = newState[i+1][j];
-        newState[i+1][j] = tmp;
-    }
-    else return cur;
-    
-    string move = to_string(newState[i][j]) + " up\n";
-    return Node(cur.n, i+1, j, newState, costPath+1, move);
-}
-
-vector<Node> expandNode(Node cur){
-    vector<Node> neighbour;
-    if (!compare(cur, goRight(cur)))
-        neighbour.push_back(goRight(cur));
-
-    if (!compare(cur, goLeft(cur)))
-        neighbour.push_back(goLeft(cur));
-
-    if (!compare(cur, goUp(cur)))
-        neighbour.push_back(goUp(cur));
-
-    if (!compare(cur, goDown(cur)))
-        neighbour.push_back(goDown(cur));
-    
-    return neighbour;
+    return successors;
 }
 
 
@@ -131,10 +105,24 @@ vector<Node> expandNode(Node cur){
 // 6 7 8
 
 int main(){
-    vector<vector<int>> initState{{1, 4, 2}, {3, 0, 5}, {6, 7, 8}};
-    // vector<vector<int>> initState2{{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
-    Node a(3, 1, 1, initState, 0, "");
-    for (Node i : expandNode(a)){
+    int n = 3; // Change this to the desired board size
+    int initial_state_arr[] = {7, 2, 4, 5, 0, 6, 8, 3, 1}; // Change this to the initial state
+
+    // Create initial state 2D array from the single-dimensional array
+    int** initial_state = new int*[n];
+    for (int i = 0; i < n; ++i) {
+        initial_state[i] = new int[n];
+        for (int j = 0; j < n; ++j) {
+            initial_state[i][j] = initial_state_arr[i * n + j];
+        }
+    }
+
+
+    Node a(3, 1, 1, initial_state, 0, "");
+    a.printState();
+    cout << "\n\n";
+
+    for (Node i : getSuccessors(a)){
         i.printState();
         cout << "(" << i.i << ';' << i.j << ")\n\n";
     }
