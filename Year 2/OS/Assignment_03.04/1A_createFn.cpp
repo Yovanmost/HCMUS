@@ -16,7 +16,7 @@ using namespace std;
 
 /*format:
 0:FAT, 1: NTFS, 2: FAT32*/
-void writeText(string fileName, int n, int format){
+void createFnFile(string fileName, int n, int format){
     ofstream fw;
     fw.open(fileName);
 
@@ -27,29 +27,31 @@ void writeText(string fileName, int n, int format){
     int sizeLine = sizeof(value) + sizeof(newLine) + sizeof(carriageReturn);
     int nCluster = 4 - n%4;
     int sizeFile = 0;
-    switch (format)
-    {
-        case 0:
-        sizeFile = nCluster*N_SECTOR_FAT*SECTOR_SIZE;
-        break;
+    sizeFile = nCluster*format*SECTOR_SIZE;
 
-        case 1:
-        sizeFile = nCluster*N_SECTOR_NTFS*SECTOR_SIZE;
-        break;
+    // switch (format)
+    // {
+    //     case 0:
+    //     sizeFile = nCluster*N_SECTOR_FAT*SECTOR_SIZE;
+    //     break;
 
-        case 2:
-        sizeFile = nCluster*N_SECTOR_FAT32*SECTOR_SIZE;
-        break;
+    //     case 1:
+    //     sizeFile = nCluster*N_SECTOR_NTFS*SECTOR_SIZE;
+    //     break;
+
+    //     case 2:
+    //     sizeFile = nCluster*N_SECTOR_FAT32*SECTOR_SIZE;
+    //     break;
     
-    default:
-        return;
-        break;
-    }
+    // default:
+    //     sizeFile = nCluster*format*SECTOR_SIZE;
+    //     break;
+    // }
 
     int nLines = sizeFile/sizeLine;
 
     cout << "File [" << n << "] size: " << sizeFile << " byte(s)"
-        << "\nLine size:" << sizeLine << " byte(s)"
+        << "\nLine size: " << sizeLine << " byte(s)"
         << "\nNumber of cluster: " << nCluster << " cluster(s)"
         << "\nNumber of lines: " << nLines << " line(s)"
         << "\nLine content: " << value << "\n\n";
@@ -65,9 +67,10 @@ void writeText(string fileName, int n, int format){
 int main(){
     int n = 0, f = 0;
     string diskName;
-    cout << "Input n: ";
+    cout << "Input n(number of files): ";
     cin >> n;
-    cout << "Input format(0: FAT, 1: NTFS, 2: FAT32): ";
+    cout << "Basic format: FAT(8 sector), NTFS(4 sector), FAT32(2 sector)\n";
+    cout << "Input cluster size(sector): ";
     cin >> f;
     cin.ignore();
     cout << "Input disk location(e.g: Disk E(FAT) - enter: E:\\): ";
@@ -76,7 +79,8 @@ int main(){
     // 1A
     for (int i = 0; i < n; i++){
         string fileName2 = diskName + "F" + to_string(i) + ".dat";
-        writeText(fileName2, i, f);
+        createFnFile
+        (fileName2, i, f);
     }
     
     /*
