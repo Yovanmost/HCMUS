@@ -74,36 +74,106 @@ def RR(processes, quantum):
     return scheduling_chart, completion_times
 
 # Thuật toán lập lịch SJF không chia cắt
-def SJF_Nonpreemptive(processes):
-    # Sắp xếp các tiến trình theo thời gian đến và thời gian thực thi ngắn nhất
-    processes.sort(key=lambda x: (x.arrival_time, x.cpu_burst))
+def SJF_Nonpreemptive(process):
+    processes = process.copy()
     scheduling_chart = "0"
     completion_times = [0] * len(processes)
-    time = 0 
-    for i, process in enumerate(processes):
-        # Nếu thời gian hiện tại nhỏ hơn thời gian đến của tiến trình, đặt thời gian hiện tại bằng thời gian đến của tiến trình
-        if time < process.arrival_time:
-            time = process.arrival_time
-        completion_times[i] = time + process.cpu_burst
-        scheduling_chart += f" ~{process.name}~ {completion_times[i]} "
-        time += process.cpu_burst
+    processes.sort(key=lambda x: (x.arrival_time, x.cpu_burst))
+
+    current_time = 0
+    n = len(processes)
+    list_done = []
+
+    while len(list_done) < n:
+        min_burst_index = 0
+        min_burst = processes[0].cpu_burst
+
+        # Find the process with the minimum burst time among those arrived
+        for i in range(1, len(processes)):
+            if i not in list_done and processes[i].arrival_time <= current_time and processes[i].cpu_burst < min_burst:
+                min_burst = processes[i].cpu_burst
+                min_burst_index = i
+
+        # Update current time
+        current_time += processes[min_burst_index].cpu_burst
+
+        # Add to the list
+        completion_times[min_burst_index] = current_time
+        scheduling_chart += f" ~{processes[min_burst_index].name}~ {current_time} "
+
+        # Remove the processed process
+        list_done.append(min_burst_index)
+
     return scheduling_chart, completion_times
 
 # Thuật toán lập lịch theo ưu tiên không chia cắt
+# def Priority_Nonpreemptive(process):
+#     processes = process.copy()
+#     scheduling_chart = "0"
+#     completion_times = [0] * len(processes)
+#     processes.sort(key=lambda x: (x.arrival_time, x.priority))
+
+#     current_time = 0
+#     n = len(processes)
+#     list_done = []
+
+#     while len(list_done) < n:
+#         min_burst_index = 0
+#         min_burst = processes[0].cpu_burst
+
+#         # Find the process with the minimum burst time among those arrived
+#         for i in range(1, len(processes)):
+#             if i not in list_done and processes[i].arrival_time <= current_time and processes[i].cpu_burst < min_burst:
+#                 min_burst = processes[i].cpu_burst
+#                 min_burst_index = i
+
+#         # Update current time
+#         current_time += processes[min_burst_index].cpu_burst
+
+#         # Add to the list
+#         completion_times[min_burst_index] = current_time
+#         scheduling_chart += f" ~{processes[min_burst_index].name}~ {current_time} "
+
+#         # Remove the processed process
+#         list_done.append(min_burst_index)
+
+#     return scheduling_chart, completion_times
+
 def Priority_Nonpreemptive(processes):
-    # Sắp xếp các tiến trình theo thời gian đến và độ ưu tiên
-    processes.sort(key=lambda x: (x.arrival_time, x.priority))
+    processes = processes.copy()
     scheduling_chart = "0"
     completion_times = [0] * len(processes)
-    time = 0 
-    for i, process in enumerate(processes):
-        # Nếu thời gian hiện tại nhỏ hơn thời gian đến của tiến trình, đặt thời gian hiện tại bằng thời gian đến của tiến trình
-        if time < process.arrival_time:
-            time = process.arrival_time
-        completion_times[i] = time + process.cpu_burst
-        scheduling_chart += f" ~{process.name}~ {completion_times[i]} "
-        time += process.cpu_burst
+    processes.sort(key=lambda x: (x.arrival_time, x.priority))
+    # for p in processes:
+    #     print(p.arrival_time)
+    #     print(p.priority)
+
+    current_time = 0
+    n = len(processes)
+    list_done = []
+
+    while len(list_done) < n:
+        highest_priority_index = 0
+        highest_priority = processes[0].priority
+
+        # Find the process with the highest priority among those arrived
+        for i in range(0, len(processes)):
+            if i not in list_done and processes[i].arrival_time <= current_time and processes[i].priority < highest_priority:
+                highest_priority = processes[i].priority
+                highest_priority_index = i
+
+        # Update current time
+        current_time += processes[highest_priority_index].cpu_burst
+
+        # Add to the list
+        completion_times[highest_priority_index] = current_time
+        scheduling_chart += f" ~{processes[highest_priority_index].name}~ {current_time} "
+
+        # Remove the processed process
+        list_done.append(highest_priority_index)
+
     return scheduling_chart, completion_times
+
 
 def RR_scheduling(processes, quantum) :
     # Chạy thuật toán lập lịch
