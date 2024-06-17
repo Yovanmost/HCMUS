@@ -1,0 +1,172 @@
+USE [master]
+GO
+IF DB_ID('DBSALES') IS NOT NULL
+	DROP DATABASE DBSALES
+GO
+CREATE DATABASE DBSALES
+GO
+USE DBSALES
+GO 
+
+CREATE TABLE CUSTOMER (
+	ID INT,
+	NAME NCHAR(50),
+	CITY NCHAR(50)
+
+	CONSTRAINT PK_C
+	PRIMARY KEY(ID)
+)
+
+CREATE TABLE SALES_ORDER (
+	O_ID NCHAR(3),
+	O_DATE NCHAR(50),
+	CUSTOMER_ID INT,
+	AMOUNT INT
+
+	CONSTRAINT PK_SO
+	PRIMARY KEY(O_ID)
+)
+
+CREATE TABLE PRODUCT (
+	PID NCHAR(2),
+	PNAME NCHAR(50),
+	TYPE NCHAR(50)
+
+	CONSTRAINT PK_P
+	PRIMARY KEY(PID)
+)
+
+CREATE TABLE DETAILS (
+	O_ID NCHAR(3),
+	P_ID NCHAR(2)
+
+	CONSTRAINT PK_PD
+	PRIMARY KEY(O_ID, P_ID)
+)
+
+ALTER TABLE SALES_ORDER
+ADD
+	CONSTRAINT FK_SO_C
+	FOREIGN KEY(CUSTOMER_ID)
+	REFERENCES CUSTOMER(ID)
+
+ALTER TABLE DETAILS
+ADD
+	CONSTRAINT FK_D_SO
+	FOREIGN KEY(O_ID)
+	REFERENCES SALES_ORDER,
+
+	CONSTRAINT FK_D_P
+	FOREIGN KEY(P_ID)
+	REFERENCES PRODUCT(PID)
+
+
+INSERT PRODUCT
+VALUES
+('P1', 'Cinderella', 'Books'),
+('P2', 'Dell XYS', 'Computers'),
+('P3', 'Aladdin', 'Books'),
+('P4', 'HP 123', 'Computers')
+
+INSERT CUSTOMER
+VALUES
+(1, 'Brian', 'Chicago'),
+(2, 'Jane', 'Houston'),
+(3, 'Katie', 'Houston'),
+(4, 'John', 'Houston'),
+(5, 'Leo', 'San Jose')
+
+INSERT SALES_ORDER
+VALUES
+('001', 'May 30', 2, 200),
+('002', 'June 8', 3, 500),
+('003', 'June 12', 2, 100),
+('004', 'May 30', 4, 300),
+('005', 'June 14', 2, 400),
+('006', 'May 30', 3, 300)
+
+
+INSERT DETAILS
+VALUES
+('001', 'P1'),
+('001', 'P3'),
+('002', 'P2'),
+('003', 'P2'),
+('004', 'P2'),
+('005', 'P2'),
+('006', 'P1')
+
+
+-- 2. Find all customers who purchased in May 30
+SELECT C.*
+FROM CUSTOMER C, SALES_ORDER O
+WHERE C.ID = O.CUSTOMER_ID
+	AND O.O_DATE = N'May 30'
+
+-- 4. Find id, date and amount of all orders of "Brian" 
+SELECT O.O_ID, O.O_DATE, O.AMOUNT
+FROM CUSTOMER C, SALES_ORDER O
+WHERE C.ID = O.CUSTOMER_ID
+	AND C.NAME = 'Brian'
+
+-- 6. Find name of products which have never sold.
+SELECT P.PNAME 
+FROM PRODUCT P
+WHERE NOT EXISTS(SELECT *
+				FROM SALES_ORDER O, DETAILS D
+				WHERE O.O_ID = D.O_ID
+				AND D.P_ID = P.PID)
+
+-- 8. Find name of customers who have all books.
+-- KQ: CUSTOMER.NAME -> SALES_ORDER.O_ID
+-- C: PRODUCT.TYPE -> PRODUCT_PID
+-- BC: DETAILS(O_ID, PID)
+
+SELECT *
+FROM CUSTOMER C
+WHERE NOT EXISTS(SELECT P.PID
+				FROM PRODUCT P
+				WHERE P.TYPE = 'Books'
+				EXCEPT
+				SELECT P.PID 
+				FROM PRODUCT P, SALES_ORDER O, DETAILS D
+				WHERE P.PID = D.P_ID
+					AND D.O_ID = O.O_ID
+					AND O.CUSTOMER_ID = C.ID)
+
+-- 10. Find name of computers which has been sold in May 30.
+SELECT P.PNAME
+FROM PRODUCT P, SALES_ORDER O, DETAILS D
+WHERE O.O_DATE = 'May 30' 
+	AND P.TYPE = 'Computers' 
+	AND D.O_ID = O.O_ID
+	AND D.P_ID = P.PID
+
+-- 12. Show id and name of customers who had paid the most for their orders.
+SELECT C.ID, C.NAME
+FROM CUSTOMER C, SALES_ORDER O
+WHERE C.ID = O.CUSTOMER_ID
+	AND O.AMOUNT >= ALL(SELECT O.AMOUNT
+						FROM SALES_ORDER O)
+
+-- 14. Show the dates which had the most sales.
+SELECT O.O_DATE
+FROM SALES_ORDER O
+GROUP BY O.O_DATE
+HAVING COUNT(*) >= ALL(SELECT COUNT(*)
+						FROM SALES_ORDER O2
+						GROUP BY O2.O_DATE)
+
+-- 16. Find ID and Name of customer who don't make any order
+SELECT DISTINCT C.*
+FROM CUSTOMER C, SALES_ORDER O
+WHERE C.ID NOT IN (SELECT C.ID
+					FROM CUSTOMER C, SALES_ORDER O
+					WHERE C.ID = O.CUSTOMER_ID)
+
+-- 18. Find name of customers whom every amounts of their orders must be 300
+SELECT C.NAME
+FROM CUSTOMER C
+JOIN SALES_ORDER O ON C.ID = O.CUSTOMER_ID
+GROUP BY C.NAME
+HAVING MIN(O.AMOUNT) = 300 AND MAX(O.AMOUNT) = 300
