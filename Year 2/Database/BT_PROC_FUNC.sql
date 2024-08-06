@@ -67,7 +67,7 @@ RETURN (
 	WHERE CV.MADT = @MADT
 	GROUP BY SOTT, TENCV
 )
-
+GO
 SELECT * FROM dbo.F_PRINT_CV_OF_DT('001')
 
 
@@ -237,22 +237,62 @@ END
 CREATE OR ALTER PROCEDURE P_ThongKe_GV @MAGV NCHAR(3)
 AS
 BEGIN
-    SELECT @MAGV AS [Mã GV], 
-           GV.HoTen, 
-           BM.TENBM, 
-           (SELECT COUNT(*) 
+	DECLARE @GV_HOTEN NVARCHAR(150), @TEN_BM NVARCHAR(150), @SLDT INT
+
+    SELECT @GV_HOTEN = GV.HoTen, 
+           @TEN_BM = BM.TENBM, 
+           @SLDT = (SELECT COUNT(*) 
 			FROM THAMGIADT TG 
-			WHERE TG.MAGV = @MAGV) AS SoDeTaiThamGia
+			WHERE TG.MAGV = @MAGV)
     FROM GIAOVIEN GV
 		JOIN BOMON BM ON GV.MABM = BM.MABM
     WHERE GV.MAGV = @MAGV
 
+	PRINT 'MA GV: ' + @MAGV
+	PRINT 'HO TEN: ' + @GV_HOTEN
+	PRINT 'TEN BM: ' + @TEN_BM
+	PRINT 'SO ĐE TAI THAM GIA: ' + CAST(@SLDT AS CHAR)
+
+	DECLARE @DSDT TABLE (
+		MADT NCHAR(3),
+		TENDT NVARCHAR(150),
+		PHUCAP DECIMAL(3,1),
+		KETQUA NCHAR(3)
+	)
+
+	INSERT INTO @DSDT
+
 	SELECT DT.MADT, DT.TENDT, TG.PHUCAP, TG.KETQUA 
 	FROM DETAI DT
 		JOIN THAMGIADT TG ON TG.MADT = DT.MADT AND TG.MAGV = @MAGV
-END
 
+	-- select * from @DSDT
+
+
+	declare @i int = 1, @n int = (select count(*) from @DSDT)
+	declare @MADT nchar(3), @TENDT nvarchar(150), @PHUCAP DECIMAL(3,1), @KETQUA NCHAR(3)
+
+	print 'MADT' + SPACE(4) + 'TENDT' + SPACE(41- LEN('TENDT')) + 'PHUCAP' + SPACE(2) + 'KETQUA'
+
+	while @i<= @n
+	begin
+		select @MADT = MADT, 
+			   @TENDT = TENDT, 
+			   @PHUCAP = PHUCAP, 
+			   @KETQUA = isnull(KETQUA, '-')
+		from 	(select ROW_NUMBER() OVER (ORDER BY MADT) STT, MADT, TENDT, PHUCAP, KETQUA
+				 from @DSDT) DS
+		where  DS.STT = @i
+	
+		print @MADT + SPACE(5) + @TENDT + SPACE(40 - LEN(@TENDT)) + CAST(@PHUCAP AS VARCHAR(10)) + SPACE(5) + @KETQUA
+		-- print 'something'
+		set @i = @i + 1
+	end
+
+END
+GO
 EXEC DBO.P_ThongKe_GV '003'
+
 
 --5. VIẾT THỦ TỤC IN THÔNG TIN THỐNG KÊ SAU
 --INPUT: MADT
@@ -268,41 +308,70 @@ EXEC DBO.P_ThongKe_GV '003'
 CREATE OR ALTER PROCEDURE P_ThongKeTheoDeTai @MADT NCHAR(3)
 AS
 BEGIN
-    SELECT @MADT,
-           DT.TENDT,
-           GV.HOTEN AS GVCNDT,
 
-           (SELECT DISTINCT COUNT(*) 
-		    FROM CONGVIEC CV
-			WHERE CV.MADT = @MaDT AND (CV.NGAYKT < GETDATE() OR CV.NGAYKT IS NOT NULL)) AS SoCongViecHoanThanh,
+	DECLARE @TENDT NVARCHAR(150), @GV_HOTEN NVARCHAR(150), @SLCV_XONG INT, @SLCV_CHUA_XONG INT
 
-           (SELECT DISTINCT COUNT(*) 
+    SELECT @TENDT = DT.TENDT,
+           @GV_HOTEN = GV.HOTEN,
+
+           @SLCV_XONG = (SELECT DISTINCT COUNT(*) 
 		    FROM CONGVIEC CV
-			WHERE MaDT = @MaDT AND (CV.NGAYKT > GETDATE() OR CV.NGAYKT IS NULL)) AS SoCongViecChuaHoanThanh
+			WHERE CV.MADT = @MaDT AND (CV.NGAYKT < GETDATE() OR CV.NGAYKT IS NOT NULL)),
+
+           @SLCV_CHUA_XONG = (SELECT DISTINCT COUNT(*) 
+		    FROM CONGVIEC CV
+			WHERE MaDT = @MaDT AND (CV.NGAYKT > GETDATE() OR CV.NGAYKT IS NULL))
     FROM DETAI DT
 		LEFT JOIN GIAOVIEN GV ON DT.GVCNDT = GV.MAGV -- có thể ko có gvcndt -> left join
     WHERE DT.MADT = @MADT
 
-	SELECT CV.SOTT, CV.TENCV, ISNULL(COUNT(TG.MAGV), 0) AS SLGV, ISNULL(SUM(TG.PHUCAP), 0) AS TONG_PHU_CAP
+	PRINT 'MADT: ' + @MADT
+	PRINT 'TEN DT: ' + @TENDT
+	PRINT 'TEN GVCN: ' + @GV_HOTEN
+	PRINT 'SO CONG VIEC HOAN THANH: ' + CAST(@SLCV_XONG AS CHAR)
+	PRINT 'SO CONG VIEC CHUA HOAN THANH: ' + CAST(@SLCV_CHUA_XONG AS CHAR)
+
+	DECLARE @DSCV TABLE(
+		SOTT INT,
+		TENCV NVARCHAR(150),
+		SLGV INT,
+		TONGPHUCAP DECIMAL(3,1)
+	)
+
+	INSERT INTO @DSCV
+
+	SELECT CV.SOTT, CV.TENCV, ISNULL(COUNT(TG.MAGV), 0), ISNULL(SUM(TG.PHUCAP), 0)
 	FROM CONGVIEC CV
 		LEFT JOIN THAMGIADT TG ON TG.MADT = CV.MADT AND TG.STT = CV.SOTT
 	WHERE CV.MADT = @MADT
 	GROUP BY SOTT, TENCV
 
-END
 
+
+	declare @i int = 1, @n int = (select count(*) from @DSCV)
+	declare @SOTT INT, @TENCV nvarchar(150), @SLGV INT, @TONGPHUCAP DECIMAL(3,1)
+
+	PRINT 'STT' + SPACE(5) + 'TEN CV' + SPACE(24 - LEN('TEN CV')) + 'SLGV' + SPACE(5) + 'TONG PHU CAP'
+
+	while @i<= @n
+	begin
+		select @SOTT = SOTT,
+			   @TENCV = TENCV, 
+			   @SLGV = SLGV,
+			   @TONGPHUCAP = TONGPHUCAP
+		from 	(select ROW_NUMBER() OVER (ORDER BY SOTT) STT, SOTT, TENCV, SLGV, TONGPHUCAP
+				 from @DSCV) DS
+		where  DS.STT = @i
+	
+		PRINT CAST(@SOTT AS CHAR) + SPACE(5) + @TENCV + SPACE(25 - LEN(@TENCV)) + CAST(@SLGV AS CHAR) + SPACE(5) + CAST(@TONGPHUCAP AS CHAR)
+		-- Print 'something'
+		set @i = @i + 1
+	end
+
+END
+GO
 EXEC DBO.P_ThongKeTheoDeTai '002'
 
-declare @i int = 1, @n int = (select count(*) from GIAOVIEN)
-declare @magv varchar(10),@hoten nvarchar(50),@luong int
 
-while @i<= @n
-begin
-	select @magv= magv,@hoten = isnull(hoten, '-'), @luong = isnull(luong,0)
-	from 	(select ROW_NUMBER() OVER (ORDER BY magv) stt, magv,hoten, luong
-			from GIAOVIEN) gv
-	where  gv.stt = @i
-	
-	print cast(@i as char(5))  + @magv + space(5) + @hoten + space(20 - len(@hoten)) + cast(@luong as varchar(10))
-	set @i = @i + 1
-end
+
+
