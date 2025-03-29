@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.chart-box {
+    background: #f9f9f9;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.chart-box:hover {
+    transform: scale(1.05);
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 90%;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
