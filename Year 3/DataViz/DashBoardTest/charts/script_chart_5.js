@@ -1,10 +1,10 @@
-// Set the dimensions and margins of the graph
-var margin = { top: 20, right: 50, bottom: 50, left: 60 },
-    width = 500 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+// Set up the dimensions and margins of the graph
+var margin = {top: 30, right: 180, bottom: 40, left: 60}; // Increased right margin for legend
+var width = 700 - margin.left - margin.right; // Fixed width for the chart
+var height = 400 - margin.top - margin.bottom;
 
 // Append the svg object to the body of the page
-var svg = d3.select("#boxplot")
+var svg = d3.select("#chart_5")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -155,4 +155,44 @@ d3.csv("project_heart_disease.csv", function (data) {
         .attr("y1", d => y(d.value.median))
         .attr("y2", d => y(d.value.median))
         .attr("stroke", "black");
+
+    // Add Legend
+    const legend = svg.append("g")
+    .attr("transform", `translate(${width + 20}, ${margin.top})`);
+
+  legend.append("rect")
+    .attr("width", 140)
+    .attr("height", 70)
+    .attr("fill", "#fff")
+    .attr("stroke", "#ccc")
+    .attr("stroke-width", 1)
+    .attr("rx", 8);
+
+  legend.append("text")
+    .attr("x", 10)
+    .attr("y", 20)
+    .attr("font-size", "13px")
+    .attr("font-weight", "bold")
+    .text("Heart Disease Status"); // Updated legend title
+
+  const legendItems = ["Yes", "No"];
+  const colors = ["red", "green"]; // Corresponding colors
+
+  legendItems.forEach((key, i) => {
+    const row = legend.append("g")
+      .attr("transform", `translate(10, ${(i + 1) * 20 + 10})`);
+
+    row.append("rect")
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("fill", colors[i]); // Use the corresponding color
+
+    row.append("text")
+      .attr("x", 20)
+      .attr("y", 12)
+      .style("font-size", "12px")
+      .text(key);
+  });
+
+
 });
