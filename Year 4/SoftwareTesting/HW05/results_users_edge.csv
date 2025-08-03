@@ -1,0 +1,20 @@
+Browser,Email,Result,Message
+edge,john.doe.1@example.com,Fail,First Name is required
+edge,john.doe.2@example.com,Fail,The last name field is required.
+edge,john.doe.3@example.com,Fail,Customer must be younger than 75 years old.
+edge,john.doe.4@example.com,Fail,Customer must be younger than 75 years old.
+edge,john.doe.5@example.com,Fail,Date of birth is required
+edge,john.doe.6@example.com,Pass,User saved!
+edge,john.doe.7@example.com,Pass,User saved!
+edge,john.doe.8@example.com,Pass,User saved!
+edge,john.doe.9@example.com,Pass,User saved!
+edge,john.doe.10@example.com,Fail,"Message: Could not locate element with visible text:  ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+"
+edge,john.doe.11@example.com,Pass,User saved!
+edge, ,Fail,Email is required
+edge,not-an-email,Fail,
+edge,john.doe.14@example.com,Fail,Something went wrong
+edge,john.doe.15@example.com,Fail,Something went wrong
+edge,john.doe.16@example.com,Fail,Something went wrong
+edge,john.doe.17@example.com,Fail,"The password field must contain at least one uppercase and one lowercase letter.,The password field must contain at least one symbol.,The password field must contain at least one number."
+edge,john.doe.18@example.com,Fail,The password field is required.

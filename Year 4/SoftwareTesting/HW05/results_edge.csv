@@ -1,0 +1,10 @@
+Browser,Product Name,Result,Message
+edge,Product 0,Pass,Product saved!
+edge,,Fail,No success or error alert found after waiting
+edge,Empty Description,Pass,Product saved!
+edge,Stock - Product 1,Pass,Product saved!
+edge,Stock - Product 2,Fail,No success or error alert found after waiting
+edge,Stock - Product 3,Fail,The name field is required.
+edge,Price - Product 1,Pass,Product saved!
+edge,Price - Product 2,Fail,No success or error alert found after waiting
+edge,Price - Product 3,Fail,No success or error alert found after waiting

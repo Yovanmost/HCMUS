@@ -1,0 +1,10 @@
+Product Name,Description,Stock,Price,Location Offer,Item for Rent,Brand,Category,Image
+Product 0,This is a normal product with correct data,10,1200,Yes,No,ForgeFlex Tools,Pliers,Pliers
+,Empty name,20,800,No,Yes,MightyCraft Hardware,Hammer,Hammer
+Empty Description,,20,800,No,Yes,MightyCraft Hardware,Hammer,Hammer
+Stock - Product 1,Stock value is abc,abc,800,No,Yes,MightyCraft Hardware,Hammer,Hammer
+Stock - Product 2,Stock value is -1,-1,800,No,Yes,MightyCraft Hardware,Hammer,Hammer
+Stock - Product 3,Stock value is empty,,800,No,Yes,MightyCraft Hardware,Hammer,Hammer
+Price - Product 1,Price value is -1,20,-1,No,Yes,MightyCraft Hardware,Hammer,Hammer
+Price - Product 2,Price value is abc,20,abc,No,Yes,MightyCraft Hardware,Hammer,Hammer
+Price - Product 3,Price value is empty,20,,No,Yes,MightyCraft Hardware,Hammer,Hammer
