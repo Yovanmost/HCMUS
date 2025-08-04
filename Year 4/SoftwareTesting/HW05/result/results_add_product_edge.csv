@@ -1,0 +1,13 @@
+Browser,Test case ID,Message,Result,Expected result
+edge,PRT_ADD_01,Product saved!,Pass,Product added successfully
+edge,PRT_ADD_02,Name is required,Fail,Missing product name -> cannot added
+edge,PRT_ADD_03,Description is required,Fail,Missing description -> cannot added
+edge,PRT_ADD_04,The name field must not be greater than 120 characters.,Fail,Name is more than 120 character -> cannot added
+edge,PRT_ADD_05,Something went wrong,Fail,Stock value is not a number -> cannot added
+edge,PRT_ADD_06,Product saved!,Pass,Stock value is negative -> cannot added
+edge,PRT_ADD_07,,Fail,Stock value is empty -> cannot added
+edge,PRT_ADD_08,Something went wrong,Fail,Stock value is > 2147483647 -> cannot added
+edge,PRT_ADD_09,Product saved!,Pass,Price value is negative -> cannot added
+edge,PRT_ADD_10,The price field must be a number.,Fail,Price value is a string -> cannot added
+edge,PRT_ADD_11,Price is required,Fail,Price value is empty -> cannot added
+edge,PRT_ADD_12,Something went wrong,Fail,Price value is > 99999999 -> cannot added

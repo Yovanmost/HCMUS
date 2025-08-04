@@ -1,0 +1,46 @@
+Browser,Test case ID,Message,Result,Expected result
+edge,PRT_ADD_01,Product saved!,Pass,Product added successfully
+edge,PRT_ADD_02,Product saved!,Pass,Missing product name -> cannot added
+edge,PRT_ADD_03,No success or error alert found after waiting,Fail,Missing description -> cannot added
+edge,PRT_ADD_04,No success or error alert found after waiting,Fail,Name is more than 120 character -> cannot added
+edge,PRT_ADD_05,Product saved!,Pass,Stock value is not a number -> cannot added
+edge,PRT_ADD_06,Product saved!,Pass,Stock value is negative -> cannot added
+edge,PRT_ADD_07,Product saved!,Pass,Stock value is empty -> cannot added
+edge,PRT_ADD_08,Product saved!,Pass,Stock value is > 2147483647 -> cannot added
+edge,PRT_ADD_09,Product saved!,Pass,Price value is negative -> cannot added
+edge,PRT_ADD_10,No success or error alert found after waiting,Fail,Price value is a string -> cannot added
+edge,PRT_ADD_11,No success or error alert found after waiting,Fail,Price value is empty -> cannot added
+edge,PRT_ADD_12,"Message: element click intercepted: Element is not clickable at point (111, 749)
+  (Session info: MicrosoftEdge=138.0.3351.121); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x0x100d593+37219]
+	(No symbol) [0x0xeba716]
+	(No symbol) [0x0xc851ce]
+	(No symbol) [0x0xcbe6a7]
+	(No symbol) [0x0xcbd324]
+	(No symbol) [0x0xcbbbed]
+	(No symbol) [0x0xcbb673]
+	(No symbol) [0x0xcb3f4a]
+	(No symbol) [0x0xcd27ec]
+	(No symbol) [0x0xcb3a91]
+	(No symbol) [0x0xcb3a10]
+	(No symbol) [0x0xcd2ae4]
+	(No symbol) [0x0xcb3a91]
+	(No symbol) [0x0xce8929]
+	(No symbol) [0x0xcd24f6]
+	(No symbol) [0x0xcb3327]
+	(No symbol) [0x0xcb2723]
+	(No symbol) [0x0xcb3144]
+	sqlite3_dbdata_init [0x0x10fa89c+518364]
+	sqlite3_dbdata_init [0x0x11e1ab0+1465072]
+	sqlite3_dbdata_init [0x0x11e13e5+1463333]
+	sqlite3_dbdata_init [0x0x11d28ec+1403180]
+	sqlite3_dbdata_init [0x0x11e22d2+1467154]
+	(No symbol) [0x0xed1d9d]
+	(No symbol) [0x0xec5108]
+	(No symbol) [0x0xec52fb]
+	(No symbol) [0x0xeaa649]
+	BaseThreadInitThunk [0x0x76ac5d49+25]
+	RtlInitializeExceptionChain [0x0x7798d1ab+107]
+	RtlGetAppContainerNamedObjectPath [0x0x7798d131+561]
+",Fail,Price value is > 99999999 -> cannot added

@@ -29,7 +29,7 @@ def get_driver(browser_name):
         svc = ChromeService(os.path.join(DRIVER_DIR, "chromedriver.exe"))
         opts = ChromeOptions()
         # ← point to your actual chrome.exe path
-        opts.binary_location = r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+        opts.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
         return webdriver.Chrome(service=svc, options=opts)
 
     if browser_name == "firefox":
@@ -49,86 +49,18 @@ def get_driver(browser_name):
 def login_as_admin(driver):
     driver.get(URL_LOGIN)
     wait = WebDriverWait(driver, 10)
-    
+
     wait.until(EC.presence_of_element_located((By.ID, "email"))).send_keys("admin@practicesoftwaretesting.com")
-    
+
     # Use data-test or CSS selector instead of By.ID
     driver.find_element(By.CSS_SELECTOR, "input[data-test='password']").send_keys("welcome01")
-    
+
     driver.find_element(By.CSS_SELECTOR, "input[data-test='login-submit']").click()
     wait.until(EC.url_contains("/admin"))
     print("[🔐] Logged in successfully.")
 
 
 # ─── Test Runner ────────────────────────────────────────────────────────────────
-# def run_add_product_test(base_url, browser_name):
-#     if not os.path.exists(CSV_PATH):
-#         print(f"[❌] CSV not found at {CSV_PATH}")
-#         return
-
-#     df = pd.read_csv(CSV_PATH)
-#     driver = get_driver(browser_name)
-#     driver.maximize_window()
-#     wait = WebDriverWait(driver, 10)
-
-#     try:
-#         login_as_admin(driver)
-
-#         for _, row in df.iterrows():
-#             print(f"\n[🧪] {browser_name.upper()} → Adding '{row['Product Name']}'")
-#             driver.get(base_url)
-#             # wait for form title
-#             wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "h2[data-test='page-title']")))
-#             time.sleep(5) # I want to change this part to something more suitable for web
-
-#             # fill text fields
-#             driver.find_element(By.ID, "name").send_keys(row["Product Name"])
-#             driver.find_element(By.ID, "description").send_keys(row["Description"])
-#             driver.find_element(By.ID, "stock").send_keys(str(row["Stock"]))
-#             driver.find_element(By.ID, "price").send_keys(str(row["Price"]))
-
-#             # Location Offer checkbox
-#             if str(row["Location Offer"]).strip().lower() == "yes":
-#                 try:
-#                     cb = driver.find_element(By.ID, "is_location_offer")
-#                     if not cb.is_selected():
-#                         cb.click()
-#                 except NoSuchElementException:
-#                     print("⚠️ 'Location Offer' checkbox not found")
-
-#             # Item for Rent checkbox (id="is_rental")
-#             if str(row["Item for Rent"]).strip().lower() == "yes":
-#                 try:
-#                     cb = driver.find_element(By.ID, "is_rental")
-#                     if not cb.is_selected():
-#                         cb.click()
-#                 except NoSuchElementException:
-#                     print("⚠️ 'Item for Rent' checkbox not found")
-
-#             # dropdowns
-#             wait = WebDriverWait(driver, 7)
-#             Select(driver.find_element(By.ID,    "brand_id"         )).select_by_visible_text(row["Brand"])
-#             Select(driver.find_element(By.ID,    "category_id"      )).select_by_visible_text(row["Category"])
-#             Select(driver.find_element(By.ID,    "product_image_id" )).select_by_visible_text(row["Image"])
-
-#             # submit
-#             driver.find_element(By.CSS_SELECTOR, "button[data-test='product-submit']").click()
-
-#             # wait for success (URL or flash message)
-#             success_alert = WebDriverWait(driver, 5).until(
-#                 EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert-success"))
-#             )
-#             msg = success_alert.text.strip().lower()
-
-#             # accept either “product saved” or “successfully added”
-#             if "product saved" in msg or "successfully added" in msg:
-#                 print(f"[✅] '{row['Product Name']}' confirmed by flash message: '{success_alert.text}'")
-#             else:
-#                 raise AssertionError(f"Unexpected alert text: '{success_alert.text}'")
-
-#     finally:
-#         driver.quit()
-
 def run_add_product_test(base_url, browser_name):
     if not os.path.exists(CSV_PATH):
         print(f"[❌] CSV not found at {CSV_PATH}")
@@ -147,7 +79,9 @@ def run_add_product_test(base_url, browser_name):
 
         for _, row in df.iterrows():
             product_name = str(row['Product Name'])
-            print(f"\n[🧪] {browser_name.upper()} → Adding '{product_name}'")
+            test_case_id = str(row['Test case ID'])
+            expected_result = str(row['Expected Result'])
+            print(f"\n[🧪] {browser_name.upper()} → Adding '{test_case_id}'")
 
             try:
                 driver.get(base_url)
@@ -192,6 +126,8 @@ def run_add_product_test(base_url, browser_name):
 
 
                 # Submit form
+                time.sleep(1)
+                print("Click save")
                 driver.find_element(By.CSS_SELECTOR, "button[data-test='product-submit']").click()
 
                 # Wait for alert (success or error)
@@ -206,48 +142,58 @@ def run_add_product_test(base_url, browser_name):
                     alert_class = alert.get_attribute("class")
 
                     if "alert-success" in alert_class:
-                        print(f"[✅] '{product_name}' added successfully.")
+                        print(f"[✅] '{test_case_id}' added successfully.")
+                        print(f"\nExpected result: {expected_result}")
                         test_results.append({
                             "Browser": browser_name,
-                            "Product Name": product_name,
+                            "Test case ID": test_case_id,
+                            "Message": alert_text,
                             "Result": "Pass",
-                            "Message": alert_text
+                            "Expected result": expected_result
                         })
 
                     elif "alert-danger" in alert_class:
-                        print(f"[❌] Error alert when adding '{product_name}': {alert_text}")
+                        print(f"[❌] Error alert when adding '{test_case_id}': {alert_text}")
+                        print(f"\nExpected result: {expected_result}")
                         test_results.append({
                             "Browser": browser_name,
-                            "Product Name": product_name,
+                            "Test case ID": test_case_id,
+                            "Message": alert_text,
                             "Result": "Fail",
-                            "Message": alert_text
+                            "Expected result": expected_result
                         })
 
                     else:
-                        print(f"[❌] Unknown alert type for '{product_name}'")
+                        print(f"[❌] Unknown alert type for '{test_case_id}'")
+                        print(f"\nExpected result: {expected_result}")
                         test_results.append({
                             "Browser": browser_name,
-                            "Product Name": product_name,
+                            "Test case ID": test_case_id,
+                            "Message": f"Unknown alert type: {alert_class}",
                             "Result": "Fail",
-                            "Message": f"Unknown alert type: {alert_class}"
+                            "Expected result": expected_result
                         })
 
                 except TimeoutException:
-                    print(f"[❌] No alert shown after submitting '{product_name}'")
+                    print(f"[❌] No alert shown after submitting '{test_case_id}'")
+                    print(f"\nExpected result: {expected_result}")
                     test_results.append({
                         "Browser": browser_name,
-                        "Product Name": product_name,
+                        "Test case ID": test_case_id,
+                        "Message": "No success or error alert found after waiting",
                         "Result": "Fail",
-                        "Message": "No success or error alert found after waiting"
+                        "Expected result": expected_result
                     })
 
             except Exception as e:
-                print(f"[❌] Failed to add '{product_name}': {str(e)}")
+                print(f"[❌] Failed to add '{test_case_id}': {str(e)}\n")
+                print(f"Expected result: {expected_result}")
                 test_results.append({
                     "Browser": browser_name,
-                    "Product Name": product_name,
+                    "Test case ID": test_case_id,
+                    "Message": str(e),
                     "Result": "Fail",
-                    "Message": str(e)
+                    "Expected result": expected_result
                 })
 
     finally:
@@ -255,7 +201,7 @@ def run_add_product_test(base_url, browser_name):
 
         # Export result to CSV
         results_df = pd.DataFrame(test_results)
-        out_path = os.path.join(BASE_DIR, f"results_{browser_name}.csv")
+        out_path = os.path.join(BASE_DIR, "result", f"results_add_product_{browser_name}_with_bugs.csv")
         results_df.to_csv(out_path, index=False)
         print(f"[📄] Results saved to {out_path}")
 

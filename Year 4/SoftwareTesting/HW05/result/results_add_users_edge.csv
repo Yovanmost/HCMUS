@@ -1,0 +1,27 @@
+Browser,Test case ID,Message,Result,Expected Result
+edge,URS_ADD_00,User saved!,Pass,Added successfully
+edge,USR_ADD_01,First Name is required,Fail,Empty first name
+edge,USR_ADD_02,The first name field must not be greater than 40 characters.,Fail,First name is > 40 characters -> cannot added
+edge,USR_ADD_03,The last name field must not be greater than 20 characters.,Fail,Last name is > 20 characters -> cannot added
+edge,USR_ADD_04,Customer must be 18 years old.,Fail,Younger than 18 years old -> cannot added
+edge,USR_ADD_05,Customer must be younger than 75 years old.,Fail,> 200 years old -> cannot added
+edge,USR_ADD_06,Date of birth is required,Fail,Empty dob -> cannot added
+edge,USR_ADD_07,User saved!,Pass,Empty street -> cannot added
+edge,USR_ADD_08,The address.street field must not be greater than 70 characters.,Fail,Street is > 70 characters -> cannot added
+edge,USR_ADD_09,User saved!,Pass,Empty postal code -> cannot added
+edge,USR_ADD_10,The address.postal code field must not be greater than 10 characters.,Fail,Postal code is > 10 characters -> cannot added
+edge,USR_ADD_11,User saved!,Pass,City is empty -> cannot added
+edge,USR_ADD_12,The address.city field must not be greater than 40 characters.,Fail,City is > 40 characters -> cannot added
+edge,USR_ADD_13a,User saved!,Pass,State is empty -> cannot added
+edge,USR_ADD_13b,The address.state field must not be greater than 40 characters.,Fail,State is > 40 characters -> cannot added
+edge,USR_ADD_14,"Message: Could not locate element with visible text:  ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+",Fail,Country is empty -> cannot added
+edge,USR_ADD_15,User saved!,Pass,Phone is empty -> cannot added
+edge,USR_ADD_16a,The phone field must not be greater than 24 characters.,Fail,Phone is > 24 characters -> cannot added
+edge,USR_ADD_16b,Email is required,Fail,Email is empty -> cannot added
+edge,USR_ADD_17,,Fail,Wrong email format -> cannot added
+edge,USR_ADD_18,Something went wrong,Fail,Disable the user -> cannot added
+edge,USR_ADD_19,Something went wrong,Fail,Failed Login Attempts is not a number -> cannot added
+edge,USR_ADD_20,Something went wrong,Fail,Empty Failed Login Attempts -> cannot added
+edge,USR_ADD_21,"The password field must contain at least one uppercase and one lowercase letter.,The password field must contain at least one symbol.,The password field must contain at least one number.",Fail,Weak password -> cannot added
+edge,USR_ADD_22,The password field is required.,Fail,Empty password -> cannot added

@@ -1,0 +1,3 @@
+First Name,Last Name,Date of Birth,Street,Postal Code,City,State,Country,Select your country,Phone,Email,Enabled,Failed login attempts,Password
+Alice,Smith,01/01/1990,123 Main St,10001,New York,NY,USA,United States,+1234567890,alice@test.com,Yes,0,pass1234
+Bob,Johnson,02/02/1985,456 Elm St,20002,Washington,DC,USA,United States,+1987654321,bob@test.com,No,2,securepass

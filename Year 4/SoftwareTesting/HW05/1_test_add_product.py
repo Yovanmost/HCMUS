@@ -26,7 +26,7 @@ def get_driver(browser_name):
         svc = ChromeService(os.path.join(DRIVER_DIR, "chromedriver.exe"))
         opts = ChromeOptions()
         # ← point to your actual chrome.exe path
-        opts.binary_location = r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+        opts.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
         return webdriver.Chrome(service=svc, options=opts)
 
     if browser_name == "firefox":
@@ -74,7 +74,9 @@ def run_add_product_test(base_url, browser_name):
 
         for _, row in df.iterrows():
             product_name = str(row['Product Name'])
-            print(f"\n[🧪] {browser_name.upper()} → Adding '{product_name}'")
+            test_case_id = str(row['Test case ID'])
+            expected_result = str(row['Expected Result'])
+            print(f"\n[🧪] {browser_name.upper()} → Adding '{test_case_id}'")
 
             try:
                 driver.get(base_url)
@@ -133,48 +135,58 @@ def run_add_product_test(base_url, browser_name):
                     alert_class = alert.get_attribute("class")
 
                     if "alert-success" in alert_class:
-                        print(f"[✅] '{product_name}' added successfully.")
+                        print(f"[✅] '{test_case_id}' added successfully.")
+                        print(f"\nExpected result: {expected_result}")
                         test_results.append({
                             "Browser": browser_name,
-                            "Product Name": product_name,
+                            "Test case ID": test_case_id,
+                            "Message": alert_text,
                             "Result": "Pass",
-                            "Message": alert_text
+                            "Expected result": expected_result
                         })
 
                     elif "alert-danger" in alert_class:
-                        print(f"[❌] Error alert when adding '{product_name}': {alert_text}")
+                        print(f"[❌] Error alert when adding '{test_case_id}': {alert_text}")
+                        print(f"\nExpected result: {expected_result}")
                         test_results.append({
                             "Browser": browser_name,
-                            "Product Name": product_name,
+                            "Test case ID": test_case_id,
+                            "Message": alert_text,
                             "Result": "Fail",
-                            "Message": alert_text
+                            "Expected result": expected_result
                         })
 
                     else:
-                        print(f"[❌] Unknown alert type for '{product_name}'")
+                        print(f"[❌] Unknown alert type for '{test_case_id}'")
+                        print(f"\nExpected result: {expected_result}")
                         test_results.append({
                             "Browser": browser_name,
-                            "Product Name": product_name,
+                            "Test case ID": test_case_id,
+                            "Message": f"Unknown alert type: {alert_class}",
                             "Result": "Fail",
-                            "Message": f"Unknown alert type: {alert_class}"
+                            "Expected result": expected_result
                         })
 
                 except TimeoutException:
-                    print(f"[❌] No alert shown after submitting '{product_name}'")
+                    print(f"[❌] No alert shown after submitting '{test_case_id}'")
+                    print(f"\nExpected result: {expected_result}")
                     test_results.append({
                         "Browser": browser_name,
-                        "Product Name": product_name,
+                        "Test case ID": test_case_id,
+                        "Message": "No success or error alert found after waiting",
                         "Result": "Fail",
-                        "Message": "No success or error alert found after waiting"
+                        "Expected result": expected_result
                     })
 
             except Exception as e:
-                print(f"[❌] Failed to add '{product_name}': {str(e)}")
+                print(f"[❌] Failed to add '{test_case_id}': {str(e)}\n")
+                print(f"Expected result: {expected_result}")
                 test_results.append({
                     "Browser": browser_name,
-                    "Product Name": product_name,
+                    "Test case ID": test_case_id,
+                    "Message": str(e),
                     "Result": "Fail",
-                    "Message": str(e)
+                    "Expected result": expected_result
                 })
 
     finally:
@@ -182,7 +194,7 @@ def run_add_product_test(base_url, browser_name):
 
         # Export result to CSV
         results_df = pd.DataFrame(test_results)
-        out_path = os.path.join(BASE_DIR, f"results_{browser_name}.csv")
+        out_path = os.path.join(BASE_DIR, "result", f"results_add_product_{browser_name}.csv")
         results_df.to_csv(out_path, index=False)
         print(f"[📄] Results saved to {out_path}")
 

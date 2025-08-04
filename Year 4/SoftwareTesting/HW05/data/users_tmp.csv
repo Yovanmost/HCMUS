@@ -1,2 +1,2 @@
 First Name,Last Name,Date of Birth,Street,Postal Code,City,State,Country,Phone,Email,Enabled,Failed Login Attempts,Password
-John,Doe,15-01-1990,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.0@example.com,TRUE,0,StrongPass@36363636
+John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.0@example.com,TRUE,0,StrongPass@36363636

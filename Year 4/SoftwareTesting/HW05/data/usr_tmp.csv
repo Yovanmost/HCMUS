@@ -1,0 +1,2 @@
+Test case ID,Expected Result,First Name,Last Name,Date of Birth,Address,Postal Code,City,State,Country,Phone,Email,Enabled,Failed Login Attempts,Password
+URS_ADD_00,Added successfully,Siuu,Siuuu,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.cena@example.com,TRUE,0,StrongPass@36363636

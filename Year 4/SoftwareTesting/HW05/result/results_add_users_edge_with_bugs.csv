@@ -1,0 +1,60 @@
+Browser,Test case ID,Message,Result,Expected Result
+edge,URS_ADD_00,User already registered - Your password hint is: Name of your cat!,Fail,Added successfully
+edge,USR_ADD_01,Something went wrong,Fail,Empty first name
+edge,USR_ADD_02,The first name field must not be greater than 40 characters. The last name field format is invalid.,Fail,First name is > 40 characters -> cannot added
+edge,USR_ADD_03,The last name field must not be greater than 20 characters.,Fail,Last name is > 20 characters -> cannot added
+edge,USR_ADD_04,Customer must be 18 years old.,Fail,Younger than 18 years old -> cannot added
+edge,USR_ADD_05,Customer must be younger than 75 years old.,Fail,> 200 years old -> cannot added
+edge,USR_ADD_06,Date of birth is required,Fail,Empty dob -> cannot added
+edge,USR_ADD_07,The address field is required.,Fail,Empty street -> cannot added
+edge,USR_ADD_08,The address field must not be greater than 70 characters.,Fail,Street is > 70 characters -> cannot added
+edge,USR_ADD_09,No alert displayed,Fail,Empty postal code -> cannot added
+edge,USR_ADD_10,The postcode field must not be greater than 10 characters.,Fail,Postal code is > 10 characters -> cannot added
+edge,USR_ADD_11,The city field is required.,Fail,City is empty -> cannot added
+edge,USR_ADD_12,The city field must not be greater than 40 characters.,Fail,City is > 40 characters -> cannot added
+edge,USR_ADD_13,No alert displayed,Fail,State is empty -> cannot added
+edge,USR_ADD_13,The state field must not be greater than 40 characters.,Fail,State is > 40 characters -> cannot added
+edge,USR_ADD_14,"Message: Could not locate element with visible text:  ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+",Fail,Country is empty -> cannot added
+edge,USR_ADD_15,No alert displayed,Fail,Phone is empty -> cannot added
+edge,USR_ADD_16a,The phone field must not be greater than 24 characters.,Fail,Phone is > 24 characters -> cannot added
+edge,USR_ADD_16b,Email is required,Fail,Email is empty -> cannot added
+edge,USR_ADD_17,,Fail,Wrong email format -> cannot added
+edge,USR_ADD_18,No alert displayed,Fail,Disable the user -> cannot added
+edge,USR_ADD_19,No alert displayed,Fail,Failed Login Attempts is not a number -> cannot added
+edge,USR_ADD_20,"Message: element click intercepted: Element is not clickable at point (229, 605)
+  (Session info: MicrosoftEdge=138.0.3351.121); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x0x131d593+37219]
+	(No symbol) [0x0x11ca716]
+	(No symbol) [0x0xf951ce]
+	(No symbol) [0x0xfce6a7]
+	(No symbol) [0x0xfcd324]
+	(No symbol) [0x0xfcbbed]
+	(No symbol) [0x0xfcb673]
+	(No symbol) [0x0xfc3f4a]
+	(No symbol) [0x0xfe27ec]
+	(No symbol) [0x0xfc3a91]
+	(No symbol) [0x0xfc3a10]
+	(No symbol) [0x0xfe2ae4]
+	(No symbol) [0x0xfc3a91]
+	(No symbol) [0x0xff8929]
+	(No symbol) [0x0xfe24f6]
+	(No symbol) [0x0xfc3327]
+	(No symbol) [0x0xfc2723]
+	(No symbol) [0x0xfc3144]
+	sqlite3_dbdata_init [0x0x140a89c+518364]
+	sqlite3_dbdata_init [0x0x14f1ab0+1465072]
+	sqlite3_dbdata_init [0x0x14f13e5+1463333]
+	sqlite3_dbdata_init [0x0x14e28ec+1403180]
+	sqlite3_dbdata_init [0x0x14f22d2+1467154]
+	(No symbol) [0x0x11e1d9d]
+	(No symbol) [0x0x11d5108]
+	(No symbol) [0x0x11d52fb]
+	(No symbol) [0x0x11ba649]
+	BaseThreadInitThunk [0x0x76ac5d49+25]
+	RtlInitializeExceptionChain [0x0x7798d1ab+107]
+	RtlGetAppContainerNamedObjectPath [0x0x7798d131+561]
+",Fail,Empty Failed Login Attempts -> cannot added
+edge,USR_ADD_21,The password field must be at least 9 characters.,Fail,Weak password -> cannot added
+edge,USR_ADD_22,The password field must be at least 9 characters.,Fail,Empty password -> cannot added

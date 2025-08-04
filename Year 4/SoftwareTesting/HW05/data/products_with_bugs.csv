@@ -1,10 +1,13 @@
-Product Name,Description,Stock,Price,Location Offer,Item for Rent,Brand,Category,Image
-Product 0,This is a normal product with correct data,10,1200,Yes,No,Brand name 1,Pliers,Pliers
-,Empty name,20,800,No,Yes,Brand name 2,Hammer,Hammer
-Empty Description,,20,800,No,Yes,Brand name 2,Hammer,Hammer
-Stock - Product 1,Stock value is abc,abc,800,No,Yes,Brand name 2,Hammer,Hammer
-Stock - Product 2,Stock value is -1,-1,800,No,Yes,Brand name 2,Hammer,Hammer
-Stock - Product 3,Stock value is empty,,800,No,Yes,Brand name 2,Hammer,Hammer
-Price - Product 1,Price value is -1,20,-1,No,Yes,Brand name 2,Hammer,Hammer
-Price - Product 2,Price value is abc,20,abc,No,Yes,Brand name 2,Hammer,Hammer
-Price - Product 3,Price value is empty,20,,No,Yes,Brand name 2,Hammer,Hammer
+Test case ID,Expected Result,Product Name,Description,Stock,Price,Location Offer,Item for Rent,Brand,Category,Image
+PRT_ADD_01,Product added successfully,Product 0,This is a normal product with correct data,10,1200,Yes,No,Brand name 1,Pliers,Pliers
+PRT_ADD_02,Missing product name -> cannot added,,Empty name,20,800,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_03,Missing description -> cannot added,Empty Description,,20,800,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_04,Name is more than 120 character -> cannot added,"Creativity thrives when imagination meets purpose, crafting ideas that inspire, connect, and transform the world.????????",Name has 121 characters,20,800,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_05,Stock value is not a number -> cannot added,Stock - Product 1,Stock value is abc,abc,800,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_06,Stock value is negative -> cannot added,Stock - Product 2,Stock value is -1,-1,800,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_07,Stock value is empty -> cannot added,Stock - Product 3,Stock value is empty,,800,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_08,Stock value is > 2147483647 -> cannot added,Stock - Product 4,Stock value is 2147483648,2147483648,800,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_09,Price value is negative -> cannot added,Price - Product 1,Price value is -1,20,-1,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_10,Price value is a string -> cannot added,Price - Product 2,Price value is abc,20,abc,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_11,Price value is empty -> cannot added,Price - Product 3,Price value is empty,20,,No,Yes,Brand name 2,Hammer,Hammer
+PRT_ADD_12,Price value is > 99999999 -> cannot added,Price - Product 4,Price value is 100000000,20,100000000,No,Yes,Brand name 2,Hammer,Hammer

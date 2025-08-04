@@ -1,3 +1,26 @@
-First Name,Last Name,Date of Birth,Street,Postal Code,City,State,Country,Select your country,Phone,Email,Enabled,Failed login attempts,Password
-Alice,Smith,01/01/1990,123 Main St,10001,New York,NY,USA,United States,+1234567890,alice@test.com,Yes,0,pass1234
-Bob,Johnson,02/02/1985,456 Elm St,20002,Washington,DC,USA,United States,+1987654321,bob@test.com,No,2,securepass
+Test case ID,Expected Result,First Name,Last Name,Date of Birth,Address,Postal Code,City,State,Country,Phone,Email,Enabled,Failed Login Attempts,Password
+URS_ADD_00,Added successfully,Siuu,Siuuu,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.sifffuna@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_01,Empty first name,, Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.1aa@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_02,First name is > 40 characters -> cannot added,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.1b@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_03,Last name is > 20 characters -> cannot added,John,aaaaaaaaaaaaaaaaaaaaa,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.2a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_04,Younger than 18 years old -> cannot added,John,Doe,2010-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.3a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_05,> 200 years old -> cannot added,John,Doe,1820-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.4a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_06,Empty dob -> cannot added,John,Doe, ,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.5a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_07,Empty street -> cannot added,John,Doe,1990-01-15, ,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.6a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_08,Street is > 70 characters -> cannot added,John,Doe,1990-01-15,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.6b@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_09,Empty postal code -> cannot added,John,Doe,1990-01-15,123 Main St, ,New York,NY,United States of America (the),+1-212-555-1234,john.doe.7a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_10,Postal code is > 10 characters -> cannot added,John,Doe,1990-01-15,123 Main St,12345678901,New York,NY,United States of America (the),+1-212-555-1234,john.doe.7b@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_11,City is empty -> cannot added,John,Doe,1990-01-15,123 Main St,10001, ,NY,United States of America (the),+1-212-555-1234,john.doe.8a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_12,City is > 40 characters -> cannot added,John,Doe,1990-01-15,123 Main St,10001,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,NY,United States of America (the),+1-212-555-1234,john.doe.8b@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_13,State is empty -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York, ,United States of America (the),+1-212-555-1234,john.doe.9a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_13,State is > 40 characters -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,United States of America (the),+1-212-555-1234,john.doe.9b@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_14,Country is empty -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY, ,+1-212-555-1234,john.doe.10a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_15,Phone is empty -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the), ,john.doe.11a@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_16a,Phone is > 24 characters -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),aaaaaaaaaaaaaaaaaaaaaaaaa,john.doe.11b@example.com,TRUE,0,StrongPass@36363636
+USR_ADD_16b,Email is empty -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234, ,TRUE,0,StrongPass@36363636
+USR_ADD_17,Wrong email format -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,not-an-email,TRUE,0,StrongPass@36363636
+USR_ADD_18,Disable the user -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.14a@example.com,FALSE,0,StrongPass@36363636
+USR_ADD_19,Failed Login Attempts is not a number -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.15a@example.com,TRUE,string,StrongPass@36363636
+USR_ADD_20,Empty Failed Login Attempts -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.16a@example.com,TRUE, ,StrongPass@36363636
+USR_ADD_21,Weak password -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.17a@example.com,TRUE,0,password
+USR_ADD_22,Empty password -> cannot added,John,Doe,1990-01-15,123 Main St,10001,New York,NY,United States of America (the),+1-212-555-1234,john.doe.18a@example.com,TRUE,0,
