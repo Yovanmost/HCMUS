@@ -5,3 +5,4 @@
 *.exe
 .env
 node_modules/
+.vs/
