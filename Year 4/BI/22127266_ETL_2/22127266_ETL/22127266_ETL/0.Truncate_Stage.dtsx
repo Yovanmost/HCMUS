@@ -1,0 +1,197 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/24/2025 1:37:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DJ06MIO"
+  DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
+  DTS:DTSID="{FFF5B6C0-18DA-4771-B7CB-ADAFEFACF9F4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="0 Truncate_Stage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{421FAB4B-3F39-4419-A8A7-DA106C5518C6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.CRM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{10AA98C6-23A3-442D-A367-C070E760336E}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.CRM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=CRM;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{10AA98C6-23A3-442D-A367-C070E760336E}DESKTOP-DJ06MIO.CRM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{80E4E00F-5CFA-4018-B26F-6E8A38E1FC3E}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.DQ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=DQ;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{80E4E00F-5CFA-4018-B26F-6E8A38E1FC3E}DESKTOP-DJ06MIO.DQ;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{273DFF9E-26BA-499C-B6D5-831454AFE7FA}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ERP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ERP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{273DFF9E-26BA-499C-B6D5-831454AFE7FA}DESKTOP-DJ06MIO.ERP;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ETL_Metadata]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0783592C-173E-4E38-AD5E-AB1AD83A3EC2}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ETL_Metadata">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ETL_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{0783592C-173E-4E38-AD5E-AB1AD83A3EC2}DESKTOP-DJ06MIO.ETL_Metadata;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D41290C6-D2C2-4981-919D-32F0DC7D6CE0}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{D41290C6-D2C2-4981-919D-32F0DC7D6CE0}DESKTOP-DJ06MIO.NDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{306D7785-2A93-4B91-9301-CA39C15FAD8D}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{306D7785-2A93-4B91-9301-CA39C15FAD8D}DESKTOP-DJ06MIO.Stage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4E786C8E-4B84-405D-A99F-F4CEE73426DA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FF65BAFA-B500-42DE-8B12-9023CDF752E9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EntityName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF53F74F-A9F6-40DA-B8D3-E7C6CC0F8EFE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B5841215-285A-4903-B0DB-A70B5D0155FC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InsertedRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BFA427C0-909C-41FB-BD8F-00380F3D22AD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceSystem">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D16D13AF-5D5B-4EF4-B4F1-77A0F1F1A605}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">10/24/2025 9:27:19 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E1454EA8-7F50-41D4-AD24-3E23522C93D4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TotalRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\EST_Truncate_Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AC02FCAE-355E-4491-8C3F-C6DB81FCAD20}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EST_Truncate_Stage"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{306D7785-2A93-4B91-9301-CA39C15FAD8D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Stg_Tour;&#xA;TRUNCATE TABLE Stg_Customer;&#xA;TRUNCATE TABLE Stg_Booking;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\EST_Truncate_Stage"
+          TopLeft="171,127" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

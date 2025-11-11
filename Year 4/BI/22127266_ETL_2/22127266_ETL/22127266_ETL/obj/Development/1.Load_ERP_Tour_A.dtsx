@@ -1,0 +1,1745 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/24/2025 1:37:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DJ06MIO"
+  DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
+  DTS:DTSID="{910D41F5-9CC0-4519-8A0F-C6CE4A6181D9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="1 Load_ERP_Tour_A"
+  DTS:PackageType="5"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{64BC5963-3152-40C0-82E4-413C1E52E69E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.CRM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9F3EC70D-45EF-49A2-8146-B3D8ABCCDEC3}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.CRM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=CRM;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9F3EC70D-45EF-49A2-8146-B3D8ABCCDEC3}DESKTOP-DJ06MIO.CRM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DB1A217E-24B5-471F-BCF2-9E2D6E00E639}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.DQ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=DQ;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{DB1A217E-24B5-471F-BCF2-9E2D6E00E639}DESKTOP-DJ06MIO.DQ;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B9A546F0-81D5-4035-80F8-CD5BD8A4BA88}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ERP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ERP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B9A546F0-81D5-4035-80F8-CD5BD8A4BA88}DESKTOP-DJ06MIO.ERP;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ETL_Metadata]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A3BD6DE3-C24A-4ADC-96A5-A91B6FAC0782}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ETL_Metadata">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ETL_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{A3BD6DE3-C24A-4ADC-96A5-A91B6FAC0782}DESKTOP-DJ06MIO.ETL_Metadata;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7853BA59-3736-4656-8755-A47922EA5AEC}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{7853BA59-3736-4656-8755-A47922EA5AEC}DESKTOP-DJ06MIO.NDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A6BF76EE-3AB9-4AFF-8F6C-CD88C825988B}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{A6BF76EE-3AB9-4AFF-8F6C-CD88C825988B}DESKTOP-DJ06MIO.Stage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F8D4F7C2-0B23-45E6-AD1B-04B25ADF6BBE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC159A76-8C3C-47CB-B356-DBD636E1874B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EntityName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4554B345-A7E4-4013-BADE-5F78FD0B06D0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5264361F-7CAD-4A20-AD2B-0832C4090BD5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InsertedRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{436BCDE2-BE60-4DBA-919B-5A49BD73D452}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceSystem">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EA1CF059-D1BA-4179-9115-4D57283805E6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">10/24/2025 9:27:19 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{173F9467-05B3-4129-9C89-ABB603039207}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TotalRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_Tour_A"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{078481DB-F47A-4AA2-9D59-174DE6495218}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="1033"
+      DTS:ObjectName="DFT_Load_Tour_A"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_Tour_A\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input].Columns[StartDate]"
+                      cachedDataType="date"
+                      cachedName="StartDate"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[StartDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input].Columns[TenTour]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TenTour"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[TenTour]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input].Columns[Price]"
+                      cachedDataType="decimal"
+                      cachedName="Price"
+                      cachedScale="2"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[Price]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[InvalidData]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="InvalidData"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[TenTour]}) || [ISNULL](#{Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[Price]}) || [ISNULL](#{Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[StartDate]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(TenTour) || ISNULL(Price) || ISNULL(StartDate)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Count invalid"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count invalid">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::ErrorRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Count invalid.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Count invalid.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Count invalid.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Count valid"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count valid">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::InsertedRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Count valid.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Count valid.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Count valid.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column.Inputs[Derived Column Input].Columns[NgayDi]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="NgayDi"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[NgayDi]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column.Inputs[Derived Column Input].Columns[Gia]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Gia"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[Gia]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]"
+                      name="SourceSystem"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"ERP"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"ERP"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[StartDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DATE)([SUBSTRING](#{Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[NgayDi]},1,4) + "-" + [SUBSTRING](#{Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[NgayDi]},6,2) + "-" + [SUBSTRING](#{Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[NgayDi]},9,2))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DATE)(SUBSTRING(NgayDi,1,4) + "-" + SUBSTRING(NgayDi,6,2) + "-" + SUBSTRING(NgayDi,9,2))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[Price]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[Price]"
+                      name="Price"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DECIMAL,2)([REPLACE]([REPLACE](#{Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[Gia]},"tr","000000"),".",""))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DECIMAL,2)(REPLACE(REPLACE(Gia,"tr","000000"),".",""))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[EntityName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[EntityName]"
+                      name="EntityName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Tour_A"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Tour_A"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[FieldName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="23"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[FieldName]"
+                      name="FieldName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"TenTour/Price/StartDate"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"TenTour/Price/StartDate"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="13"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorType]"
+                      name="ErrorType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Missing Value"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Missing Value"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The value is missing"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value is missing"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[BatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[BatchID]"
+                      name="BatchID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::BatchID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::BatchID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Extract Tour_A"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract Tour_A"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT *
+FROM Tour_A</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Tour_A\Extract Tour_A.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[MaTour]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[MaTour]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[MaTour]"
+                      name="MaTour"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[TenTour]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[TenTour]"
+                      length="100"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[TenTour]"
+                      name="TenTour"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[Gia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[Gia]"
+                      length="20"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[Gia]"
+                      name="Gia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[NgayDi]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[NgayDi]"
+                      length="20"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[NgayDi]"
+                      name="NgayDi"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[MaTour]"
+                      dataType="wstr"
+                      length="10"
+                      name="MaTour" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[TenTour]"
+                      dataType="wstr"
+                      length="100"
+                      name="TenTour" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[Gia]"
+                      dataType="wstr"
+                      length="20"
+                      name="Gia" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].ExternalColumns[NgayDi]"
+                      dataType="wstr"
+                      length="20"
+                      name="NgayDi" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[MaTour]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[MaTour]"
+                      name="MaTour" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[TenTour]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[TenTour]"
+                      name="TenTour" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[Gia]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[Gia]"
+                      name="Gia" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[NgayDi]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[NgayDi]"
+                      name="NgayDi" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Load DQ"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load DQ"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DQ_ErrorRecords]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Tour_A\Load DQ.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SourceSystem"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[EntityName]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="EntityName"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[EntityName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[FieldName]"
+                      cachedDataType="wstr"
+                      cachedLength="23"
+                      cachedName="FieldName"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[FieldName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[ErrorType]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="ErrorType"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorType]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[BatchID]"
+                      cachedDataType="i4"
+                      cachedName="BatchID"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output].Columns[BatchID]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[MaTour]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaTour"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[MaTour]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
+                      dataType="i4"
+                      name="ErrorID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EntityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="RecordKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FieldName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      dataType="wstr"
+                      length="100"
+                      name="ErrorType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="ErrorDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Load DQ.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Load Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Stg_Tour]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Tour_A\Load Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SourceSystem"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[Price]"
+                      cachedDataType="decimal"
+                      cachedName="Price"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[StartDate]"
+                      cachedDataType="date"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      lineageId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output].Columns[StartDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[MaTour]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaTour"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[TourCode]"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[MaTour]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[TenTour]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TenTour"
+                      externalMetadataColumnId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[TourName]"
+                      lineageId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output].Columns[TenTour]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[TourCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="TourCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[TourName]"
+                      dataType="wstr"
+                      length="100"
+                      name="TourName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      dataType="numeric"
+                      name="Price"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      dataType="dbDate"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Load Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Tour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Tour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Tour_A\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::TotalRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Tour_A\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Tour_A\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_Tour_A\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[Conditional Split Default Output]"
+              endId="Package\DFT_Load_Tour_A\Count valid.Inputs[Row Count Input 1]"
+              name="Conditional Split Default Output"
+              startId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[Conditional Split Default Output]" />
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[Derived Column Output]"
+              endId="Package\DFT_Load_Tour_A\Load DQ.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_Tour_A\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[Derived Column Output1]"
+              endId="Package\DFT_Load_Tour_A\Conditional Split.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_Tour_A\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[InvalidData]"
+              endId="Package\DFT_Load_Tour_A\Count invalid.Inputs[Row Count Input 1]"
+              name="InvalidData"
+              startId="Package\DFT_Load_Tour_A\Conditional Split.Outputs[InvalidData]" />
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Load_Tour_A\Row Count.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Load_Tour_A\Extract Tour_A.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[Row Count Output 1]"
+              endId="Package\DFT_Load_Tour_A\Derived Column.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_Tour_A\Row Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[Row Count Output 11]"
+              endId="Package\DFT_Load_Tour_A\Load Stage.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_Tour_A\Count valid.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_Tour_A.Paths[Row Count Output 12]"
+              endId="Package\DFT_Load_Tour_A\Derived Column 1.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_Tour_A\Count invalid.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\End Batch Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D733A78A-B324-4786-830C-B0C396970CC1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End Batch Log"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3BD6DE3-C24A-4ADC-96A5-A91B6FAC0782}"
+          SQLTask:SqlStatementSource="UPDATE ETL_BatchLog&#xA;SET EndTime = GETDATE(),&#xA;    Status = 'Success',&#xA;TotalRecords = ?,&#xA;InsertedRecords = ?,&#xA;ErrorRecords = ?&#xA;WHERE BatchID = ?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TotalRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::InsertedRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ErrorRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::BatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start Batch Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{12757931-ABD8-4BAC-937E-4280633CCCBF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start Batch Log"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3BD6DE3-C24A-4ADC-96A5-A91B6FAC0782}"
+          SQLTask:SqlStatementSource="INSERT INTO ETL_BatchLog (BatchName, SourceSystem, StartTime, Status)&#xA;VALUES ('Load_Tour_A', 'ERP', GETDATE(), 'Running');&#xA;SELECT SCOPE_IDENTITY();&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::BatchID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D772155-2331-4856-B159-D403FEDECBE8}"
+      DTS:From="Package\Start Batch Log"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_Load_Tour_A" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7F155883-190D-42AB-A0DF-052075E0DACD}"
+      DTS:From="Package\DFT_Load_Tour_A"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\End Batch Log" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT_Load_Tour_A"
+          TopLeft="37,145" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\End Batch Log"
+          TopLeft="33,253" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Start Batch Log"
+          TopLeft="42,64" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="121.75,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="117.25,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Load_Tour_A">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT_Load_Tour_A\Count invalid"
+          TopLeft="336.666666666667,305.555555555556" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\DFT_Load_Tour_A\Row Count"
+          TopLeft="130.111111111111,86.2222222222222" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\DFT_Load_Tour_A\Extract Tour_A"
+          TopLeft="131.222222222222,10.1111111111111" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DFT_Load_Tour_A\Derived Column"
+          TopLeft="134,190" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DFT_Load_Tour_A\Derived Column 1"
+          TopLeft="310.777777777778,393.222222222222" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\DFT_Load_Tour_A\Load Stage"
+          TopLeft="124,394.777777777778" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Load_Tour_A\Load DQ"
+          TopLeft="316.777777777778,489.222222222222" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT_Load_Tour_A\Count valid"
+          TopLeft="112.222222222222,295.555555555556" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT_Load_Tour_A\Conditional Split"
+          TopLeft="344.333333333333,202.444444444444" />
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[Row Count Output 12]"
+          TopLeft="406.166666666667,347.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.8888888888889,45.6666666666666"
+              Start="0,0"
+              End="-13.8888888888889,38.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.8333333333333"
+                    Point2="0,22.8333333333333"
+                    Point3="-4,22.8333333333333" />
+                  <mssgle:LineSegment
+                    End="-9.88888888888886,22.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.88888888888886,22.8333333333333"
+                    Point2="-13.8888888888889,22.8333333333333"
+                    Point3="-13.8888888888889,26.8333333333333" />
+                  <mssgle:LineSegment
+                    End="-13.8888888888889,38.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[Row Count Output 11]"
+          TopLeft="181.722222222222,337.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.27777777777777,57.2222222222222"
+              Start="0,0"
+              End="8.27777777777777,49.7222222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.6111111111111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.6111111111111"
+                    Point2="0,28.6111111111111"
+                    Point3="4,28.6111111111111" />
+                  <mssgle:LineSegment
+                    End="4.27777777777777,28.6111111111111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.27777777777777,28.6111111111111"
+                    Point2="8.27777777777777,28.6111111111111"
+                    Point3="8.27777777777777,32.6111111111111" />
+                  <mssgle:LineSegment
+                    End="8.27777777777777,49.7222222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[Row Count Output 1]"
+          TopLeft="195.111111111111,128.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.888888888889,61.7777777777778"
+              Start="0,0"
+              End="15.888888888889,54.2777777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.8888888888889"
+                    Point2="0,30.8888888888889"
+                    Point3="4,30.8888888888889" />
+                  <mssgle:LineSegment
+                    End="11.888888888889,30.8888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.888888888889,30.8888888888889"
+                    Point2="15.888888888889,30.8888888888889"
+                    Point3="15.888888888889,34.8888888888889" />
+                  <mssgle:LineSegment
+                    End="15.888888888889,54.2777777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[OLE DB Source Output]"
+          TopLeft="205.722222222222,52.1111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.611111111111,34.1111111111111"
+              Start="0,0"
+              End="-10.611111111111,26.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0555555555556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0555555555556"
+                    Point2="0,17.0555555555556"
+                    Point3="-4,17.0555555555556" />
+                  <mssgle:LineSegment
+                    End="-6.611111111111,17.0555555555556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.611111111111,17.0555555555556"
+                    Point2="-10.611111111111,17.0555555555556"
+                    Point3="-10.611111111111,21.0555555555556" />
+                  <mssgle:LineSegment
+                    End="-10.611111111111,26.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[InvalidData]"
+          TopLeft="446.333333333333,244.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40.1666666666663,61.1111111111116"
+              Start="0,0"
+              End="-40.1666666666663,53.6111111111116">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8190719455089" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.8190719455089"
+                    Point2="0,24.8190719455089"
+                    Point3="-4,24.8190719455089" />
+                  <mssgle:LineSegment
+                    End="-36.1666666666663,24.8190719455089" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.1666666666663,24.8190719455089"
+                    Point2="-40.1666666666663,24.8190719455089"
+                    Point3="-40.1666666666663,28.8190719455089" />
+                  <mssgle:LineSegment
+                    End="-40.1666666666663,53.6111111111116" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.6782942708331,29.8190719455089,51.189921875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[Derived Column Output1]"
+          TopLeft="288,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.333333333333,12.444444444444"
+              Start="0,0"
+              End="48.833333333333,12.444444444444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.1666666666665,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.1666666666665,0"
+                    Point2="28.1666666666665,0"
+                    Point3="28.1666666666665,4" />
+                  <mssgle:LineSegment
+                    End="28.1666666666665,8.444444444444" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.1666666666665,8.444444444444"
+                    Point2="28.1666666666665,12.444444444444"
+                    Point3="32.1666666666665,12.444444444444" />
+                  <mssgle:LineSegment
+                    End="48.833333333333,12.444444444444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[Derived Column Output]"
+          TopLeft="392.277777777778,435.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,54.0000000000001"
+              Start="0,0"
+              End="10,46.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
+                  <mssgle:LineSegment
+                    End="6,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,27"
+                    Point2="10,27"
+                    Point3="10,31" />
+                  <mssgle:LineSegment
+                    End="10,46.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Tour_A.Paths[Conditional Split Default Output]"
+          TopLeft="397.333333333333,244.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-215.611111111111,51.1111111111115"
+              Start="0,0"
+              End="-215.611111111111,43.6111111111115">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7577692635166" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7577692635166"
+                    Point2="0,20.7577692635166"
+                    Point3="-4,20.7577692635166" />
+                  <mssgle:LineSegment
+                    End="-211.611111111111,20.7577692635166" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-211.611111111111,20.7577692635166"
+                    Point2="-215.611111111111,20.7577692635166"
+                    Point3="-215.611111111111,24.7577692635166" />
+                  <mssgle:LineSegment
+                    End="-215.611111111111,43.6111111111115" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-178.419461805555,25.7577692635166,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Tour_A\Extract Tour_A">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Tour_A\Load Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Tour_A\Load DQ">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

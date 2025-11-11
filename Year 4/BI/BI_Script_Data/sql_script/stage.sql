@@ -1,0 +1,80 @@
+-- ==========================================
+-- DATABASE: AirDW_Stage
+-- =========================================
+-- Xóa DB cũ nếu tồn tại
+USE master
+GO
+IF DB_ID('AirDW_Stage') IS NOT NULL
+BEGIN
+    ALTER DATABASE AirDW_Stage SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE AirDW_Stage;
+END
+GO
+CREATE DATABASE AirDW_Stage;
+GO
+USE AirDW_Stage;
+GO
+
+-- =======================
+-- STAGE - Airlines
+-- =======================
+CREATE TABLE stg_airlines (
+    IATA_CODE VARCHAR(10),
+    AIRLINE NVARCHAR(100),
+    LoadDate DATETIME DEFAULT GETDATE(),
+    BatchID INT
+);
+
+-- =======================
+-- STAGE - Airports
+-- =======================
+CREATE TABLE stg_airports (
+    IATA_CODE VARCHAR(10),
+    AIRPORT NVARCHAR(200),
+    CITY NVARCHAR(100),
+    STATE NVARCHAR(50),
+    COUNTRY NVARCHAR(50),
+    LATITUDE FLOAT,
+    LONGITUDE FLOAT,
+    LoadDate DATETIME DEFAULT GETDATE(),
+    BatchID INT
+);
+
+-- =======================
+-- STAGE - Flights
+-- =======================
+CREATE TABLE stg_flights (
+    [DATE] DATE,
+    AIRLINE VARCHAR(10),
+    FLIGHT_NUMBER INT,
+    TAIL_NUMBER VARCHAR(50),
+    ORIGIN_AIRPORT VARCHAR(10),
+    DESTINATION_AIRPORT VARCHAR(10),
+    SCHEDULED_DEPARTURE INT,
+    DEPARTURE_TIME INT,
+    DEPARTURE_DELAY INT,
+    TAXI_OUT INT,
+    WHEELS_OFF INT,
+    SCHEDULED_TIME INT,
+    ELAPSED_TIME INT,
+    AIR_TIME INT,
+    DISTANCE INT,
+    WHEELS_ON INT,
+    TAXI_IN INT,
+    SCHEDULED_ARRIVAL INT,
+    ARRIVAL_TIME INT,
+    ARRIVAL_DELAY INT,
+    DIVERTED BIT,
+    CANCELLED BIT,
+    CANCELLATION_REASON VARCHAR(10),
+    AIR_SYSTEM_DELAY INT,
+    SECURITY_DELAY INT,
+    AIRLINE_DELAY INT,
+    LATE_AIRCRAFT_DELAY INT,
+    WEATHER_DELAY INT,
+    CREATED DATETIME,
+    MODIFIED DATETIME,
+    LoadDate DATETIME DEFAULT GETDATE(),
+    BatchID INT
+);
+GO

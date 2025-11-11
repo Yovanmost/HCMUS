@@ -1,0 +1,76 @@
+@startuml
+skinparam style strictuml
+
+title **Staging Area (STG)**
+
+entity "STG_AIRLINES" as STG_A {
+  + iata_code : varchar(2)
+  --
+  airline : varchar(100)
+
+  'Metadata Load
+  created_date : datetime
+  batch_id : int
+}
+
+entity "STG_AIRPORTS" as STG_P {
+  + iata_code : varchar(3)
+  --
+  airport : varchar(100)
+  city : varchar(50)
+  state : varchar(2)
+  country : varchar(3)
+  latitude : numeric(9,6)
+  longitude : numeric(9,6)
+
+  'Metadata Load
+  created_date : datetime
+  batch_id : int
+}
+
+entity "STG_FLIGHTS" as STG_F {
+  'Dữ liệu chuyến bay
+  + unique_flight_id : bigint <<PK>> (Khóa tự tăng/Hợp nhất)
+  --
+  'Business Keys (để kiểm tra trùng lặp)
+  flight_date : date
+  flight_number : varchar(10)
+  airline_iata_code : varchar(2)
+  
+  'Thuộc tính còn lại
+  tail_number : varchar(10)
+  origin_airport : varchar(3)
+  destination_airport : varchar(3)
+  scheduled_departure : time
+  departure_time : time (Nullable)
+  departure_delay : int (Nullable)
+  taxi_out : int (Nullable)
+  wheels_off : time (Nullable)
+  scheduled_time : int
+  elapsed_time : int (Nullable)
+  air_time : int (Nullable)
+  distance : int
+  wheels_on : time (Nullable)
+  taxi_in : int (Nullable)
+  scheduled_arrival : time
+  arrival_time : time (Nullable)
+  arrival_delay : int (Nullable)
+  diverted : tinyint (1/0)
+  cancelled : tinyint (1/0)
+  cancellation_reason : char(1) (Nullable)
+  air_system_delay : int (Nullable)
+  security_delay : int (Nullable)
+  airline_delay : int (Nullable)
+  late_aircraft_delay : int (Nullable)
+  weather_delay : int (Nullable)
+
+  'Metadata Load
+  created_date : datetime
+
+  'CET/LSET Management
+  is_error : tinyint(1/0)
+  error_description : varchar(255) (Nullable)
+  created_date : datetime
+  batch_id : int
+}
+@enduml

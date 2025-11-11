@@ -1,0 +1,3158 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/24/2025 1:37:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DJ06MIO"
+  DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
+  DTS:DTSID="{9C1C1ECF-56B0-4C30-984F-D80A45C6E4BB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="3 Load_ERP_DangKyTour_A"
+  DTS:PackageType="5"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{D274B297-0E65-40DE-99B7-CED65360BFFD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.CRM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{04D8EA3C-FDC7-4697-B633-79F479D38A49}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.CRM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=CRM;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{04D8EA3C-FDC7-4697-B633-79F479D38A49}DESKTOP-DJ06MIO.CRM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{111436F5-4E0E-4832-B396-BF370698EBA0}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.DQ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=DQ;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{111436F5-4E0E-4832-B396-BF370698EBA0}DESKTOP-DJ06MIO.DQ;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{37108DBB-B1D3-417C-869F-890526A88EF0}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ERP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ERP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{37108DBB-B1D3-417C-869F-890526A88EF0}DESKTOP-DJ06MIO.ERP;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ETL_Metadata]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DA604054-E889-45EC-BF73-EA7B261CAEF2}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ETL_Metadata">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ETL_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{DA604054-E889-45EC-BF73-EA7B261CAEF2}DESKTOP-DJ06MIO.ETL_Metadata;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B0A096E6-0278-4EE5-8477-61B2DF110AC5}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B0A096E6-0278-4EE5-8477-61B2DF110AC5}DESKTOP-DJ06MIO.NDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5A6482BB-A91C-47FF-8E2F-A8BA142A93C7}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{5A6482BB-A91C-47FF-8E2F-A8BA142A93C7}DESKTOP-DJ06MIO.Stage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0A887776-5815-4D90-B011-47AF41450513}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2C1E9A76-E38D-4D72-81FD-11D2A7A10A3C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CountInvalid">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{66D91AA6-7E4F-46B8-BF7D-810076D94FED}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CountInvalidMaKH">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{58F4EF01-B76E-430B-A51E-A771BE40E321}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CountInvalidMaTour">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2296A75B-8FF7-4B73-8757-4701CFA195A2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EntityName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{416A1257-E398-423C-9273-D229F87C7B80}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B7BFCD7A-A76B-473F-89DD-AF912EA248BF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InsertedRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B6E75B2-3C63-434B-803E-E66B27B7BAE2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceSystem">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F43DFC0E-302A-49EC-85A0-11E0165C792F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">10/24/2025 9:27:19 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E3C3555C-4BD2-4CA8-BDA7-DA97EA675245}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TotalRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_DangKyTour_A"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C63F4CC3-A939-4BFA-99BC-9908511D0D93}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="1033"
+      DTS:ObjectName="DFT_Load_DangKyTour_A"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Inputs[Conditional Split Input].Columns[BookingDate]"
+                      cachedDataType="date"
+                      cachedName="BookingDate"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Inputs[Conditional Split Input].Columns[SoLuong]"
+                      cachedDataType="i4"
+                      cachedName="SoLuong"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[SoLuong]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[InvalidData]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="InvalidData"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]}) || [ISNULL](#{Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[SoLuong]}) || #{Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[SoLuong]} &lt;= 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(BookingDate) || ISNULL(SoLuong) || SoLuong &lt;= 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Count invalid"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count invalid">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CountInvalid</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Count invalid.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Count invalid.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Count invalid.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Count invalid MaKH"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count invalid MaKH">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CountInvalidMaKH</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Count invalid MaKH.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Count invalid MaKH.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Count invalid MaKH.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Count invalid MaTour"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count invalid MaTour">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CountInvalidMaTour</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Count invalid MaTour.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Count invalid MaTour.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Count invalid MaTour.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Count valid"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count valid">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::InsertedRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Count valid.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Count valid.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Count valid.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column.Inputs[Derived Column Input].Columns[NgayDangKy]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="NgayDangKy"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[NgayDangKy]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]"
+                      name="SourceSystem"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"ERP"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"ERP"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]"
+                      name="BookingDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DATE)([SUBSTRING](#{Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[NgayDangKy]},1,4) + "-" + [SUBSTRING](#{Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[NgayDangKy]},6,2) + "-" + [SUBSTRING](#{Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[NgayDangKy]},9,2))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DATE)(SUBSTRING(NgayDangKy,1,4) + "-" + SUBSTRING(NgayDangKy,6,2) + "-" + SUBSTRING(NgayDangKy,9,2))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column Invalid"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[EntityName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[EntityName]"
+                      name="EntityName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"DangKyTour_A"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"DangKyTour_A"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[FieldName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[FieldName]"
+                      name="FieldName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"BookingDate/Quantity"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"BookingDate/Quantity"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[ErrorType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="28"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[ErrorType]"
+                      name="ErrorType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Missing Value/NegativeNumber"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Missing Value/NegativeNumber"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="41"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The value is missing/A number is negative"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value is missing/A number is negative"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[BatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[BatchID]"
+                      name="BatchID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::BatchID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::BatchID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column MaKH Error"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[EntityName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[EntityName]"
+                      name="EntityName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"DangKyTour_A"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"DangKyTour_A"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[FieldName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[FieldName]"
+                      name="FieldName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"MaKH"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"MaKH"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[ErrorType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="13"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[ErrorType]"
+                      name="ErrorType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Missing Value"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Missing Value"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="35"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The value is missing/Not correct FK"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value is missing/Not correct FK"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[BatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[BatchID]"
+                      name="BatchID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::BatchID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::BatchID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column MaTour Error"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[EntityName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[EntityName]"
+                      name="EntityName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"DangKyTour_A"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"DangKyTour_A"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[FieldName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[FieldName]"
+                      name="FieldName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"MaTour"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"MaTour"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[ErrorType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="13"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[ErrorType]"
+                      name="ErrorType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Missing Value"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Missing Value"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="35"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The value is missing/Not correct FK"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The value is missing/Not correct FK"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[BatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[BatchID]"
+                      name="BatchID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::BatchID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::BatchID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract DangKyTour_A"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT MaDK,MaKH, MaTour, SoLuong, NgayDangKy 
+FROM DangKyTour_A</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaTour]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[MaTour]"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaTour]"
+                      name="MaTour"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaDK]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[MaDK]"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaDK]"
+                      name="MaDK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      name="MaKH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[SoLuong]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[SoLuong]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[SoLuong]"
+                      name="SoLuong"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[NgayDangKy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[NgayDangKy]"
+                      length="20"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[NgayDangKy]"
+                      name="NgayDangKy"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[MaTour]"
+                      dataType="wstr"
+                      length="10"
+                      name="MaTour" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[MaDK]"
+                      dataType="wstr"
+                      length="10"
+                      name="MaDK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      dataType="wstr"
+                      length="10"
+                      name="MaKH" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[SoLuong]"
+                      dataType="i4"
+                      name="SoLuong" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].ExternalColumns[NgayDangKy]"
+                      dataType="wstr"
+                      length="20"
+                      name="NgayDangKy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[MaDK]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[MaDK]"
+                      name="MaDK" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      name="MaKH" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[MaTour]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[MaTour]"
+                      name="MaTour" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[SoLuong]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[SoLuong]"
+                      name="SoLuong" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[NgayDangKy]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[NgayDangKy]"
+                      name="NgayDangKy" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Load DQ"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load DQ"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DQ_ErrorRecords]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SourceSystem"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[EntityName]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="EntityName"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[EntityName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[FieldName]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="FieldName"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[FieldName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[ErrorType]"
+                      cachedDataType="wstr"
+                      cachedLength="28"
+                      cachedName="ErrorType"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[ErrorType]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="41"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[ErrorDescription]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[MaDK]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaDK"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaDK]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].Columns[BatchID]"
+                      cachedDataType="i4"
+                      cachedName="BatchID"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output].Columns[BatchID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
+                      dataType="i4"
+                      name="ErrorID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EntityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="RecordKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FieldName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      dataType="wstr"
+                      length="100"
+                      name="ErrorType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="ErrorDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load DQ.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Load DQ 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load DQ 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DQ_ErrorRecords]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SourceSystem"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].Columns[EntityName]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="EntityName"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[EntityName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].Columns[FieldName]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="FieldName"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[FieldName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].Columns[ErrorType]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="ErrorType"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[ErrorType]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="35"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[ErrorDescription]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].Columns[MaDK]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaDK"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaDK]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].Columns[BatchID]"
+                      cachedDataType="i4"
+                      cachedName="BatchID"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output].Columns[BatchID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
+                      dataType="i4"
+                      name="ErrorID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EntityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="RecordKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FieldName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      dataType="wstr"
+                      length="100"
+                      name="ErrorType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="ErrorDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Load DQ 2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load DQ 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DQ_ErrorRecords]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SourceSystem"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].Columns[EntityName]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="EntityName"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[EntityName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].Columns[FieldName]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="FieldName"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[FieldName]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].Columns[ErrorType]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="ErrorType"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[ErrorType]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="35"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[ErrorDescription]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].Columns[MaDK]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaDK"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaDK]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].Columns[BatchID]"
+                      cachedDataType="i4"
+                      cachedName="BatchID"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output].Columns[BatchID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
+                      dataType="i4"
+                      name="ErrorID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[EntityName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EntityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="RecordKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[FieldName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FieldName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorType]"
+                      dataType="wstr"
+                      length="100"
+                      name="ErrorType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="ErrorDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Load Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Stg_Booking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_DangKyTour_A\Load Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SourceSystem"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[MaDK]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaDK"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[BookingCode]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaDK]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[SoLuong]"
+                      cachedDataType="i4"
+                      cachedName="SoLuong"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[SoLuong]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[BookingDate]"
+                      cachedDataType="date"
+                      cachedName="BookingDate"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[BookingDate]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[MaTour]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaTour"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[TourCode]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Match Output].Columns[MaTour]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].Columns[MaKH]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaKH"
+                      externalMetadataColumnId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[CustomerCode]"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Match Output].Columns[MaKH]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[TourCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="TourCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[BookingCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="BookingCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[CustomerCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="CustomerCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input].ExternalColumns[BookingDate]"
+                      dataType="dbDate"
+                      name="BookingDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Load Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Load Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup MaKH"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[KhachHang_A]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[KhachHang_A]) [refTable]
+where [refTable].[MaKH] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaKH" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TenKH" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Email" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaKH]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Inputs[Lookup Input].Columns[MaKH]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaKH"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaKH]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MaKH</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Match Output].Columns[MaKH]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Match Output].Columns[MaKH]"
+                      name="MaKH"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MaKH</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup MaTour"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Tour_A]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Tour_A]) [refTable]
+where [refTable].[MaTour] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaTour" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TenTour" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Gia" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NgayDi" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaTour]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Inputs[Lookup Input].Columns[MaTour]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MaTour"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output].Columns[MaTour]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MaTour</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Match Output].Columns[MaTour]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Match Output].Columns[MaTour]"
+                      name="MaTour"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MaTour</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_DangKyTour_A\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::TotalRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_DangKyTour_A\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_DangKyTour_A\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_DangKyTour_A\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Conditional Split Default Output]"
+              endId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Inputs[Lookup Input]"
+              name="Conditional Split Default Output"
+              startId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[Conditional Split Default Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output]"
+              endId="Package\DFT_Load_DangKyTour_A\Conditional Split.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_DangKyTour_A\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output1]"
+              endId="Package\DFT_Load_DangKyTour_A\Load DQ.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output2]"
+              endId="Package\DFT_Load_DangKyTour_A\Load DQ 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output3]"
+              endId="Package\DFT_Load_DangKyTour_A\Load DQ 2.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[InvalidData]"
+              endId="Package\DFT_Load_DangKyTour_A\Count invalid.Inputs[Row Count Input 1]"
+              name="InvalidData"
+              startId="Package\DFT_Load_DangKyTour_A\Conditional Split.Outputs[InvalidData]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Lookup Match Output]"
+              endId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Lookup Match Output1]"
+              endId="Package\DFT_Load_DangKyTour_A\Count valid.Inputs[Row Count Input 1]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Lookup No Match Output]"
+              endId="Package\DFT_Load_DangKyTour_A\Count invalid MaKH.Inputs[Row Count Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\DFT_Load_DangKyTour_A\Lookup MaKH.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Lookup No Match Output1]"
+              endId="Package\DFT_Load_DangKyTour_A\Count invalid MaTour.Inputs[Row Count Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\DFT_Load_DangKyTour_A\Lookup MaTour.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Load_DangKyTour_A\Row Count.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 1]"
+              endId="Package\DFT_Load_DangKyTour_A\Load Stage.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_DangKyTour_A\Count valid.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 11]"
+              endId="Package\DFT_Load_DangKyTour_A\Derived Column Invalid.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_DangKyTour_A\Count invalid.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 12]"
+              endId="Package\DFT_Load_DangKyTour_A\Derived Column.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_DangKyTour_A\Row Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 13]"
+              endId="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_DangKyTour_A\Count invalid MaKH.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 14]"
+              endId="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_DangKyTour_A\Count invalid MaTour.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\End Batch Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6731ACCE-B1DB-40FF-8895-9CA48E444CFC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End Batch Log"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DA604054-E889-45EC-BF73-EA7B261CAEF2}"
+          SQLTask:SqlStatementSource="UPDATE ETL_BatchLog&#xA;SET EndTime = GETDATE(),&#xA;    Status = 'Success',&#xA;TotalRecords = ?,&#xA;InsertedRecords = ?,&#xA;ErrorRecords = ? + ? + ?&#xA;WHERE BatchID = ?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TotalRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::InsertedRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::CountInvalid"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::CountInvalidMaKH"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::CountInvalidMaTour"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::BatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start Batch Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DB58CB44-039D-4D75-8B23-97F9E971D7BE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start Batch Log"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DA604054-E889-45EC-BF73-EA7B261CAEF2}"
+          SQLTask:SqlStatementSource="INSERT INTO ETL_BatchLog (BatchName, SourceSystem, StartTime, Status)&#xA;VALUES ('Load_DangKyTour_A', 'ERP', GETDATE(), 'Running');&#xA;SELECT SCOPE_IDENTITY();&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::BatchID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7DABD9C0-E8F2-4C20-96BC-B45E1AAA451C}"
+      DTS:From="Package\Start Batch Log"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_Load_DangKyTour_A" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5736263A-0238-435D-A231-C9B5465AB0C2}"
+      DTS:From="Package\DFT_Load_DangKyTour_A"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\End Batch Log" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT_Load_DangKyTour_A"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\End Batch Log"
+          TopLeft="7.00000000000003,209.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Start Batch Log"
+          TopLeft="7.00000000000001,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="88.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="88.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Load_DangKyTour_A">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A"
+          TopLeft="277.5,5.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Lookup MaTour"
+          TopLeft="549.5,515.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Derived Column"
+          TopLeft="277.5,209.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Lookup MaKH"
+          TopLeft="277.5,413.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Derived Column MaKH Error"
+          TopLeft="277.5,617.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Count valid"
+          TopLeft="821.5,617.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Load DQ"
+          TopLeft="5.5,617.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Count invalid MaTour"
+          TopLeft="549.5,617.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Load DQ 1"
+          TopLeft="277.5,719.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Row Count"
+          TopLeft="277.5,107.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Count invalid MaKH"
+          TopLeft="277.5,515.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Load DQ 2"
+          TopLeft="549.5,821.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Count invalid"
+          TopLeft="5.5,413.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Load Stage"
+          TopLeft="821.5,719.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Derived Column MaTour Error"
+          TopLeft="549.5,719.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Derived Column Invalid"
+          TopLeft="5.5,515.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT_Load_DangKyTour_A\Conditional Split"
+          TopLeft="277.5,311.5" />
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 11]"
+          TopLeft="111,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 1]"
+          TopLeft="927,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[OLE DB Source Output]"
+          TopLeft="383,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Lookup No Match Output1]"
+          TopLeft="621.166666666667,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.8333333333334,60"
+              Start="0,0"
+              End="33.8333333333334,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2709313264346"
+                    Point2="0,24.2709313264346"
+                    Point3="4,24.2709313264346" />
+                  <mssgle:LineSegment
+                    End="29.8333333333334,24.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.8333333333334,24.2709313264346"
+                    Point2="33.8333333333334,24.2709313264346"
+                    Point3="33.8333333333334,28.2709313264346" />
+                  <mssgle:LineSegment
+                    End="33.8333333333334,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.8897200520833,29.2709313264346,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Lookup No Match Output]"
+          TopLeft="349.166666666667,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.8333333333334,60"
+              Start="0,0"
+              End="33.8333333333334,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2709313264346"
+                    Point2="0,24.2709313264346"
+                    Point3="4,24.2709313264346" />
+                  <mssgle:LineSegment
+                    End="29.8333333333334,24.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.8333333333334,24.2709313264346"
+                    Point2="33.8333333333334,24.2709313264346"
+                    Point3="33.8333333333334,28.2709313264346" />
+                  <mssgle:LineSegment
+                    End="33.8333333333334,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.8897200520833,29.2709313264346,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Lookup Match Output1]"
+          TopLeft="688.833333333333,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238.166666666667,60"
+              Start="0,0"
+              End="238.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2709313264346"
+                    Point2="0,24.2709313264346"
+                    Point3="4,24.2709313264346" />
+                  <mssgle:LineSegment
+                    End="234.166666666667,24.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="234.166666666667,24.2709313264346"
+                    Point2="238.166666666667,24.2709313264346"
+                    Point3="238.166666666667,28.2709313264346" />
+                  <mssgle:LineSegment
+                    End="238.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.8919466145834,29.2709313264346,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Lookup Match Output]"
+          TopLeft="416.833333333333,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238.166666666667,59.9999999999999"
+              Start="0,0"
+              End="238.166666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2709313264346"
+                    Point2="0,24.2709313264346"
+                    Point3="4,24.2709313264346" />
+                  <mssgle:LineSegment
+                    End="234.166666666667,24.2709313264346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="234.166666666667,24.2709313264346"
+                    Point2="238.166666666667,24.2709313264346"
+                    Point3="238.166666666667,28.2709313264346" />
+                  <mssgle:LineSegment
+                    End="238.166666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.8919466145833,29.2709313264346,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[InvalidData]"
+          TopLeft="349.166666666667,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-238.166666666667,60.0000000000001"
+              Start="0,0"
+              End="-238.166666666667,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2709313264347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2709313264347"
+                    Point2="0,24.2709313264347"
+                    Point3="-4,24.2709313264347" />
+                  <mssgle:LineSegment
+                    End="-234.166666666667,24.2709313264347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-234.166666666667,24.2709313264347"
+                    Point2="-238.166666666667,24.2709313264347"
+                    Point3="-238.166666666667,28.2709313264347" />
+                  <mssgle:LineSegment
+                    End="-238.166666666667,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-144.678294270833,29.2709313264347,51.189921875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output3]"
+          TopLeft="655,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output2]"
+          TopLeft="383,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output1]"
+          TopLeft="111,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Derived Column Output]"
+          TopLeft="383,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Conditional Split Default Output]"
+          TopLeft="416.833333333333,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.8333333333333,60.0000000000001"
+              Start="0,0"
+              End="-33.8333333333333,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2709313264347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2709313264347"
+                    Point2="0,24.2709313264347"
+                    Point3="-4,24.2709313264347" />
+                  <mssgle:LineSegment
+                    End="-29.8333333333333,24.2709313264347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.8333333333333,24.2709313264347"
+                    Point2="-33.8333333333333,24.2709313264347"
+                    Point3="-33.8333333333333,28.2709313264347" />
+                  <mssgle:LineSegment
+                    End="-33.8333333333333,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-87.5305729166667,29.2709313264347,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 14]"
+          TopLeft="655,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 13]"
+          TopLeft="383,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_DangKyTour_A.Paths[Row Count Output 12]"
+          TopLeft="383,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DangKyTour_A\Extract DangKyTour_A">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DangKyTour_A\Lookup MaTour">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Tour_A]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DangKyTour_A\Lookup MaKH">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[KhachHang_A]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DangKyTour_A\Load DQ">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DangKyTour_A\Load DQ 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DangKyTour_A\Load Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

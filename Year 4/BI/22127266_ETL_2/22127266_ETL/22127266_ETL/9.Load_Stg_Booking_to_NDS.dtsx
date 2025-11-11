@@ -1,0 +1,1900 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/24/2025 1:37:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DJ06MIO"
+  DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
+  DTS:DTSID="{B020F340-076D-41FB-B712-2F3A8291E247}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="9 Load_Stg_Booking_to_NDS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{D2E2673F-CFC7-4CC6-8C6E-8466BD54B66A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.CRM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1D86B0F3-BC61-46F6-B6C1-149294E26822}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.CRM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=CRM;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{1D86B0F3-BC61-46F6-B6C1-149294E26822}DESKTOP-DJ06MIO.CRM;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.DQ]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{35851B65-AF69-4D16-9CF3-C188D080966D}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.DQ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=DQ;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{35851B65-AF69-4D16-9CF3-C188D080966D}DESKTOP-DJ06MIO.DQ;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ERP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{27E78B08-8C56-417D-875F-4CBFC3713107}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ERP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ERP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{27E78B08-8C56-417D-875F-4CBFC3713107}DESKTOP-DJ06MIO.ERP;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.ETL_Metadata]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{06AB7964-E366-41AD-9C1F-D58080512F46}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.ETL_Metadata">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=ETL_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{06AB7964-E366-41AD-9C1F-D58080512F46}DESKTOP-DJ06MIO.ETL_Metadata;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DDB2AD82-9EB1-4225-B3E1-9FFB25784E28}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{DDB2AD82-9EB1-4225-B3E1-9FFB25784E28}DESKTOP-DJ06MIO.NDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9ACC3C5A-E719-4889-A035-587C88F59AC6}"
+      DTS:ObjectName="DESKTOP-DJ06MIO.Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-DJ06MIO;Initial Catalog=Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{9ACC3C5A-E719-4889-A035-587C88F59AC6}DESKTOP-DJ06MIO.Stage;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{55B978F5-25F4-4DCA-93F3-AA0CC0B6BC64}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D31B7A66-0380-4F11-A070-14A8F90ACDA2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentLoad">
+      <DTS:VariableValue
+        DTS:DataType="7">10/26/2025 1:48:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{238B7490-8D44-4702-80C3-99D8ACD0911E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EntityName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5463A3E1-726E-4733-966F-BF43A86006EB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0C2A9530-A324-4E5E-B917-BD670C172D24}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InsertedRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D11FA030-FDAE-4E57-8C69-65762DB3E9C8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastSuccessfulLoad">
+      <DTS:VariableValue
+        DTS:DataType="7">10/26/2025 1:48:09 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1B74921D-1E0E-4519-A39D-BF116E411EC5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceSystem">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7CA7FB0D-9482-4779-B7DF-3E626C53A880}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">10/24/2025 9:27:19 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F46A2710-B1DC-4082-99DE-8A53D427383A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TotalRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3756DBA9-A5B0-43C0-9437-3A42D396E300}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="UpdatedRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_Stg_Booking"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0C514958-5C24-472B-A501-AD66C64B0699}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="1033"
+      DTS:ObjectName="DFT_Load_Stg_Booking"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[BookingDate]"
+                      cachedDataType="dbDate"
+                      cachedName="BookingDate"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[UnifiedCustomerCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedCustomerCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedCustomerCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[UnifiedTourCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedTourCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedTourCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[UnifiedCustomerCode1]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedCustomerCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedCustomerCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[UnifiedTourCode1]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedTourCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedTourCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[Quantity1]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input].Columns[BookingDate1]"
+                      cachedDataType="dbDate"
+                      cachedName="BookingDate"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[BookingDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Changed]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Changed"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[Quantity]}) != ![ISNULL](#{Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[Quantity]}) || ![ISNULL](#{Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]}) != ![ISNULL](#{Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[BookingDate]}) || ![ISNULL](#{Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedCustomerCode]}) != ![ISNULL](#{Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedCustomerCode]}) || ![ISNULL](#{Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedTourCode]}) != ![ISNULL](#{Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedTourCode]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL([Extract Stg_Booking].Quantity) != !ISNULL(Lookup.Quantity) || !ISNULL([Derived Column].BookingDate) != !ISNULL(Lookup.BookingDate) || !ISNULL([Derived Column].UnifiedCustomerCode) != !ISNULL(Lookup.UnifiedCustomerCode) || !ISNULL([Derived Column].UnifiedTourCode) != !ISNULL(Lookup.UnifiedTourCode)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Unchanged]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Unchanged"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Count inserted"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count inserted">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::InsertedRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Count inserted.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Count inserted.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Count inserted.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Count updated"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Count updated">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::UpdatedRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Count updated.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Count updated.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Count updated.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="SourceSystem"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input].Columns[CustomerCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CustomerCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[CustomerCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input].Columns[BookingCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BookingCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input].Columns[TourCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="TourCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[TourCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input].Columns[BookingDate]"
+                      cachedDataType="dbDate"
+                      cachedName="BookingDate"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedBookingCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedBookingCode]"
+                      name="UnifiedBookingCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[SourceSystem]} + #{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SourceSystem + BookingCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]"
+                      name="BookingDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)#{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)BookingDate</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedCustomerCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedCustomerCode]"
+                      name="UnifiedCustomerCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[SourceSystem]} + #{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[CustomerCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SourceSystem + CustomerCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedTourCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedTourCode]"
+                      name="UnifiedTourCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[SourceSystem]} + #{Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[TourCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SourceSystem + TourCode</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract Stg_Booking"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT *
+FROM Stg_Booking</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[SourceSystem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[SourceSystem]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[SourceSystem]"
+                      name="SourceSystem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[LoadDate]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[LoadDate]"
+                      name="LoadDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[CustomerCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[CustomerCode]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[CustomerCode]"
+                      name="CustomerCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[BookingCode]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingCode]"
+                      name="BookingCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[TourCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[TourCode]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[TourCode]"
+                      name="TourCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[BookingDate]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[BookingDate]"
+                      name="BookingDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[CustomerCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="CustomerCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[BookingCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="BookingCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[TourCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="TourCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].ExternalColumns[BookingDate]"
+                      dataType="dbDate"
+                      name="BookingDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[SourceSystem]"
+                      name="SourceSystem" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[BookingCode]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[BookingCode]"
+                      name="BookingCode" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[CustomerCode]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[CustomerCode]"
+                      name="CustomerCode" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[TourCode]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[TourCode]"
+                      name="TourCode" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[BookingDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[BookingDate]"
+                      name="BookingDate" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[LoadDate]"
+                      name="LoadDate" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Load NDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load NDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[NDS_Booking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Stg_Booking\Load NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].Columns[SourceSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="SourceSystem"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[SourceSystem]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].Columns[UnifiedCustomerCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedCustomerCode"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[UnifiedCustomerCode]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedCustomerCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].Columns[UnifiedBookingCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedBookingCode"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[UnifiedBookingCode]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedBookingCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].Columns[UnifiedTourCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedTourCode"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[UnifiedTourCode]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedTourCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].Columns[BookingDate]"
+                      cachedDataType="dbDate"
+                      cachedName="BookingDate"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[BookingDate]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="10"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[UnifiedCustomerCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="UnifiedCustomerCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[BookingID]"
+                      dataType="i4"
+                      name="BookingID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[UnifiedBookingCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="UnifiedBookingCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[UnifiedTourCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="UnifiedTourCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input].ExternalColumns[BookingDate]"
+                      dataType="dbDate"
+                      name="BookingDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Load NDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Load NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Load NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Load NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[NDS_Booking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[NDS_Booking]) [refTable]
+where [refTable].[UnifiedBookingCode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="BookingID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnifiedBookingCode" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnifiedCustomerCode" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnifiedTourCode" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quantity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BookingDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SourceSystem" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LoadDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedBookingCode]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Stg_Booking\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Inputs[Lookup Input].Columns[UnifiedBookingCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedBookingCode"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedBookingCode]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">UnifiedBookingCode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedBookingCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="20"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedBookingCode]"
+                      name="UnifiedBookingCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">UnifiedBookingCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedCustomerCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="20"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedCustomerCode]"
+                      name="UnifiedCustomerCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">UnifiedCustomerCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedTourCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="20"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[UnifiedTourCode]"
+                      name="UnifiedTourCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">UnifiedTourCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Quantity</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[BookingDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output].Columns[BookingDate]"
+                      name="BookingDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">BookingDate</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::TotalRecords</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_Booking\Update NDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update NDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE dbo.NDS_Booking
+SET UnifiedCustomerCode = ?, UnifiedTourCode = ?, Quantity = ?, BookingDate = ?
+WHERE UnifiedBookingCode = ?
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Stg_Booking\Update NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].Columns[UnifiedCustomerCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedCustomerCode"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedCustomerCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].Columns[UnifiedTourCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedTourCode"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedTourCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].Columns[BookingDate]"
+                      cachedDataType="dbDate"
+                      cachedName="BookingDate"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[BookingDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].Columns[UnifiedBookingCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UnifiedBookingCode"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output].Columns[UnifiedBookingCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="20"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="20"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbDate"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="20"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Update NDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_Booking\Update NDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Update NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_Booking\Update NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_Booking\Update NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[Changed]"
+              endId="Package\DFT_Load_Stg_Booking\Count updated.Inputs[Row Count Input 1]"
+              name="Changed"
+              startId="Package\DFT_Load_Stg_Booking\Conditional Split.Outputs[Changed]" />
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[Derived Column Output]"
+              endId="Package\DFT_Load_Stg_Booking\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_Stg_Booking\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[Lookup Match Output]"
+              endId="Package\DFT_Load_Stg_Booking\Conditional Split.Inputs[Conditional Split Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[Lookup No Match Output]"
+              endId="Package\DFT_Load_Stg_Booking\Count inserted.Inputs[Row Count Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\DFT_Load_Stg_Booking\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Load_Stg_Booking\Row Count.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Load_Stg_Booking\Extract Stg_Booking.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[Row Count Output 1]"
+              endId="Package\DFT_Load_Stg_Booking\Derived Column.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_Stg_Booking\Row Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[Row Count Output 11]"
+              endId="Package\DFT_Load_Stg_Booking\Load NDS.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_Stg_Booking\Count inserted.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT_Load_Stg_Booking.Paths[Row Count Output 12]"
+              endId="Package\DFT_Load_Stg_Booking\Update NDS.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT_Load_Stg_Booking\Count updated.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\End Batch Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{924A71B2-BC4F-4AA4-BF71-3C505E9AF7AA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End Batch Log"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{06AB7964-E366-41AD-9C1F-D58080512F46}"
+          SQLTask:SqlStatementSource="UPDATE ETL_BatchLog&#xA;SET EndTime = GETDATE(),&#xA;    Status = 'Success',&#xA;TotalRecords = ?,&#xA;InsertedRecords = ?,&#xA;ErrorRecords = ?&#xA;WHERE BatchID = ?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TotalRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::InsertedRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ErrorRecords"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::BatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start Batch Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1FF4ED94-3D00-41F2-A5F9-F87309B8697F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start Batch Log"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{06AB7964-E366-41AD-9C1F-D58080512F46}"
+          SQLTask:SqlStatementSource="INSERT INTO ETL_BatchLog (BatchName, SourceSystem, StartTime, Status)&#xA;VALUES ('Load_Stg_Booking', 'Stage', GETDATE(), 'Running');&#xA;SELECT SCOPE_IDENTITY();&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::BatchID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FAEB9BCA-D0FF-4F2A-8F4D-16D6F61A5C1B}"
+      DTS:From="Package\Start Batch Log"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_Load_Stg_Booking" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{ABE62D31-70F9-4E61-AC6C-372BE773EDE3}"
+      DTS:From="Package\DFT_Load_Stg_Booking"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\End Batch Log" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{6B7DCD3B-F689-49B1-B949-3BC8BCC00189}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{866A1367-A3E3-449F-A2F5-0C6FCBC9E879}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables />
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DFT_Load_Stg_Booking"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\End Batch Log"
+          TopLeft="11.5,209.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Start Batch Log"
+          TopLeft="11.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="93,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="93,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Load_Stg_Booking">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\DFT_Load_Stg_Booking\Row Count"
+          TopLeft="218,107.5" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\DFT_Load_Stg_Booking\Update NDS"
+          TopLeft="215,617.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DFT_Load_Stg_Booking\Derived Column"
+          TopLeft="206,209.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT_Load_Stg_Booking\Count updated"
+          TopLeft="213.5,515.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT_Load_Stg_Booking\Count inserted"
+          TopLeft="5.50000000000009,413.5" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\DFT_Load_Stg_Booking\Load NDS"
+          TopLeft="12.5000000000001,515.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT_Load_Stg_Booking\Conditional Split"
+          TopLeft="205.5,413.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\DFT_Load_Stg_Booking\Extract Stg_Booking"
+          TopLeft="208.5,5.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\DFT_Load_Stg_Booking\Lookup"
+          TopLeft="226.5,311.5" />
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[Row Count Output 1]"
+          TopLeft="283,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[OLE DB Source Output]"
+          TopLeft="283,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[Lookup No Match Output]"
+          TopLeft="265.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-190.5,60"
+              Start="0,0"
+              End="-190.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5026178010471" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5026178010471"
+                    Point2="0,24.5026178010471"
+                    Point3="-4,24.5026178010471" />
+                  <mssgle:LineSegment
+                    End="-186.5,24.5026178010471" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.5,24.5026178010471"
+                    Point2="-190.5,24.5026178010471"
+                    Point3="-190.5,28.5026178010471" />
+                  <mssgle:LineSegment
+                    End="-190.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-151.05638671875,29.5026178010471,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[Lookup Match Output]"
+          TopLeft="300.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.5,60"
+              Start="0,0"
+              End="-17.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5026178010471" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5026178010471"
+                    Point2="0,24.5026178010471"
+                    Point3="-4,24.5026178010471" />
+                  <mssgle:LineSegment
+                    End="-13.5,24.5026178010471" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.5,24.5026178010471"
+                    Point2="-17.5,24.5026178010471"
+                    Point3="-17.5,28.5026178010471" />
+                  <mssgle:LineSegment
+                    End="-17.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-56.94138671875,29.5026178010471,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[Derived Column Output]"
+          TopLeft="283,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[Changed]"
+          TopLeft="283,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.8755078125,20.41845703125,39.751015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[Row Count Output 12]"
+          TopLeft="283,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_Booking.Paths[Row Count Output 11]"
+          TopLeft="75.0000000000001,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Stg_Booking\Load NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Stg_Booking\Extract Stg_Booking">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Stg_Booking\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NDS_Booking]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
