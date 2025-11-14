@@ -15,7 +15,16 @@ module.exports = {
   ],
   darkMode: 'class', // bật dark mode theo class
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          500: '#0ea5a4',
+          700: '#0b8380'
+        }
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')

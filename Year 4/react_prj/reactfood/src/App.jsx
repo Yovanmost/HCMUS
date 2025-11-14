@@ -13,7 +13,7 @@ export default function App() {
   function Header() {
     const { user, logout } = useAuth();
     return (
-      <header className="bg-white dark:bg-gray-800 shadow">
+      <header className="bg-gradient-to-r from-primary-500 to-green-500 dark:from-primary-700 dark:to-green-700 text-white shadow">
         <div className="container mx-auto p-4 flex justify-between items-center">
           <Link to="/" className="font-bold text-xl">ReactFood</Link>
           <nav className="space-x-4">
