@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/15/2025 9:16:58 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-DJ06MIO"
   DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
-  DTS:DTSID="{BDDF83E9-FB65-459A-A50C-35ED3F52342D}"
+  DTS:DTSID="{EF3EE29D-1D91-4BAA-9987-648F0017137F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="3072"
-  DTS:ObjectName="1_Load_Dim_Date"
+  DTS:ObjectName="4_Load_Dim_Date"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{4C49EFC7-C6D7-4A59-9C17-FA2AE70EEAE0}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{D0FADBE1-8584-4D5B-8CE1-004F768583A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1151,16 +1151,28 @@ FROM Bill_NDS b</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\DFT_Load_DimDate\Derived Column"
-          TopLeft="235,107.5" />
+          Size="163,42"
+          Id="Package\DFT_Load_DimDate\Insert Destination"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT_Load_DimDate\OLE DB Command"
+          TopLeft="229,311.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT_Load_DimDate\OLE DB Source"
+          TopLeft="237,5.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\DFT_Load_DimDate\Slowly Changing Dimension"
           TopLeft="207.5,209.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DFT_Load_DimDate\Derived Column"
+          TopLeft="235,107.5" />
         <EdgeLayout
-          Id="Package\DFT_Load_DimDate.Paths[Derived Column Output]"
-          TopLeft="312,149.5">
+          Id="Package\DFT_Load_DimDate.Paths[OLE DB Source Output]"
+          TopLeft="312,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1180,10 +1192,6 @@ FROM Bill_NDS b</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\DFT_Load_DimDate\Insert Destination"
-          TopLeft="5.50000000000006,311.5" />
         <EdgeLayout
           Id="Package\DFT_Load_DimDate.Paths[New Output]"
           TopLeft="278.5,251.5">
@@ -1220,10 +1228,28 @@ FROM Bill_NDS b</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\DFT_Load_DimDate\OLE DB Command"
-          TopLeft="229,311.5" />
+        <EdgeLayout
+          Id="Package\DFT_Load_DimDate.Paths[Derived Column Output]"
+          TopLeft="312,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_Load_DimDate.Paths[Changing Attribute Updates Output]"
           TopLeft="345.5,251.5">
@@ -1260,35 +1286,30 @@ FROM Bill_NDS b</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DFT_Load_DimDate\OLE DB Source"
-          TopLeft="237,5.5" />
-        <EdgeLayout
-          Id="Package\DFT_Load_DimDate.Paths[OLE DB Source Output]"
-          TopLeft="312,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DimDate\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_DimDate\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT_Load_DimDate\Slowly Changing Dimension">
     <Properties>
@@ -1353,27 +1374,6 @@ FROM Bill_NDS b</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_Load_DimDate\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_Load_DimDate\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
