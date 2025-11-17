@@ -37,20 +37,22 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Personal Task Manager</h1>
+      <div className="card">
+        <h1>Personal Task Manager</h1>
 
-      <TaskForm onAdd={add} />
+        <TaskForm onAdd={add} />
 
-      <div className="filter">
-        <label>Filter:</label>
-        <select value={filter} onChange={e => setFilter(e.target.value)}>
-          <option value="">Tất cả</option>
-          <option value="Đang làm">Đang làm</option>
-          <option value="Hoàn thành">Hoàn thành</option>
-        </select>
+        <div className="filter">
+          <label>Filter:</label>
+          <select value={filter} onChange={e => setFilter(e.target.value)}>
+            <option value="">Tất cả</option>
+            <option value="Đang làm">Đang làm</option>
+            <option value="Hoàn thành">Hoàn thành</option>
+          </select>
+        </div>
+
+        <TaskList tasks={tasks} onDelete={remove} onUpdate={update} />
       </div>
-
-      <TaskList tasks={tasks} onDelete={remove} onUpdate={update} />
     </div>
   )
 }

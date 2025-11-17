@@ -53,7 +53,7 @@ export default function TaskList({ tasks, onDelete, onUpdate }) {
             <td>{editingId === t.id ? (
               <input type="date" value={editDue} onChange={e => setEditDue(e.target.value)} />
             ) : (
-              formatDate(t.dueDate)
+              (t.dueDate ? formatDate(t.dueDate) : <span className="no-date">-</span>)
             )}</td>
             <td>{editingId === t.id ? (
               <select value={editStatus} onChange={e => setEditStatus(e.target.value)}>
@@ -61,7 +61,11 @@ export default function TaskList({ tasks, onDelete, onUpdate }) {
                 <option>Hoàn thành</option>
               </select>
             ) : (
-              t.status
+              (() => {
+                const s = t.status || ''
+                const cls = s === 'Hoàn thành' ? 'badge--done' : s === 'Đang làm' ? 'badge--doing' : 'badge--default'
+                return <span className={`badge ${cls}`}>{s}</span>
+              })()
             )}</td>
             <td>
               {editingId === t.id ? (
@@ -70,13 +74,13 @@ export default function TaskList({ tasks, onDelete, onUpdate }) {
                   <button onClick={() => setEditingId(null)}>Cancel</button>
                 </>
               ) : (
-                <>
-                  <button onClick={() => startEdit(t)}>✏️</button>
-                  <button onClick={() => onDelete(t.id)}>🗑️</button>
+                <div className="actions">
+                  <button className="btn-edit" onClick={() => startEdit(t)} title="Sửa">✏️</button>
+                  <button className="btn-delete" onClick={() => onDelete(t.id)} title="Xóa">🗑️</button>
                   {t.status !== 'Hoàn thành' && (
-                    <button onClick={() => onUpdate(t.id, { title: t.title, dueDate: t.dueDate, status: 'Hoàn thành' })} title="Mark as complete">✅</button>
+                    <button className="btn-complete" onClick={() => onUpdate(t.id, { title: t.title, dueDate: t.dueDate, status: 'Hoàn thành' })} title="Hoàn thành">✅</button>
                   )}
-                </>
+                </div>
               )}
             </td>
           </tr>

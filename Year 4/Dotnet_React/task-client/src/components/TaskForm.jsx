@@ -20,9 +20,9 @@ export default function TaskForm({ onAdd }) {
 
   return (
     <form className="task-form" onSubmit={submit}>
-      <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Task name" />
-      <input type="date" value={dueDate} onChange={e => setDueDate(e.target.value)} />
-      <button type="submit">Add</button>
+      <input className="task-input" value={title} onChange={e => setTitle(e.target.value)} placeholder="Task name" />
+      <input className="task-date" type="date" value={dueDate} onChange={e => setDueDate(e.target.value)} />
+      <button className="task-add" type="submit">Add</button>
     </form>
   )
 }
