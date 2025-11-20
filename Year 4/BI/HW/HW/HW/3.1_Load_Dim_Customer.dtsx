@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-DJ06MIO"
   DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
-  DTS:DTSID="{922339AF-AE40-4C8F-9382-1E5020BA1851}"
+  DTS:DTSID="{A761F553-A3DF-48ED-A0EC-A2C1562E5357}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="3072"
-  DTS:ObjectName="1_Load_Dim_Customer"
+  DTS:ObjectName="3 1_Load_Dim_Customer"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{64B12D84-1F20-41E4-8640-0AA3BDE36A02}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{15014CD3-26F1-4628-A1A7-FFF0B306DB6B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

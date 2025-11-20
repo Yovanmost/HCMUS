@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
   DTS:DTSID="{25FFB257-8AF3-41F4-85CA-B001CFCF5E25}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="3072"
   DTS:ObjectName="2 Load_nds"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{79DF673B-33AA-4ECB-ADE7-BEA0AEFE36EB}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{0DAADFDA-79AF-4B2D-8AEC-7D6D7FC97F00}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -177,13 +177,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[NDS_Airline]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NDS_Airline]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[NDS_Airline]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[NDS_Airline]) [refTable]
 where [refTable].[IATA_CODE] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -357,7 +357,7 @@ where [refTable].[IATA_CODE] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE dbo.NDS_Airline
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.NDS_Airline
 SET AirlineName = ?
 Where IATA_CODE = ?</property>
                 <property
@@ -484,7 +484,7 @@ Where IATA_CODE = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -617,7 +617,7 @@ Where IATA_CODE = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -967,13 +967,13 @@ Where IATA_CODE = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[NDS_Airport]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NDS_Airport]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[NDS_Airport]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[NDS_Airport]) [refTable]
 where [refTable].[IATA_CODE] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1220,7 +1220,7 @@ where [refTable].[IATA_CODE] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE dbo.NDS_Airport
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.NDS_Airport
 SET AirportName = ?,
 City = ?,
 State = ?,
@@ -1443,7 +1443,7 @@ Where IATA_CODE = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1632,7 +1632,7 @@ Where IATA_CODE = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1901,6 +1901,2444 @@ Where IATA_CODE = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_Flights"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{02242e26-3571-4317-9189-eb44f3a17736}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Load_Flights"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_Flights\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[AIRPORT]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="AIRPORT"
+                      lineageId="Package\DFT_Load_Flights\381:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CITY"
+                      lineageId="Package\DFT_Load_Flights\382:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      lineageId="Package\DFT_Load_Flights\383:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[COUNTRY]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      lineageId="Package\DFT_Load_Flights\384:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[LATITUDE]"
+                      cachedDataType="r8"
+                      cachedName="LATITUDE"
+                      lineageId="Package\DFT_Load_Flights\385:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[LONGITUDE]"
+                      cachedDataType="r8"
+                      cachedName="LONGITUDE"
+                      lineageId="Package\DFT_Load_Flights\386:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[AirportName]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="AirportName"
+                      lineageId="Package\DFT_Load_Flights\387:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="City"
+                      lineageId="Package\DFT_Load_Flights\388:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\DFT_Load_Flights\389:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Country"
+                      lineageId="Package\DFT_Load_Flights\390:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[Latitude]"
+                      cachedDataType="r8"
+                      cachedName="Latitude"
+                      lineageId="Package\DFT_Load_Flights\391:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input].Columns[Longitude]"
+                      cachedDataType="r8"
+                      cachedName="Longitude"
+                      lineageId="Package\DFT_Load_Flights\392:invalid" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\Conditional Split.Outputs[Changed]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Changed"
+                  synchronousInputId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DFT_Load_Flights\381:invalid} != #{Package\DFT_Load_Flights\387:invalid} || #{Package\DFT_Load_Flights\382:invalid} != #{Package\DFT_Load_Flights\388:invalid} || #{Package\DFT_Load_Flights\383:invalid} != #{Package\DFT_Load_Flights\389:invalid} || #{Package\DFT_Load_Flights\384:invalid} != #{Package\DFT_Load_Flights\390:invalid} || #{Package\DFT_Load_Flights\385:invalid} != #{Package\DFT_Load_Flights\391:invalid} || #{Package\DFT_Load_Flights\386:invalid} != #{Package\DFT_Load_Flights\392:invalid}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">AIRPORT != AirportName || CITY != City || STATE != State || COUNTRY != Country || LATITUDE != Latitude || LONGITUDE != Longitude</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\Lookup_Airlines"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup_Airlines"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NDS_Airline]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[NDS_Airline]) [refTable]
+where [refTable].[IATA_CODE] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AirlineID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IATA_CODE" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="AirlineName" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRLINE]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\Lookup_Airlines.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\Lookup_Airlines.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Airlines.Inputs[Lookup Input].Columns[AIRLINE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="AIRLINE"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRLINE]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IATA_CODE</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Airlines.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Match Output].Columns[IATA_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Match Output].Columns[IATA_CODE]"
+                      name="IATA_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IATA_CODE</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Match Output].Columns[AirlineID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Match Output].Columns[AirlineID]"
+                      name="AirlineID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">AirlineID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Airlines.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Airlines.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\Lookup_CancellationReason"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup_CancellationReason"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NDS_DelayReason]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[NDS_DelayReason]) [refTable]
+where [refTable].[ReasonCode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ReasonCode" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Description" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CANCELLATION_REASON]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Inputs[Lookup Input].Columns[CANCELLATION_REASON]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CANCELLATION_REASON"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CANCELLATION_REASON]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ReasonCode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_CancellationReason.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Match Output].Columns[ReasonCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Match Output].Columns[ReasonCode]"
+                      name="ReasonCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ReasonCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Match Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="200"
+                      lineageId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Match Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Description</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_CancellationReason.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_CancellationReason.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\Lookup_Destination_Airports"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup_Destination_Airports"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NDS_Airport]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[NDS_Airport]) [refTable]
+where [refTable].[IATA_CODE] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AirportID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IATA_CODE" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="AirportName" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESTINATION_AIRPORT]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Inputs[Lookup Input].Columns[DESTINATION_AIRPORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DESTINATION_AIRPORT"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESTINATION_AIRPORT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IATA_CODE</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Match Output].Columns[Destination_AP_IATA_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Match Output].Columns[Destination_AP_IATA_CODE]"
+                      name="Destination_AP_IATA_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IATA_CODE</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Match Output].Columns[Destination_AirportID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Match Output].Columns[Destination_AirportID]"
+                      name="Destination_AirportID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">AirportID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup_Exist_In_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NDS_Flight]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FlightID" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FlightDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AirlineCode" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="FlightNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TailNumber" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="OriginAirportCode" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DestAirportCode" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ScheduledDeparture" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DepartureTime" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DepartureDelay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WheelsOff" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TaxiOut" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ScheduledArrival" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArrivalTime" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArrivalDelay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WheelsOn" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TaxiIn" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ElapsedTime" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AirTime" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Distance" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Diverted" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cancelled" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CancellationReason" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="AirSystemDelay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SecurityDelay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AirlineDelay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LateAircraftDelay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeatherDelay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Created" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Modified" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LoadBatchID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[FlightDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[FlightDate]"
+                      name="FlightDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">FlightDate</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[AirlineCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[AirlineCode]"
+                      name="AirlineCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">AirlineCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[FlightNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[FlightNumber]"
+                      name="FlightNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">FlightNumber</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[OriginAirportCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[OriginAirportCode]"
+                      name="OriginAirportCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">OriginAirportCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[ScheduledDeparture]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Match Output].Columns[ScheduledDeparture]"
+                      name="ScheduledDeparture"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ScheduledDeparture</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\Lookup_Origin_Airports"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup_Origin_Airports"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NDS_Airport]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[NDS_Airport]) [refTable]
+where [refTable].[IATA_CODE] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AirportID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IATA_CODE" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="AirportName" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORIGIN_AIRPORT]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Inputs[Lookup Input].Columns[ORIGIN_AIRPORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ORIGIN_AIRPORT"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORIGIN_AIRPORT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IATA_CODE</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Match Output].Columns[Origin_AP_IATA_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Match Output].Columns[Origin_AP_IATA_CODE]"
+                      name="Origin_AP_IATA_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IATA_CODE</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Match Output].Columns[Origin_AirportID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Match Output].Columns[Origin_AirportID]"
+                      name="Origin_AirportID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">AirportID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.NDS_Airport
+SET AirportName = ?,
+City = ?,
+State = ?,
+Country = ?,
+Latitude = ?,
+Longitude = ?
+Where IATA_CODE = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].Columns[AIRPORT]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="AIRPORT"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT_Load_Flights\381:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT_Load_Flights\389:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT_Load_Flights\388:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT_Load_Flights\390:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].Columns[Latitude]"
+                      cachedDataType="r8"
+                      cachedName="Latitude"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DFT_Load_Flights\391:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].Columns[Longitude]"
+                      cachedDataType="r8"
+                      cachedName="Longitude"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\DFT_Load_Flights\392:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].Columns[IATA_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IATA_CODE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\DFT_Load_Flights\393:invalid" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="r8"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="r8"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[NDS_Airport]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IATA_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IATA_CODE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IATA_CODE]"
+                      lineageId="Package\DFT_Load_Flights\394:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AIRPORT]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="AIRPORT"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirportName]"
+                      lineageId="Package\DFT_Load_Flights\381:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\DFT_Load_Flights\382:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\DFT_Load_Flights\383:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COUNTRY]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\DFT_Load_Flights\384:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LATITUDE]"
+                      cachedDataType="r8"
+                      cachedName="LATITUDE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      lineageId="Package\DFT_Load_Flights\385:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LONGITUDE]"
+                      cachedDataType="r8"
+                      cachedName="LONGITUDE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      lineageId="Package\DFT_Load_Flights\386:invalid" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IATA_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IATA_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirportID]"
+                      dataType="i4"
+                      name="AirportID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirportName]"
+                      dataType="wstr"
+                      length="200"
+                      name="AirportName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      dataType="r8"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      dataType="r8"
+                      name="Longitude" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[NDS_Airport]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[IATA_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IATA_CODE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[IATA_CODE]"
+                      lineageId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Match Output].Columns[IATA_CODE]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[AIRPORT]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="AIRPORT"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AirportName]"
+                      lineageId="Package\DFT_Load_Flights\381:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\DFT_Load_Flights\382:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\DFT_Load_Flights\383:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[COUNTRY]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\DFT_Load_Flights\384:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[LATITUDE]"
+                      cachedDataType="r8"
+                      cachedName="LATITUDE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      lineageId="Package\DFT_Load_Flights\385:invalid" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[LONGITUDE]"
+                      cachedDataType="r8"
+                      cachedName="LONGITUDE"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      lineageId="Package\DFT_Load_Flights\386:invalid" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[IATA_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IATA_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AirportID]"
+                      dataType="i4"
+                      name="AirportID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AirportName]"
+                      dataType="wstr"
+                      length="200"
+                      name="AirportName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      dataType="r8"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      dataType="r8"
+                      name="Longitude" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_Flights\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Flights\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_flights]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Flights\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-DJ06MIO.AirDW_Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoadDate]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoadDate]"
+                      name="LoadDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[BatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BatchID]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[BatchID]"
+                      name="BatchID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATE]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATE]"
+                      name="DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRLINE]"
+                      name="AIRLINE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLIGHT_NUMBER]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FLIGHT_NUMBER]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLIGHT_NUMBER]"
+                      name="FLIGHT_NUMBER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[TAIL_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TAIL_NUMBER]"
+                      length="50"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[TAIL_NUMBER]"
+                      name="TAIL_NUMBER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORIGIN_AIRPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORIGIN_AIRPORT]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORIGIN_AIRPORT]"
+                      name="ORIGIN_AIRPORT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESTINATION_AIRPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESTINATION_AIRPORT]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESTINATION_AIRPORT]"
+                      name="DESTINATION_AIRPORT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULED_DEPARTURE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULED_DEPARTURE]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULED_DEPARTURE]"
+                      name="SCHEDULED_DEPARTURE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPARTURE_TIME]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEPARTURE_TIME]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPARTURE_TIME]"
+                      name="DEPARTURE_TIME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPARTURE_DELAY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEPARTURE_DELAY]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPARTURE_DELAY]"
+                      name="DEPARTURE_DELAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[TAXI_OUT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TAXI_OUT]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[TAXI_OUT]"
+                      name="TAXI_OUT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[WHEELS_OFF]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WHEELS_OFF]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[WHEELS_OFF]"
+                      name="WHEELS_OFF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULED_TIME]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULED_TIME]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULED_TIME]"
+                      name="SCHEDULED_TIME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ELAPSED_TIME]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ELAPSED_TIME]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ELAPSED_TIME]"
+                      name="ELAPSED_TIME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIR_TIME]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIR_TIME]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIR_TIME]"
+                      name="AIR_TIME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISTANCE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DISTANCE]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISTANCE]"
+                      name="DISTANCE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[WHEELS_ON]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WHEELS_ON]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[WHEELS_ON]"
+                      name="WHEELS_ON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[TAXI_IN]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TAXI_IN]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[TAXI_IN]"
+                      name="TAXI_IN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULED_ARRIVAL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULED_ARRIVAL]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULED_ARRIVAL]"
+                      name="SCHEDULED_ARRIVAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_TIME]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_TIME]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_TIME]"
+                      name="ARRIVAL_TIME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_DELAY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_DELAY]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_DELAY]"
+                      name="ARRIVAL_DELAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DIVERTED]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DIVERTED]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[DIVERTED]"
+                      name="DIVERTED"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CANCELLED]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CANCELLED]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CANCELLED]"
+                      name="CANCELLED"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CANCELLATION_REASON]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CANCELLATION_REASON]"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CANCELLATION_REASON]"
+                      name="CANCELLATION_REASON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIR_SYSTEM_DELAY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIR_SYSTEM_DELAY]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIR_SYSTEM_DELAY]"
+                      name="AIR_SYSTEM_DELAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SECURITY_DELAY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SECURITY_DELAY]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[SECURITY_DELAY]"
+                      name="SECURITY_DELAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRLINE_DELAY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE_DELAY]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRLINE_DELAY]"
+                      name="AIRLINE_DELAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATE_AIRCRAFT_DELAY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LATE_AIRCRAFT_DELAY]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATE_AIRCRAFT_DELAY]"
+                      name="LATE_AIRCRAFT_DELAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[WEATHER_DELAY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WEATHER_DELAY]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[WEATHER_DELAY]"
+                      name="WEATHER_DELAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CREATED]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CREATED]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[CREATED]"
+                      name="CREATED"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIED]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIED]"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIED]"
+                      name="MODIFIED"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
+                      dataType="dbDate"
+                      name="DATE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AIRLINE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FLIGHT_NUMBER]"
+                      dataType="i4"
+                      name="FLIGHT_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TAIL_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TAIL_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORIGIN_AIRPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ORIGIN_AIRPORT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESTINATION_AIRPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DESTINATION_AIRPORT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULED_DEPARTURE]"
+                      dataType="i4"
+                      name="SCHEDULED_DEPARTURE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEPARTURE_TIME]"
+                      dataType="i4"
+                      name="DEPARTURE_TIME" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEPARTURE_DELAY]"
+                      dataType="i4"
+                      name="DEPARTURE_DELAY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TAXI_OUT]"
+                      dataType="i4"
+                      name="TAXI_OUT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WHEELS_OFF]"
+                      dataType="i4"
+                      name="WHEELS_OFF" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULED_TIME]"
+                      dataType="i4"
+                      name="SCHEDULED_TIME" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ELAPSED_TIME]"
+                      dataType="i4"
+                      name="ELAPSED_TIME" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIR_TIME]"
+                      dataType="i4"
+                      name="AIR_TIME" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DISTANCE]"
+                      dataType="i4"
+                      name="DISTANCE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WHEELS_ON]"
+                      dataType="i4"
+                      name="WHEELS_ON" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TAXI_IN]"
+                      dataType="i4"
+                      name="TAXI_IN" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULED_ARRIVAL]"
+                      dataType="i4"
+                      name="SCHEDULED_ARRIVAL" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_TIME]"
+                      dataType="i4"
+                      name="ARRIVAL_TIME" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_DELAY]"
+                      dataType="i4"
+                      name="ARRIVAL_DELAY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DIVERTED]"
+                      dataType="bool"
+                      name="DIVERTED" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CANCELLED]"
+                      dataType="bool"
+                      name="CANCELLED" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CANCELLATION_REASON]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CANCELLATION_REASON" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIR_SYSTEM_DELAY]"
+                      dataType="i4"
+                      name="AIR_SYSTEM_DELAY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SECURITY_DELAY]"
+                      dataType="i4"
+                      name="SECURITY_DELAY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE_DELAY]"
+                      dataType="i4"
+                      name="AIRLINE_DELAY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LATE_AIRCRAFT_DELAY]"
+                      dataType="i4"
+                      name="LATE_AIRCRAFT_DELAY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WEATHER_DELAY]"
+                      dataType="i4"
+                      name="WEATHER_DELAY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CREATED]"
+                      dataType="dbTimeStamp"
+                      name="CREATED" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIED]"
+                      dataType="dbTimeStamp"
+                      name="MODIFIED" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATE]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATE]"
+                      name="DATE" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIRLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIRLINE]"
+                      name="AIRLINE" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FLIGHT_NUMBER]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FLIGHT_NUMBER]"
+                      name="FLIGHT_NUMBER" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TAIL_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TAIL_NUMBER]"
+                      name="TAIL_NUMBER" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORIGIN_AIRPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORIGIN_AIRPORT]"
+                      name="ORIGIN_AIRPORT" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESTINATION_AIRPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESTINATION_AIRPORT]"
+                      name="DESTINATION_AIRPORT" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULED_DEPARTURE]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULED_DEPARTURE]"
+                      name="SCHEDULED_DEPARTURE" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPARTURE_TIME]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPARTURE_TIME]"
+                      name="DEPARTURE_TIME" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPARTURE_DELAY]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPARTURE_DELAY]"
+                      name="DEPARTURE_DELAY" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TAXI_OUT]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TAXI_OUT]"
+                      name="TAXI_OUT" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WHEELS_OFF]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WHEELS_OFF]"
+                      name="WHEELS_OFF" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULED_TIME]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULED_TIME]"
+                      name="SCHEDULED_TIME" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ELAPSED_TIME]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ELAPSED_TIME]"
+                      name="ELAPSED_TIME" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIR_TIME]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIR_TIME]"
+                      name="AIR_TIME" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DISTANCE]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DISTANCE]"
+                      name="DISTANCE" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WHEELS_ON]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WHEELS_ON]"
+                      name="WHEELS_ON" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TAXI_IN]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TAXI_IN]"
+                      name="TAXI_IN" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULED_ARRIVAL]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULED_ARRIVAL]"
+                      name="SCHEDULED_ARRIVAL" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_TIME]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_TIME]"
+                      name="ARRIVAL_TIME" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_DELAY]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_DELAY]"
+                      name="ARRIVAL_DELAY" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DIVERTED]"
+                      dataType="bool"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DIVERTED]"
+                      name="DIVERTED" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CANCELLED]"
+                      dataType="bool"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CANCELLED]"
+                      name="CANCELLED" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CANCELLATION_REASON]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CANCELLATION_REASON]"
+                      name="CANCELLATION_REASON" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIR_SYSTEM_DELAY]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIR_SYSTEM_DELAY]"
+                      name="AIR_SYSTEM_DELAY" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SECURITY_DELAY]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SECURITY_DELAY]"
+                      name="SECURITY_DELAY" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIRLINE_DELAY]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIRLINE_DELAY]"
+                      name="AIRLINE_DELAY" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LATE_AIRCRAFT_DELAY]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LATE_AIRCRAFT_DELAY]"
+                      name="LATE_AIRCRAFT_DELAY" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WEATHER_DELAY]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WEATHER_DELAY]"
+                      name="WEATHER_DELAY" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CREATED]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CREATED]"
+                      name="CREATED" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
+                      name="MODIFIED" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoadDate]"
+                      name="LoadDate" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BatchID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BatchID]"
+                      name="BatchID" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_Flights.Paths[Derived Column Output]"
+              endId="Package\DFT_Load_Flights\Lookup_Airlines.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_Flights\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_Flights.Paths[Lookup Match Output]"
+              endId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Load_Flights\Lookup_Airlines.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Load_Flights.Paths[Lookup Match Output1]"
+              endId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Load_Flights\Lookup_Origin_Airports.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Load_Flights.Paths[Lookup Match Output2]"
+              endId="Package\DFT_Load_Flights\Lookup_CancellationReason.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Load_Flights\Lookup_Destination_Airports.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Load_Flights.Paths[Lookup Match Output3]"
+              endId="Package\DFT_Load_Flights\Lookup_Exist_In_NDS.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Load_Flights\Lookup_CancellationReason.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Load_Flights.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Load_Flights\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -1932,6 +4370,10 @@ Where IATA_CODE = ?</property>
           Size="169,42"
           Id="Package\DFT_Load_Airports"
           TopLeft="119,146" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DFT_Load_Flights"
+          TopLeft="119,277" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="200.75,104">
@@ -2116,6 +4558,19 @@ Where IATA_CODE = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Airlines\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\DFT_Load_Airlines\OLE DB Source">
     <Properties>
       <Property>
@@ -2134,7 +4589,7 @@ Where IATA_CODE = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2144,23 +4599,10 @@ Where IATA_CODE = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_Load_Airlines\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -2170,25 +4612,49 @@ Where IATA_CODE = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="113,42"
-          Id="Package\DFT_Load_Airports\Lookup"
-          TopLeft="143,219" />
+          Size="166,42"
+          Id="Package\DFT_Load_Airports\OLE DB Command"
+          TopLeft="362,389" />
         <NodeLayout
           Size="171,42"
           Id="Package\DFT_Load_Airports\OLE DB Destination"
           TopLeft="125,337" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\DFT_Load_Airports\Conditional Split"
-          TopLeft="372,286" />
-        <NodeLayout
           Size="150,42"
           Id="Package\DFT_Load_Airports\OLE DB Source"
           TopLeft="169,110" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\DFT_Load_Airports\OLE DB Command"
-          TopLeft="362,389" />
+          Size="113,42"
+          Id="Package\DFT_Load_Airports\Lookup"
+          TopLeft="143,219" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT_Load_Airports\Conditional Split"
+          TopLeft="372,286" />
+        <EdgeLayout
+          Id="Package\DFT_Load_Airports.Paths[Changed]"
+          TopLeft="447.25,328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.8755078125,20.91845703125,39.751015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_Load_Airports.Paths[OLE DB Source Output]"
           TopLeft="244,152">
@@ -2295,30 +4761,6 @@ Where IATA_CODE = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_Load_Airports.Paths[Changed]"
-          TopLeft="447.25,328">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-19.8755078125,20.91845703125,39.751015625,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2328,7 +4770,7 @@ Where IATA_CODE = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2338,7 +4780,7 @@ Where IATA_CODE = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2368,6 +4810,350 @@ Where IATA_CODE = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_Load_Flights">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\DFT_Load_Flights\Lookup_CancellationReason"
+          TopLeft="0,360" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Load_Flights\OLE DB Destination"
+          TopLeft="379,373" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT_Load_Flights\OLE DB Command"
+          TopLeft="392.444444444444,289.555555555556" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\DFT_Load_Flights\Lookup_Destination_Airports"
+          TopLeft="2,281" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\DFT_Load_Flights\Lookup_Airlines"
+          TopLeft="31,112" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT_Load_Flights\OLE DB Source"
+          TopLeft="27,31" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\DFT_Load_Flights\Lookup_Origin_Airports"
+          TopLeft="9,198" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT_Load_Flights\Conditional Split"
+          TopLeft="366.888888888889,201.222222222222" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\DFT_Load_Flights\Lookup_Exist_In_NDS"
+          TopLeft="225,95" />
+        <EdgeLayout
+          Id="Package\DFT_Load_Flights.Paths[Lookup Match Output1]"
+          TopLeft="106.25,240">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Flights.Paths[Lookup Match Output]"
+          TopLeft="105.5,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Flights.Paths[Lookup Match Output3]"
+          TopLeft="195.666666666667,360">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.833333333333,-223"
+              Start="0,0"
+              End="129.833333333333,-215.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-13.2117202268431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-13.2117202268431"
+                    Point2="0,-17.2117202268431"
+                    Point3="4,-17.2117202268431" />
+                  <mssgle:LineSegment
+                    End="125.833333333333,-17.2117202268431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.833333333333,-17.2117202268431"
+                    Point2="129.833333333333,-17.2117202268431"
+                    Point3="129.833333333333,-21.2117202268431" />
+                  <mssgle:LineSegment
+                    End="129.833333333333,-215.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.7252799479165,-12.2117202268431,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Flights.Paths[Lookup Match Output2]"
+          TopLeft="107,323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DFT_Load_Flights\Derived Column"
+          TopLeft="230,28.8888888888889" />
+        <EdgeLayout
+          Id="Package\DFT_Load_Flights.Paths[OLE DB Source Output]"
+          TopLeft="177,50.9444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.0000000000001,0"
+              Start="0,0"
+              End="45.5000000000001,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.5000000000001,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Flights.Paths[Derived Column Output]"
+          TopLeft="307,70.8888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-199.5,41.1111111111111"
+              Start="0,0"
+              End="-199.5,33.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5555555555556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5555555555556"
+                    Point2="0,20.5555555555556"
+                    Point3="-4,20.5555555555556" />
+                  <mssgle:LineSegment
+                    End="-195.5,20.5555555555556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-195.5,20.5555555555556"
+                    Point2="-199.5,20.5555555555556"
+                    Point3="-199.5,24.5555555555556" />
+                  <mssgle:LineSegment
+                    End="-199.5,33.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Load_Flights\OLE DB Destination 1"
+          TopLeft="608.888888888889,180" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Flights\Lookup_CancellationReason">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NDS_DelayReason]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Flights\Lookup_Destination_Airports">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NDS_Airport]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Flights\Lookup_Airlines">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NDS_Airline]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Flights\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Flights\Lookup_Origin_Airports">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NDS_Airport]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Flights\Lookup_Exist_In_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NDS_Flight]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

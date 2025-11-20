@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-DJ06MIO"
   DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
-  DTS:DTSID="{5B525826-088F-4EAA-8AA8-BC3D47F136E3}"
+  DTS:DTSID="{06E91DEC-C918-4F6F-8BF4-E5DDDD878B04}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="3072"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="1 Load_AirDW_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{C584CF63-D6C1-4B17-8173-7E89EE777A20}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{54FC2808-11EB-4890-95C6-1F3E54F58B9F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -806,6 +806,28 @@
                           name="FriendlyExpression">(DT_WSTR,100)AIRLINE</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Airlines\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_Airlines\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]"
+                      name="IsProcessed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)0</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -980,7 +1002,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1042,6 +1064,12 @@
                       cachedName="AIRLINE_CONVERTED"
                       externalMetadataColumnId="Package\DFT_Load_Airlines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AIRLINE]"
                       lineageId="Package\DFT_Load_Airlines\Derived Column.Outputs[Derived Column Output].Columns[AIRLINE_CONVERTED]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Airlines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IsProcessed]"
+                      cachedDataType="bool"
+                      cachedName="IsProcessed"
+                      externalMetadataColumnId="Package\DFT_Load_Airlines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsProcessed]"
+                      lineageId="Package\DFT_Load_Airlines\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1061,9 +1089,9 @@
                       dataType="dbTimeStamp"
                       name="LoadDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_Airlines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
-                      dataType="i4"
-                      name="BatchID" />
+                      refId="Package\DFT_Load_Airlines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsProcessed]"
+                      dataType="bool"
+                      name="IsProcessed" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1122,6 +1150,79 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\DFT_Load_Airports\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Airports\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Load_Airports\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]"
+                      name="IsProcessed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Load_Airports\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\DFT_Load_Airports\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -1392,7 +1493,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1487,6 +1588,12 @@
                       cachedName="LONGITUDE"
                       externalMetadataColumnId="Package\DFT_Load_Airports\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LONGITUDE]"
                       lineageId="Package\DFT_Load_Airports\Flat File Source.Outputs[Flat File Source Output].Columns[LONGITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Airports\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IsProcessed]"
+                      cachedDataType="bool"
+                      cachedName="IsProcessed"
+                      externalMetadataColumnId="Package\DFT_Load_Airports\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsProcessed]"
+                      lineageId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1529,9 +1636,9 @@
                       dataType="dbTimeStamp"
                       name="LoadDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_Airports\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
-                      dataType="i4"
-                      name="BatchID" />
+                      refId="Package\DFT_Load_Airports\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsProcessed]"
+                      dataType="bool"
+                      name="IsProcessed" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1563,8 +1670,13 @@
           </components>
           <paths>
             <path
-              refId="Package\DFT_Load_Airports.Paths[Flat File Source Output]"
+              refId="Package\DFT_Load_Airports.Paths[Derived Column Output]"
               endId="Package\DFT_Load_Airports\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Load_Airports\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Load_Airports.Paths[Flat File Source Output]"
+              endId="Package\DFT_Load_Airports\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\DFT_Load_Airports\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -1612,6 +1724,79 @@
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]"
+                          name="IsProcessed"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_BOOL)0</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_BOOL)0</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Foreach Loop Container\DFT_Load_Flights\Flat File Source"
                   componentClassID="Microsoft.FlatFileSource"
@@ -2526,7 +2711,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2797,6 +2982,12 @@
                           cachedName="MODIFIED"
                           externalMetadataColumnId="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
                           lineageId="Package\Foreach Loop Container\DFT_Load_Flights\Flat File Source.Outputs[Flat File Source Output].Columns[MODIFIED]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IsProcessed]"
+                          cachedDataType="bool"
+                          cachedName="IsProcessed"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsProcessed]"
+                          lineageId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Output].Columns[IsProcessed]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2935,9 +3126,9 @@
                           dataType="dbTimeStamp"
                           name="LoadDate" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
-                          dataType="i4"
-                          name="BatchID" />
+                          refId="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsProcessed]"
+                          dataType="bool"
+                          name="IsProcessed" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2969,8 +3160,13 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Foreach Loop Container\DFT_Load_Flights.Paths[Flat File Source Output]"
+                  refId="Package\Foreach Loop Container\DFT_Load_Flights.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\DFT_Load_Flights.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column.Inputs[Derived Column Input]"
                   name="Flat File Source Output"
                   startId="Package\Foreach Loop Container\DFT_Load_Flights\Flat File Source.Outputs[Flat File Source Output]" />
               </paths>
@@ -3927,7 +4123,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4388,6 +4584,23 @@
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate_Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0B8F1FDA-CE47-4783-88DB-F3DA006F3B90}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate_Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8CE8FB92-2E9E-4BF3-90E4-A743FF2021B1}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg_airlines;&#xA;TRUNCATE TABLE stg_airports;&#xA;TRUNCATE TABLE stg_flights;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -4406,6 +4619,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{DC6A2E57-CF21-400A-BB81-FC48D2E6D065}"
+      DTS:From="Package\Truncate_Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DFT_Load_Airlines" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -4420,27 +4641,42 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="166,42"
+          Id="Package\DFT_Load_Airlines"
+          TopLeft="214.5,110.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\DFT_Load_Airports"
+          TopLeft="213,212.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Foreach Loop Container\DFT_Load_Flights"
+          TopLeft="5.5,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="174,103"
+          Size="174,146"
+          Id="Package\Foreach Loop Container"
+          TopLeft="210.5,314.5" />
+        <NodeLayout
           Size="163,42"
           Id="Package\Foreach Loop Container Small\DFT_Load_Flights"
           TopLeft="5.5,5.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="174,102"
+          PanelSize="174,103"
           Size="174,146"
           Id="Package\Foreach Loop Container Small"
-          TopLeft="5.50000000000006,209.5" />
+          TopLeft="5.50000000000006,311.5" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\DFT_Load_Airlines"
-          TopLeft="244.5,5.49999999999989" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\DFT_Load_Airports"
-          TopLeft="243,107.5" />
+          Size="153,42"
+          Id="Package\Truncate_Stage"
+          TopLeft="221,8.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="327.5,47.4999999999999">
+          TopLeft="297.5,152.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4460,20 +4696,31 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Foreach Loop Container\DFT_Load_Flights"
-          TopLeft="5.5,5.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="174,102"
-          Size="174,146"
-          Id="Package\Foreach Loop Container"
-          TopLeft="240.5,209.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="327.5,149.5">
+          TopLeft="297.5,254.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="297.5,50.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4499,61 +4746,10 @@
           FontInfo="{assembly:Null}"
           Size="75,40"
           Id="c18e0ee7-7843-4b7c-88fa-8ab7e4a65b03"
-          TopLeft="20,164.5" />
+          TopLeft="26.0000000000001,247.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Foreach Loop Container Small\DFT_Load_Flights">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container Small\DFT_Load_Flights\OLE DB Destination"
-          TopLeft="5.50000000000001,107.5" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Foreach Loop Container Small\DFT_Load_Flights\Flat File Source"
-          TopLeft="15.5,3.5" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container Small\DFT_Load_Flights.Paths[Flat File Source Output]"
-          TopLeft="91,45.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62"
-              Start="0,0"
-              End="0,54.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container Small\DFT_Load_Flights\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DFT_Load_Airlines">
     <LayoutInfo>
@@ -4567,6 +4763,10 @@
           Size="154,42"
           Id="Package\DFT_Load_Airlines\Derived Column"
           TopLeft="14,107.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Load_Airlines\OLE DB Destination"
+          TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\DFT_Load_Airlines.Paths[Flat File Source Output]"
           TopLeft="91,47.5">
@@ -4589,10 +4789,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DFT_Load_Airlines\OLE DB Destination"
-          TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package\DFT_Load_Airlines.Paths[Derived Column Output]"
           TopLeft="91,149.5">
@@ -4635,18 +4831,44 @@
     design-time-name="Package\DFT_Load_Airports">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Load_Airports\OLE DB Destination"
+          TopLeft="5.50000000000003,209.5" />
         <NodeLayout
           Size="151,42"
           Id="Package\DFT_Load_Airports\Flat File Source"
           TopLeft="15.5,5.5" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\DFT_Load_Airports\OLE DB Destination"
-          TopLeft="5.50000000000001,107.5" />
+          Size="154,42"
+          Id="Package\DFT_Load_Airports\Derived Column"
+          TopLeft="14,107.5" />
         <EdgeLayout
           Id="Package\DFT_Load_Airports.Paths[Flat File Source Output]"
           TopLeft="91,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Airports.Paths[Derived Column Output]"
+          TopLeft="91,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4686,17 +4908,94 @@
     design-time-name="Package\Foreach Loop Container\DFT_Load_Flights">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Foreach Loop Container\DFT_Load_Flights\Flat File Source"
-          TopLeft="15.5,3.5" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination"
-          TopLeft="5.50000000000001,107.5" />
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container\DFT_Load_Flights\Flat File Source"
+          TopLeft="15.5,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Foreach Loop Container\DFT_Load_Flights\Derived Column"
+          TopLeft="14,107.5" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\DFT_Load_Flights.Paths[Flat File Source Output]"
+          TopLeft="91,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\DFT_Load_Flights.Paths[Derived Column Output]"
+          TopLeft="91,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\DFT_Load_Flights\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container Small\DFT_Load_Flights">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container Small\DFT_Load_Flights\OLE DB Destination"
+          TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container Small\DFT_Load_Flights\Flat File Source"
+          TopLeft="15.5,3.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container Small\DFT_Load_Flights.Paths[Flat File Source Output]"
           TopLeft="91,45.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4714,11 +5013,26 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container Small\DFT_Load_Flights\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -2,38 +2,48 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>HW</Name>
-    <LastWriteTime>2025-11-16T15:14:33.9950978Z</LastWriteTime>
+    <LastWriteTime>2025-11-17T18:10:14.4608726Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>1_Load_Dim_Customer.dtsx</Name>
-      <LastWriteTime>2025-11-16T06:30:03.5220034Z</LastWriteTime>
+      <Name>3.1_Load_Dim_Customer.dtsx</Name>
+      <LastWriteTime>2025-11-17T17:45:26.4473383Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>2_Load_Dim_Product.dtsx</Name>
-      <LastWriteTime>2025-11-16T15:10:53.9292841Z</LastWriteTime>
+      <Name>3.2_Load_Dim_Product.dtsx</Name>
+      <LastWriteTime>2025-11-17T17:45:40.3135348Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>3_Load_Dim_Store.dtsx</Name>
-      <LastWriteTime>2025-11-16T15:11:06.4565307Z</LastWriteTime>
+      <Name>3.3_Load_Dim_Store.dtsx</Name>
+      <LastWriteTime>2025-11-17T17:45:58.4903322Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>4_Load_Dim_Date.dtsx</Name>
-      <LastWriteTime>2025-11-16T15:23:14.7621949Z</LastWriteTime>
+      <Name>3.4_Load_Dim_Date.dtsx</Name>
+      <LastWriteTime>2025-11-17T17:46:10.0925157Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>5_Load_Fact_Sales.dtsx</Name>
-      <LastWriteTime>2025-11-16T15:11:18.641645Z</LastWriteTime>
+      <Name>3.5_Load_Fact_Sales.dtsx</Name>
+      <LastWriteTime>2025-11-17T17:46:18.5261747Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>NDS_to_DDS.dtsx</Name>
-      <LastWriteTime>2025-11-16T15:13:57.8589653Z</LastWriteTime>
+      <Name>1.Load_Source_to_Stage.dtsx</Name>
+      <LastWriteTime>2025-11-17T17:46:44.027763Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>2.Stage_to_NDS.dtsx</Name>
+      <LastWriteTime>2025-11-17T17:47:03.453578Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>3.NDS_to_DDS.dtsx</Name>
+      <LastWriteTime>2025-11-17T18:12:48.4159417Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

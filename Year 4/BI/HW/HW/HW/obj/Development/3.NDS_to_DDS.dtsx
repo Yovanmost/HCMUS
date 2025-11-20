@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/15/2025 9:16:58 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-DJ06MIO"
   DTS:CreatorName="DESKTOP-DJ06MIO\Dawn"
-  DTS:DTSID="{B7331614-6E3E-494C-B7A8-BA52E8D24146}"
+  DTS:DTSID="{33F10F6A-FE7A-4B50-8B97-A2120373DBD6}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="3072"
-  DTS:ObjectName="NDS_to_DDS"
+  DTS:ObjectName="3 NDS_to_DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{35A28296-0E40-4518-95BF-3B407E785403}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{90838E9E-3246-4404-99F6-33B7577E6209}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -87,7 +87,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>1_Load_Dim_Customer.dtsx</PackageName>
+          <PackageName>3.1_Load_Dim_Customer.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -104,7 +104,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>2_Load_Dim_Product.dtsx</PackageName>
+          <PackageName>3.2_Load_Dim_Product.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -121,7 +121,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>3_Load_Dim_Store.dtsx</PackageName>
+          <PackageName>3.3_Load_Dim_Store.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -138,7 +138,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>4_Load_Dim_Date.dtsx</PackageName>
+          <PackageName>3.4_Load_Dim_Date.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -155,7 +155,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>5_Load_Fact_Sales.dtsx</PackageName>
+          <PackageName>3.5_Load_Fact_Sales.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>

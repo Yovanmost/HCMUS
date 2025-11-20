@@ -22,7 +22,7 @@ CREATE TABLE stg_airlines (
     IATA_CODE VARCHAR(10),
     AIRLINE NVARCHAR(100),
     LoadDate DATETIME DEFAULT GETDATE(),
-    BatchID INT
+    [IsProcessed] [bit] DEFAULT 0
 );
 
 -- =======================
@@ -37,7 +37,7 @@ CREATE TABLE stg_airports (
     LATITUDE FLOAT,
     LONGITUDE FLOAT,
     LoadDate DATETIME DEFAULT GETDATE(),
-    BatchID INT
+    [IsProcessed] [bit] DEFAULT 0
 );
 
 -- =======================
@@ -75,6 +75,6 @@ CREATE TABLE stg_flights (
     CREATED DATETIME,
     MODIFIED DATETIME,
     LoadDate DATETIME DEFAULT GETDATE(),
-    BatchID INT
+    [IsProcessed] [bit] DEFAULT 0
 );
 GO

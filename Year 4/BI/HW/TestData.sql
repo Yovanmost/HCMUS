@@ -36,9 +36,9 @@ GO
 SET IDENTITY_INSERT [dbo].[Status_NDS] ON
 GO
 INSERT INTO [dbo].[Status_NDS] ([StatusID], [Status_Name], [CreatedDate], [UpdatedDate]) VALUES
+(0, 'Inactive', GETDATE(), NULL),
 (1, 'Active', GETDATE(), NULL),
-(2, 'Inactive', GETDATE(), NULL),
-(3, 'Pending', GETDATE(), NULL);
+(2, 'Pending', GETDATE(), NULL);
 GO
 SET IDENTITY_INSERT [dbo].[Status_NDS] OFF
 GO

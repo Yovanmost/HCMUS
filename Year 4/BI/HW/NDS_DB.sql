@@ -1,6 +1,17 @@
-create database [NDS_DALT]
-go
-USE [NDS_DALT]
+USE [master]
+GO
+-- Kiểm tra và XÓA Database NDS_DALT nếu tồn tại
+IF EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = N'NDS_DALT')
+BEGIN
+    ALTER DATABASE [NDS_DALT] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE [NDS_DALT];
+END
+GO
+
+-- TẠO Database NDS_DALT
+CREATE DATABASE [NDS_DALT];
+GO
+USE [NDS_DALT];
 GO
 /****** Object:  Table [dbo].[Country_NDS]    Script Date: 20/11/2020 1:56:11 PM ******/
 SET ANSI_NULLS ON
@@ -405,4 +416,27 @@ ALTER TABLE [dbo].[StoreType_NDS]  WITH CHECK ADD  CONSTRAINT [FK_ST_S] FOREIGN 
 REFERENCES [dbo].[Source_NDS] ([SourceID])
 GO
 ALTER TABLE [dbo].[StoreType_NDS] CHECK CONSTRAINT [FK_ST_S]
+GO
+
+---------------------------------------------------
+-- 2. Status_NDS (Không phụ thuộc, cần chèn đầu tiên)
+---------------------------------------------------
+SET IDENTITY_INSERT [dbo].[Status_NDS] ON
+GO
+INSERT INTO [dbo].[Status_NDS] ([StatusID], [Status_Name], [CreatedDate], [UpdatedDate]) VALUES
+(0, 'Inactive', GETDATE(), NULL),
+(1, 'Active', GETDATE(), NULL),
+(2, 'Pending', GETDATE(), NULL);
+GO
+SET IDENTITY_INSERT [dbo].[Status_NDS] OFF
+GO
+
+SET IDENTITY_INSERT [dbo].[Source_NDS] ON
+GO
+INSERT INTO [dbo].[Source_NDS] ([SourceID], [SourceName], [CreatedDate], [UpdatedDate]) VALUES
+(1, 'Jade', GETDATE(), NULL),
+(2, 'Jupiter', GETDATE(), NULL),
+(3, 'WebTower9', GETDATE(), NULL);
+GO
+SET IDENTITY_INSERT [dbo].[Source_NDS] OFF
 GO

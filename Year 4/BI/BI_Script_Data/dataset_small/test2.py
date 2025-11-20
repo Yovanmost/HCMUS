@@ -4,7 +4,7 @@ from typing import List, Tuple, Dict
 
 # --- Configuration ---
 # You must change this to the actual path of your CSV file
-CSV_FILE_PATH = 'dataset_small\merged_filtered_flights.csv'
+CSV_FILE_PATH = 'merged_filtered_flights.csv'
 
 # Define the expected columns based on your request (used primarily for sample data creation)
 ALL_COLUMNS = [
@@ -21,29 +21,30 @@ ALL_COLUMNS = [
 # Define the list of column combinations (subsets) you want to test for uniqueness.
 # These are tuples of column names that are good candidates for a composite primary key.
 CANDIDATE_KEYS: List[Tuple[str, ...]] = [
-    # 1. Date and Flight Number (Highly likely to be unique)
-    ('DATE', 'FLIGHT_NUMBER'),
+    # # 1. Date and Flight Number (Highly likely to be unique)
+    # ('DATE', 'FLIGHT_NUMBER'),
 
-    # 2. Tail Number (Specific plane) and Scheduled Departure Time
-    ('TAIL_NUMBER', 'SCHEDULED_DEPARTURE'),
+    # # 2. Tail Number (Specific plane) and Scheduled Departure Time
+    # ('TAIL_NUMBER', 'SCHEDULED_DEPARTURE'),
 
-    # 3. Origin, Destination, and Scheduled Departure Time
-    ('ORIGIN_AIRPORT', 'DESTINATION_AIRPORT', 'SCHEDULED_DEPARTURE'),
+    # # 3. Origin, Destination, and Scheduled Departure Time
+    # ('ORIGIN_AIRPORT', 'DESTINATION_AIRPORT', 'SCHEDULED_DEPARTURE'),
 
-    # 4. A comprehensive combination, often a solid PK choice for flights
-    ('DATE', 'AIRLINE', 'FLIGHT_NUMBER'),
+    # # 4. A comprehensive combination, often a solid PK choice for flights
+    # ('DATE', 'AIRLINE', 'FLIGHT_NUMBER'),
 
-    # 5. Using the ID attributes (Tail, Flight, Date, Time)
-    ('TAIL_NUMBER', 'FLIGHT_NUMBER', 'DATE', 'SCHEDULED_DEPARTURE'),
+    # # 5. Using the ID attributes (Tail, Flight, Date, Time)
+    # ('TAIL_NUMBER', 'FLIGHT_NUMBER', 'DATE', 'SCHEDULED_DEPARTURE'),
 
-    # 6. Just the Tail Number (Only useful if the dataset is already aggregated by plane)
-    ('TAIL_NUMBER',),
+    # # 6. Just the Tail Number (Only useful if the dataset is already aggregated by plane)
+    # ('TAIL_NUMBER',),
+
+    ('DATE', 'AIRLINE', 'FLIGHT_NUMBER', 'ORIGIN_AIRPORT', 'SCHEDULED_DEPARTURE'),
 
     # 7. All columns (The ultimate unique set, useful as a baseline)
     tuple(ALL_COLUMNS),
 
     # 8.
-    ('DATE', 'AIRLINE', 'FLIGHT_NUMBER', 'ORIGIN_AIRPORT', 'SCHEDULED_DEPARTURE'),
 
     # # 9.
     # ('TAIL_NUMBER', 'FLIGHT_NUMBER'),
@@ -174,8 +175,8 @@ def check_uniqueness(df: pd.DataFrame, candidate_keys: List[Tuple[str, ...]]) ->
                         # show a compact example of the values for this duplicated row
                         example_vals = df.loc[indices[0], list(key_combo)].to_dict()
                         # print only a subset of columns for readability if many columns
-                        example_preview = {k: example_vals[k] for k in list(example_vals)[:8]}
-                        print(f"      example (first 8 cols): {example_preview}")
+                        example_preview = {k: example_vals[k] for k in list(example_vals)[:30]}
+                        print(f"      example (first 30 cols): {example_preview}")
                     if len(grouped) > 10:
                         print(f"    ... and {len(grouped)-10} more duplicated groups not printed")
 
