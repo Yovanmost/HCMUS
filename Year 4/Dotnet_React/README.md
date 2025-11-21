@@ -39,15 +39,7 @@ npm run dev
 
 Open the Vite dev server (it will show the address, typically `http://localhost:5173`). The frontend calls the backend at `http://localhost:5000`.
 
-Notes
+<!-- Notes
 
 - The backend will ensure the database is created on startup (code-first). If you prefer EF migrations, run `dotnet ef migrations add Initial` and `dotnet ef database update`.
-- If you run MySQL locally instead of Docker, update connection string in `TaskApi/appsettings.json`.
-
----
-Files added:
-- `TaskApi/` (backend)
-- `task-client/` (frontend)
-- `docker-compose.yml`, `.env.sample`
-
-If you want, I can run more steps: create migrations, run the backend, or add Dockerfile for the API.
+- If you run MySQL locally instead of Docker, update connection string in `TaskApi/appsettings.json`. -->
