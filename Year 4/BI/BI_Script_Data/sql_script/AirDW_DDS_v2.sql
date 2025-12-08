@@ -195,16 +195,28 @@ CREATE TABLE fact_FlightPerformance (
     SourceRecordID BIGINT, -- Link back to NDS FlightFactKey
     
     -- Foreign Key Constraints
-    -- CONSTRAINT FK_Flight_Date 
-    --     FOREIGN KEY (DateKey) REFERENCES dim_Date(DateKey),
+    CONSTRAINT FK_Flight_Date 
+        FOREIGN KEY (DateKey) REFERENCES dim_Date(DateKey),
+    
     CONSTRAINT FK_Flight_Airline 
         FOREIGN KEY (AirlineKey) REFERENCES dim_Airline(AirlineKey),
+
     CONSTRAINT FK_Flight_OriginAirport 
         FOREIGN KEY (OriginAirportKey) REFERENCES dim_Airport(AirportKey),
     CONSTRAINT FK_Flight_DestinationAirport 
         FOREIGN KEY (DestinationAirportKey) REFERENCES dim_Airport(AirportKey),
-    -- CONSTRAINT FK_Flight_ScheduledDepartureTime 
-    --     FOREIGN KEY (ScheduledDepartureTimeKey) REFERENCES dim_Time(TimeKey),
+    
+    CONSTRAINT FK_Flight_ScheduledDepartureTime 
+        FOREIGN KEY (ScheduledDepartureTimeKey) REFERENCES dim_Time(TimeKey),
+    -- CONSTRAINT FK_Flight_ActualDepartureTimeKey 
+    --     FOREIGN KEY (ActualDepartureTimeKey) REFERENCES dim_Time(TimeKey),
+    -- CONSTRAINT FK_Flight_ScheduledArrivalTimeKey 
+    --     FOREIGN KEY (ScheduledArrivalTimeKey) REFERENCES dim_Time(TimeKey),
+    -- CONSTRAINT FK_Flight_ActualArrivalTimeKey 
+    --     FOREIGN KEY (ActualArrivalTimeKey) REFERENCES dim_Time(TimeKey),
+    
+    
+    
     CONSTRAINT FK_Flight_CancellationReason 
         FOREIGN KEY (CancellationReasonKey) REFERENCES dim_CancellationReason(CancellationReasonKey)
 );
@@ -216,98 +228,98 @@ CREATE INDEX IX_FlightPerformance_OriginAirport ON fact_FlightPerformance(Origin
 CREATE INDEX IX_FlightPerformance_DestinationAirport ON fact_FlightPerformance(DestinationAirportKey);
 CREATE INDEX IX_FlightPerformance_Status ON fact_FlightPerformance(IsCancelled, IsOnTime);
 
--- Columnstore Index for Analytics (SQL Server 2012+)
-CREATE NONCLUSTERED COLUMNSTORE INDEX IX_FlightPerformance_Analytics
-ON fact_FlightPerformance
-(
-    DateKey, AirlineKey, OriginAirportKey, DestinationAirportKey,
-    ArrivalDelayMinutes, DepartureDelayMinutes,
-    AirSystemDelayMinutes, SecurityDelayMinutes, AirlineDelayMinutes,
-    LateAircraftDelayMinutes, WeatherDelayMinutes,
-    IsOnTime, IsSevereDelay, IsCancelled
-);
+-- -- Columnstore Index for Analytics (SQL Server 2012+)
+-- CREATE NONCLUSTERED COLUMNSTORE INDEX IX_FlightPerformance_Analytics
+-- ON fact_FlightPerformance
+-- (
+--     DateKey, AirlineKey, OriginAirportKey, DestinationAirportKey,
+--     ArrivalDelayMinutes, DepartureDelayMinutes,
+--     AirSystemDelayMinutes, SecurityDelayMinutes, AirlineDelayMinutes,
+--     LateAircraftDelayMinutes, WeatherDelayMinutes,
+--     IsOnTime, IsSevereDelay, IsCancelled
+-- );
 
--- ========================
--- AGGREGATE FACT: Daily Airport Performance
--- ========================
-CREATE TABLE fact_DailyAirportPerformance (
-    DailyAirportPerfKey BIGINT IDENTITY(1,1) PRIMARY KEY,
-    DateKey INT NOT NULL,
-    AirportKey INT NOT NULL,
+-- -- ========================
+-- -- AGGREGATE FACT: Daily Airport Performance
+-- -- ========================
+-- CREATE TABLE fact_DailyAirportPerformance (
+--     DailyAirportPerfKey BIGINT IDENTITY(1,1) PRIMARY KEY,
+--     DateKey INT NOT NULL,
+--     AirportKey INT NOT NULL,
     
-    -- Counts
-    TotalFlights INT,
-    TotalDepartures INT,
-    TotalArrivals INT,
-    CancelledFlights INT,
-    DivertedFlights INT,
-    OnTimeFlights INT,
-    DelayedFlights INT,
-    SevereDelayedFlights INT,
+--     -- Counts
+--     TotalFlights INT,
+--     TotalDepartures INT,
+--     TotalArrivals INT,
+--     CancelledFlights INT,
+--     DivertedFlights INT,
+--     OnTimeFlights INT,
+--     DelayedFlights INT,
+--     SevereDelayedFlights INT,
     
-    -- Aggregated Delay Measures (in minutes)
-    TotalDepartureDelayMinutes INT,
-    TotalArrivalDelayMinutes INT,
-    AvgDepartureDelay DECIMAL(10,2),
-    AvgArrivalDelay DECIMAL(10,2),
+--     -- Aggregated Delay Measures (in minutes)
+--     TotalDepartureDelayMinutes INT,
+--     TotalArrivalDelayMinutes INT,
+--     AvgDepartureDelay DECIMAL(10,2),
+--     AvgArrivalDelay DECIMAL(10,2),
     
-    -- Ground Operations
-    AvgTaxiOutTime DECIMAL(10,2),
-    AvgTaxiInTime DECIMAL(10,2),
+--     -- Ground Operations
+--     AvgTaxiOutTime DECIMAL(10,2),
+--     AvgTaxiInTime DECIMAL(10,2),
     
-    -- Derived KPIs (%)
-    OnTimePerformancePct DECIMAL(5,2),
-    CancellationRate DECIMAL(5,2),
-    SevereDelayRate DECIMAL(5,2),
+--     -- Derived KPIs (%)
+--     OnTimePerformancePct DECIMAL(5,2),
+--     CancellationRate DECIMAL(5,2),
+--     SevereDelayRate DECIMAL(5,2),
     
-    LoadDate DATETIME DEFAULT GETDATE(),
+--     LoadDate DATETIME DEFAULT GETDATE(),
     
-    -- CONSTRAINT FK_DailyAirportPerf_Date 
-    --     FOREIGN KEY (DateKey) REFERENCES dim_Date(DateKey),
-    CONSTRAINT FK_DailyAirportPerf_Airport 
-        FOREIGN KEY (AirportKey) REFERENCES dim_Airport(AirportKey),
-    CONSTRAINT UC_DailyAirportPerf UNIQUE (DateKey, AirportKey)
-);
+--     -- CONSTRAINT FK_DailyAirportPerf_Date 
+--     --     FOREIGN KEY (DateKey) REFERENCES dim_Date(DateKey),
+--     CONSTRAINT FK_DailyAirportPerf_Airport 
+--         FOREIGN KEY (AirportKey) REFERENCES dim_Airport(AirportKey),
+--     CONSTRAINT UC_DailyAirportPerf UNIQUE (DateKey, AirportKey)
+-- );
 
-CREATE INDEX IX_DailyAirportPerf_Date ON fact_DailyAirportPerformance(DateKey);
-CREATE INDEX IX_DailyAirportPerf_Airport ON fact_DailyAirportPerformance(AirportKey);
+-- CREATE INDEX IX_DailyAirportPerf_Date ON fact_DailyAirportPerformance(DateKey);
+-- CREATE INDEX IX_DailyAirportPerf_Airport ON fact_DailyAirportPerformance(AirportKey);
 
--- ========================
--- AGGREGATE FACT: Monthly Airline Performance
--- ========================
-CREATE TABLE fact_MonthlyAirlinePerformance (
-    MonthlyAirlinePerfKey BIGINT IDENTITY(1,1) PRIMARY KEY,
-    YearMonth VARCHAR(7) NOT NULL, -- Format: 2015-01
-    Year INT NOT NULL,
-    Month INT NOT NULL,
-    AirlineKey INT NOT NULL,
+-- -- ========================
+-- -- AGGREGATE FACT: Monthly Airline Performance
+-- -- ========================
+-- CREATE TABLE fact_MonthlyAirlinePerformance (
+--     MonthlyAirlinePerfKey BIGINT IDENTITY(1,1) PRIMARY KEY,
+--     YearMonth VARCHAR(7) NOT NULL, -- Format: 2015-01
+--     Year INT NOT NULL,
+--     Month INT NOT NULL,
+--     AirlineKey INT NOT NULL,
     
-    -- Counts
-    TotalFlights INT,
-    CancelledFlights INT,
-    OnTimeFlights INT,
-    DelayedFlights INT,
-    SevereDelayedFlights INT,
+--     -- Counts
+--     TotalFlights INT,
+--     CancelledFlights INT,
+--     OnTimeFlights INT,
+--     DelayedFlights INT,
+--     SevereDelayedFlights INT,
     
-    -- Aggregated Delay (in minutes)
-    TotalDelayMinutes INT,
-    AvgDelayMinutes DECIMAL(10,2),
+--     -- Aggregated Delay (in minutes)
+--     TotalDelayMinutes INT,
+--     AvgDelayMinutes DECIMAL(10,2),
     
-    -- KPIs (%)
-    OnTimePerformancePct DECIMAL(5,2),
-    CancellationRate DECIMAL(5,2),
-    SevereDelayRate DECIMAL(5,2),
+--     -- KPIs (%)
+--     OnTimePerformancePct DECIMAL(5,2),
+--     CancellationRate DECIMAL(5,2),
+--     SevereDelayRate DECIMAL(5,2),
     
-    LoadDate DATETIME DEFAULT GETDATE(),
+--     LoadDate DATETIME DEFAULT GETDATE(),
     
-    CONSTRAINT FK_MonthlyAirlinePerf_Airline 
-        FOREIGN KEY (AirlineKey) REFERENCES dim_Airline(AirlineKey),
-    CONSTRAINT UC_MonthlyAirlinePerf UNIQUE (YearMonth, AirlineKey)
-);
+--     CONSTRAINT FK_MonthlyAirlinePerf_Airline 
+--         FOREIGN KEY (AirlineKey) REFERENCES dim_Airline(AirlineKey),
+--     CONSTRAINT UC_MonthlyAirlinePerf UNIQUE (YearMonth, AirlineKey)
+-- );
 
-CREATE INDEX IX_MonthlyAirlinePerf_YearMonth ON fact_MonthlyAirlinePerformance(YearMonth);
-CREATE INDEX IX_MonthlyAirlinePerf_Airline ON fact_MonthlyAirlinePerformance(AirlineKey);
-GO
+-- CREATE INDEX IX_MonthlyAirlinePerf_YearMonth ON fact_MonthlyAirlinePerformance(YearMonth);
+-- CREATE INDEX IX_MonthlyAirlinePerf_Airline ON fact_MonthlyAirlinePerformance(AirlineKey);
+-- GO
 -- ==========================================
 -- CONTROL & AUDIT TABLES (for SSIS)
 -- ==========================================
@@ -341,33 +353,33 @@ GO
 
 -- GO
 
--- Control Table: Lưu watermark (last successful load time)
-CREATE TABLE ctl_ETL_Watermark (
-    TableName VARCHAR(100) PRIMARY KEY,
-    LastLoadDate DATETIME NOT NULL,
-    LastLoadedID BIGINT NULL,
-    UpdatedDate DATETIME DEFAULT GETDATE()
-);
+-- -- Control Table: Lưu watermark (last successful load time)
+-- CREATE TABLE ctl_ETL_Watermark (
+--     TableName VARCHAR(100) PRIMARY KEY,
+--     LastLoadDate DATETIME NOT NULL,
+--     LastLoadedID BIGINT NULL,
+--     UpdatedDate DATETIME DEFAULT GETDATE()
+-- );
 
--- Insert initial watermarks
-INSERT INTO ctl_ETL_Watermark (TableName, LastLoadDate, LastLoadedID)
-VALUES 
-    ('dim_Airline', '1900-01-01', 0),
-    ('dim_Airport', '1900-01-01', 0),
-    ('fact_FlightPerformance', '1900-01-01', 0);
+-- -- Insert initial watermarks
+-- INSERT INTO ctl_ETL_Watermark (TableName, LastLoadDate, LastLoadedID)
+-- VALUES 
+--     ('dim_Airline', '1900-01-01', 0),
+--     ('dim_Airport', '1900-01-01', 0),
+--     ('fact_FlightPerformance', '1900-01-01', 0);
 
--- Execution Log: Track mỗi lần chạy package
-CREATE TABLE ctl_ETL_Execution_Log (
-    ExecutionID BIGINT IDENTITY(1,1) PRIMARY KEY,
-    PackageName VARCHAR(100),
-    TableName VARCHAR(100),
-    StartTime DATETIME,
-    EndTime DATETIME,
-    RowsRead INT,
-    RowsInserted INT,
-    RowsUpdated INT,
-    Status VARCHAR(20), -- Running, Success, Failed
-    ErrorMessage NVARCHAR(MAX),
-    CreatedDate DATETIME DEFAULT GETDATE()
-);
-GO
+-- -- Execution Log: Track mỗi lần chạy package
+-- CREATE TABLE ctl_ETL_Execution_Log (
+--     ExecutionID BIGINT IDENTITY(1,1) PRIMARY KEY,
+--     PackageName VARCHAR(100),
+--     TableName VARCHAR(100),
+--     StartTime DATETIME,
+--     EndTime DATETIME,
+--     RowsRead INT,
+--     RowsInserted INT,
+--     RowsUpdated INT,
+--     Status VARCHAR(20), -- Running, Success, Failed
+--     ErrorMessage NVARCHAR(MAX),
+--     CreatedDate DATETIME DEFAULT GETDATE()
+-- );
+-- GO

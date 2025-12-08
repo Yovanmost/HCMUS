@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>ETL_AirDW</Name>
-    <LastWriteTime>2025-11-20T17:40:59.0485235Z</LastWriteTime>
+    <LastWriteTime>2025-11-28T18:21:00.5728685Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,12 +18,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>3.Load_AirDW_DDS.dtsx</Name>
-      <LastWriteTime>2025-11-24T09:18:43.2779219Z</LastWriteTime>
+      <LastWriteTime>2025-11-24T10:38:33.1015394Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>1.Load_AirDW_Stage.dtsx</Name>
-      <LastWriteTime>2025-11-20T17:40:37.7126444Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:43:01.2743385Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>3.Load_AirDW_DDS_2.dtsx</Name>
+      <LastWriteTime>2025-11-29T13:52:23.7398368Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>2.Load_AirDW_NDS_2.dtsx</Name>
+      <LastWriteTime>2025-11-30T07:30:11.1411869Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

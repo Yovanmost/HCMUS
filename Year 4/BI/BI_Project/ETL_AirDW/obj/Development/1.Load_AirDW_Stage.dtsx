@@ -8,11 +8,11 @@
   DTS:DTSID="{06E91DEC-C918-4F6F-8BF4-E5DDDD878B04}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.2"
-  DTS:LocaleID="3072"
+  DTS:LocaleID="1033"
   DTS:ObjectName="1 Load_AirDW_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{54FC2808-11EB-4890-95C6-1F3E54F58B9F}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{DED13416-31FF-42FE-8152-090632DA1D5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

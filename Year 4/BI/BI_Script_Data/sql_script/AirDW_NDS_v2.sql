@@ -65,6 +65,7 @@ CREATE TABLE nds_CancellationReasons (
 );
 
 -- Seed Reference Data
+-- https://www.bts.gov/topics/airlines-and-airports/number-15-gate-departure-time
 INSERT INTO nds_CancellationReasons (CancellationCode, ReasonDescription, ReasonCategory)
 VALUES 
     ('A', 'Airline/Carrier', 'Airline'),
@@ -150,20 +151,20 @@ CREATE TABLE nds_FlightFacts (
 -- DATA QUALITY & AUDIT
 -- ==========================================
 
--- Log bảng để SSIS ghi kết quả ETL
-CREATE TABLE nds_ETL_Log (
-    LogID BIGINT IDENTITY(1,1) PRIMARY KEY,
-    PackageName VARCHAR(100),
-    TaskName VARCHAR(100),
-    StartTime DATETIME,
-    EndTime DATETIME,
-    RowsRead INT,
-    RowsInserted INT,
-    RowsUpdated INT,
-    RowsErrored INT,
-    Status VARCHAR(20), -- Success, Failed, Warning
-    ErrorMessage NVARCHAR(MAX),
-    CreatedDate DATETIME DEFAULT GETDATE()
-);
+-- -- Log bảng để SSIS ghi kết quả ETL
+-- CREATE TABLE nds_ETL_Log (
+--     LogID BIGINT IDENTITY(1,1) PRIMARY KEY,
+--     PackageName VARCHAR(100),
+--     TaskName VARCHAR(100),
+--     StartTime DATETIME,
+--     EndTime DATETIME,
+--     RowsRead INT,
+--     RowsInserted INT,
+--     RowsUpdated INT,
+--     RowsErrored INT,
+--     Status VARCHAR(20), -- Success, Failed, Warning
+--     ErrorMessage NVARCHAR(MAX),
+--     CreatedDate DATETIME DEFAULT GETDATE()
+-- );
 
-GO
+-- GO
